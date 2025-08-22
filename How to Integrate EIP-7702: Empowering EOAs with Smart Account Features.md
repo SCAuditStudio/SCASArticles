@@ -77,7 +77,7 @@ contract SimpleDelegate {
 }
 ```
 
-This contract enables batching of arbitrary calls—ideal for EIP-7702 delegation.
+This contract enables batching of arbitrary calls ideal for EIP-7702 delegation.
 
 
 ---
