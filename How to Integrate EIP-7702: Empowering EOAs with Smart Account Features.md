@@ -169,7 +169,7 @@ Use **ERC-4337 when**:
 
 * **Hardhat + GitHub Example**: Check out the `woogie96/eip7702-example` repo, a full Hardhat project demonstrating batch delegation logic [Luganodes | Hassle-Free Staking](https://www.luganodes.com/blog/ethereum-pectra-eip/).
 * **MetaMask Delegation Toolkit**: Offers developer flow to upgrade EOAs into smart accounts with minimal friction [ethereum.org](https://ethereum.org/te/roadmap/pectra/7702/).
-* **Wallet UX Templates & dApp Interfaces**: Enhanced payment flows—for example, paying gas with USDC or other tokens are already being rolled out by wallets like MetaMask and platforms supporting ERC-5792/6900 standards [Bitpowr](https://bitpowr.com/blog/the-ethereum-pectra-upgrade-how-eip-7702-will-transform-ethereum-s-ux-with-stablecoin-gas-payments-and-more), [Metana](https://metana.io/blog/ethereum-pectra-upgrade/)
+* **Wallet UX Templates & dApp Interfaces**: Enhanced payment flows for example, paying gas with USDC or other tokens are already being rolled out by wallets like MetaMask and platforms supporting ERC-5792/6900 standards [Bitpowr](https://bitpowr.com/blog/the-ethereum-pectra-upgrade-how-eip-7702-will-transform-ethereum-s-ux-with-stablecoin-gas-payments-and-more), [Metana](https://metana.io/blog/ethereum-pectra-upgrade/)
 
 ### TL;DR
 
