@@ -1,5 +1,19 @@
 # How to Integrate EIP-7702: Empowering EOAs with Smart Account Features
 
+## Table of Contents
+
+- [Why EIP-7702 Was Proposed?](#why-eip-7702-was-proposed)
+- [What Is EIP-7702 & Why It Matters](#what-is-eip-7702--why-it-matters)
+- [EIP-7702 Integration Steps](#eip-7702-integration-steps)
+  - [Step 1: Initialize a Foundry Project & Set EVM Version](#step-1-initialize-a-foundry-project--set-evm-version)
+  - [Step 2: Write a Delegate Contract in Solidity](#step-2-write-a-delegate-contract-in-solidity)
+  - [Step 3: Write Foundry Tests with Delegation Cheatcodes](#step-3-write-foundry-tests-with-delegation-cheatcodes)
+  - [Step 4: Deploy](#step-4-deploy)
+  - [Step 5: Send Delegation via CLI with `cast`](#step-5-send-delegation-via-cli-with-cast)
+- [When to Choose EIP-7702 vs ERC-4337](#when-to-choose-eip-7702-vs-erc-4337)
+  - [Ecosystem & Tool Support](#ecosystem--tool-support)
+  - [TL;DR](#tldr)
+- [About Us](#about-us)
 
 ## Why EIP-7702 Was Proposed?
 
@@ -17,7 +31,7 @@ This proposal addresses key developer and UX pain points:
 
 EIP-7702 delivers smart account capabilities directly in EOAs, unlocking powerful features without sacrificing simplicity or compatibility.
 
----
+
 
 ## What Is EIP-7702 & Why It Matters
 
@@ -30,7 +44,7 @@ This clever enhancement preserves the EOA's address, private key, and UX while u
 * **Custom policy logic** (like spending limits or social recovery fallback)
 * **Broader compatibility with ERC-4337 and account abstraction plans**.
 
----
+
 
 ## EIP-7702 Integration Steps
 
@@ -50,7 +64,7 @@ evm_version = "prague"
 
 This ensures Foundry’s cheatcodes like `signDelegation` and `attachDelegation` are available.
 
----
+
 
 ### Step 2: Write a Delegate Contract in Solidity
 
@@ -80,7 +94,7 @@ contract SimpleDelegate {
 This contract enables batching of arbitrary calls ideal for EIP-7702 delegation.
 
 
----
+
 
 ### Step 3: Write Foundry Tests with Delegation Cheatcodes
 
@@ -121,7 +135,7 @@ contract EIP7702Test is Test {
 
 This illustrates signing and attaching the delegation in one step using Foundry’s built-in cheatcodes.
 
----
+
 
 ### Step 4: Deploy 
 
@@ -133,7 +147,7 @@ forge test -vv
 
 Foundry will deploy the delegate contract, apply the signed delegation to your EOA, and allow execution of batch logic as if the EOA were a contract all within the test environment.
 
----
+
 
 ### Step 5: Send Delegation via CLI with `cast`
 
@@ -147,7 +161,7 @@ cast send 0xYourEOAAddress --auth 0xSignedAuthorization --rpc-url http://localho
 
 Pair this with deployme and a prepared authorization list to complete delegation on a real or forked network.
 
----
+
 
 ## When to Choose EIP-7702 vs ERC-4337
 
@@ -163,7 +177,7 @@ Use **ERC-4337 when**:
 
 **Combining Both**: Use EIP-7702 for address continuity, and ERC-4337 for deep abstraction capabilities.
 
----
+
 
 ### Ecosystem & Tool Support
 
