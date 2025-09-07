@@ -198,3 +198,19 @@ Use **ERC-4337 when**:
 At SC Audit Studio, we specialize in protocols security assessments. Our team of experts is dedicated to ensuring the safety and reliability of your projects. Partner with us to enhance your project's security and gain peace of mind.
 
 [Reach out to us](https://x.com/SCAuditStudio) for queries and security assessments!
+
+## FAQ
+[
+  {
+    "question": "What is EIP-7702?",
+    "answer": "EIP-7702 is an Ethereum upgrade introduced in the Pectra hard fork that allows Externally Owned Accounts (EOAs) to temporarily behave like smart contract accounts for a single transaction, enabling advanced features without requiring users to migrate to contract wallets."
+  },
+  {
+    "question": "What problems does EIP-7702 solve?",
+    "answer": "It addresses the limitations of EOAs by enabling features like transaction batching, gas sponsorship, spending limits, social recovery, and token-based gas payments, all while maintaining backward compatibility and EOA simplicity."
+  },
+  {
+    "question": "When should I use EIP-7702 vs ERC-4337?",
+    "answer": "Use EIP-7702 if you want lightweight upgrades, minimal gas overhead, and to maintain the same EOA address across chains. Use ERC-4337 if you need full programmability, deep customization, or advanced account abstraction features."
+  }
+]
