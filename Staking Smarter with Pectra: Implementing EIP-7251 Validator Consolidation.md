@@ -2,14 +2,15 @@
 
 ## Table of Contents
 
-* **Introduction**: What EIP-7251 Means for Ethereum Validators
-* **Core Dynamics**: Why Larger Validators, and How They Work
-* **Ecosystem Momentum**: Adoption, Metrics, and Staking Market Trends
-* **Developer Walkthrough**: What to Know Before You Code
-* **Implementation in Action**: Practical Code Snippets You Can Reuse
-* **Operational Risks & Trade-offs**: Best Practices for Safe Consolidation
-* **Wrap-Up**: Bringing It All Together
-* **About Us**
+1. [Introduction: What EIP-7251 Means for Ethereum Validators](#introduction-what-eip-7251-means-for-ethereum-validators)
+2. [Core Dynamics: Why Larger Validators, and How They Work](#core-dynamics-why-larger-validators-and-how-they-work)
+3. [Ecosystem Momentum: Adoption, Metrics, and Staking Market Trends](#ecosystem-momentum-adoption-metrics-and-staking-market-trends)
+4. [Developer Walkthrough: What to Know Before You Code](#developer-walkthrough-what-to-know-before-you-code)
+5. [Implementation in Action: Practical Code Snippets You Can Reuse](#implementation-in-action-practical-code-snippets-you-can-reuse)
+6. [Operational Risks & Trade-offs: Best Practices for Safe Consolidation](#operational-risks--trade-offs-best-practices-for-safe-consolidation)
+7. [Wrap-Up: Bringing It All Together](#wrap-up-bringing-it-all-together)
+8. [About Us](#about-us)
+9. [FAQ](#faq)
 
 ### Introduction: What EIP-7251 Means for Ethereum Validators
 

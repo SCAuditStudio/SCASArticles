@@ -2,18 +2,19 @@
 
 ## Table of Contents
 
-- [Why EIP-7702 Was Proposed?](#why-eip-7702-was-proposed)
-- [What Is EIP-7702 & Why It Matters](#what-is-eip-7702--why-it-matters)
-- [EIP-7702 Integration Steps](#eip-7702-integration-steps)
-  - [Step 1: Initialize a Foundry Project & Set EVM Version](#step-1-initialize-a-foundry-project--set-evm-version)
-  - [Step 2: Write a Delegate Contract in Solidity](#step-2-write-a-delegate-contract-in-solidity)
-  - [Step 3: Write Foundry Tests with Delegation Cheatcodes](#step-3-write-foundry-tests-with-delegation-cheatcodes)
-  - [Step 4: Deploy](#step-4-deploy)
-  - [Step 5: Send Delegation via CLI with `cast`](#step-5-send-delegation-via-cli-with-cast)
-- [When to Choose EIP-7702 vs ERC-4337](#when-to-choose-eip-7702-vs-erc-4337)
-  - [Ecosystem & Tool Support](#ecosystem--tool-support)
-  - [TL;DR](#tldr)
-- [About Us](#about-us)
+1. [Why EIP-7702 Was Proposed?](#why-eip-7702-was-proposed)
+2. [What Is EIP-7702 & Why It Matters](#what-is-eip-7702--why-it-matters)
+3. [EIP-7702 Integration Steps](#eip-7702-integration-steps)
+   - [Step 1: Initialize a Foundry Project & Set EVM Version](#step-1-initialize-a-foundry-project--set-evm-version)
+   - [Step 2: Write a Delegate Contract in Solidity](#step-2-write-a-delegate-contract-in-solidity)
+   - [Step 3: Write Foundry Tests with Delegation Cheatcodes](#step-3-write-foundry-tests-with-delegation-cheatcodes)
+   - [Step 4: Deploy](#step-4-deploy)
+   - [Step 5: Send Delegation via CLI with `cast`](#step-5-send-delegation-via-cli-with-cast)
+4. [When to Choose EIP-7702 vs ERC-4337](#when-to-choose-eip-7702-vs-erc-4337)
+   - [Ecosystem & Tool Support](#ecosystem--tool-support)
+   - [TL;DR](#tldr)
+5. [About Us](#about-us)
+6. [FAQ](#faq)
 
 ## Why EIP-7702 Was Proposed?
 

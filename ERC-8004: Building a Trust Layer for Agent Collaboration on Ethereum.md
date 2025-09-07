@@ -18,6 +18,7 @@
    - [Build Trust-Aware Applications](#5-build-trust-aware-applications)
 7. [Conclusion](#conclusion)
 8. [About Us](#about-us)
+9. [FAQ](#faq)
 
 ---
 
@@ -182,3 +183,27 @@ ERC-8004 is a significant step towards establishing a robust trust framework for
 At SC Audit Studio, we specialize in protocols security assessments. Our team of experts is dedicated to ensuring the safety and reliability of your projects. Partner with us to enhance your project's security and gain peace of mind.
 
 [Reach out to us](https://x.com/SCAuditStudio) for queries and security assessments!
+
+## FAQ
+[
+{
+"question": "What is ERC-8004 and why do we need it?",
+"answer": "ERC-8004 is a trust layer for autonomous agent collaboration on Ethereum. It addresses the cross-organizational trust gap by providing identity, reputation, and validation registries that enable agents to work together safely across different platforms and organizations."
+},
+{
+"question": "How does ERC-8004 differ from existing agent protocols?",
+"answer": "Unlike existing protocols that work only in trusted silos, ERC-8004 provides a modular, composable trust framework that works across organizational boundaries. It separates identity, reputation, and validation into distinct registries while maintaining interoperability."
+},
+{
+"question": "Can I use ERC-8004 with my existing AI agents?",
+"answer": "Yes! ERC-8004 is designed to be lightweight and pluggable. You can integrate it by registering your agent's identity, implementing the reputation feedback system, and optionally adding validation flows based on your specific trust requirements."
+},
+{
+"question": "What are the main components of ERC-8004?",
+"answer": "ERC-8004 consists of three main registries: Identity Registry (for agent registration and discovery), Reputation Registry (for feedback and trust scoring), and Validation Registry (for output verification and quality assessment)."
+},
+{
+"question": "Is ERC-8004 production-ready?",
+"answer": "ERC-8004 is still evolving based on community feedback. Demos like ChaosChain's implementation show its potential."
+}
+]
