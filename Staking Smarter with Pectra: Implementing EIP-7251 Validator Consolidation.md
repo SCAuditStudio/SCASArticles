@@ -96,23 +96,25 @@ At SC Audit Studio, we specialize in protocols security assessments. Our team of
 
 [Reach out to us](https://x.com/SCAuditStudio) for queries and security assessments!
 ## FAQ
+[
 {
-question: "What is EIP-7251?",
-answer: "EIP-7251 is an Ethereum upgrade that increases the maximum validator balance from 32 ETH to 2,048 ETH, enabling in-protocol consolidation and more efficient staking operations.",
+"question": "What is EIP-7251?",
+"answer": "EIP-7251 is an Ethereum upgrade that increases the maximum validator balance from 32 ETH to 2,048 ETH, enabling protocol consolidation and more efficient staking operations."
 },
 {
-question: "Why would validators want to consolidate?",
-answer: "Consolidation reduces node overhead, improves capital efficiency, and simplifies staking operations by merging multiple validator keys into one.",
+"question": "Why would validators want to consolidate?",
+"answer": "Consolidation reduces node overhead, improves capital efficiency, and simplifies staking operations by merging multiple validator keys into one."
 },
 {
-question: "Does validator consolidation affect fairness in proposer selection?",
-answer: "No, proposer selection fairness remains intact under EIP-7251, even with larger validator balances.",
+"question": "Does validator consolidation affect fairness in proposer selection?",
+"answer": "No, proposer selection fairness remains intact under EIP-7251, even with larger validator balances."
 },
 {
-question: "What risks come with larger validator balances?",
-answer: "While operational efficiency improves, larger validators carry higher slashing exposure, meaning potential absolute losses are greater if mismanagement or downtime occurs.",
+"question": "What risks come with larger validator balances?",
+"answer": "While operational efficiency improves, larger validators carry higher slashing exposure, meaning potential absolute losses are greater if mismanagement or downtime occurs."
 },
 {
-question: "How can developers prepare their code for EIP-7251?",
-answer: "Developers should update data models to support larger balances, implement consolidation logic through system contracts, and account for compounding in 1 ETH increments.",
+"question": "How can developers prepare their code for EIP-7251?",
+"answer": "Developers should update data models to support larger balances, implement consolidation logic through system contracts, and account for compounding in 1 ETH increments."
 }
+]
