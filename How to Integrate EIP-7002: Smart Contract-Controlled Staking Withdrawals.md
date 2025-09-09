@@ -278,6 +278,12 @@ export RESTAKE="0xRestakeAddress"
 forge script script/Deploy.s.sol:Deploy --rpc-url $RPC_URL --broadcast
 ```
 
+### Step 5: Integrations (Lido, EigenLayer, Gnosis Safe)
+
+* **Lido**: Use `lido.submit{value: ...}(address(this))` to mint stETH.
+* **EigenLayer**: Replace `IRestake` with EigenLayer’s restaking API (`restakeFor`, `delegateTo`, etc.).
+* **Gnosis Safe**: Forward ETH directly with `safe.call{value: amount}("")` to route funds into multisig-controlled treasuries.
+
 > [!WARNING]
 > **Disclaimer:** The following code examples are for **illustrative purposes only** and have **not been audited**. Do **not** deploy them directly in production.
 
