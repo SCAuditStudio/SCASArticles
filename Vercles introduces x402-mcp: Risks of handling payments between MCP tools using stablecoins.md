@@ -85,27 +85,31 @@ The current implementation of x402 works most efficiently with stablecoins. Howe
 ### Centralization Risks
 Using USDC on Base, together with Coinbase-managed wallets, raises concerns about centralization. 
 While the protocol itself does not depend on decentralized features, this setup could enable blacklisting of non-compliant companies. 
-Such outcomes may be unlikely in practice, but they challenge the notion of x402 as an “open” standard. Importantly, x402 only defines the protocol and is not inherently tied to specific tokens or wallet providers.
+Such outcomes may be unlikely in practice, but they challenge the notion of x402 as an “open” standard. Importantly, x402 only defines the protocol and is not inherently tied to specific tokens or wallet providers.  
 
 ### Supply Chain Attacks
 Another risk is supply chain compromise. Recent incidents have shown that even well-maintained npm packages can be targeted. 
 If libraries published by providers such as Vercel were ever compromised, it could severely impact integrations. 
-Mitigation strategies include pinning package versions and implementing safeguards for fund management.
+Mitigation strategies include pinning package versions and implementing safeguards for fund management.  
 
 ### AI Model Exploits
 A different class of vulnerabilities arises from AI-driven agents using x402. 
 The protocol itself does not enforce protections against overspending, and it cant determine whether a request price is “fair.” 
 Malicious actors could bait AI models into exhausting funds on overpriced or useless APIs. 
-To reduce this risk, integrations should establish strict spending policies and rules for online transactions.
+To reduce this risk, integrations should establish strict spending policies and rules for online transactions.  
 
 ### Smart Contract Vulnerabilities
 When APIs accept payments through smart contracts, attackers may exploit callback functions to launch new types of attacks. 
-This requires carefull consideration when sending payments to smart contracts, or accpeting payments using smart contracts.
+This requires carefull consideration when sending payments to smart contracts, or accpeting payments using smart contracts.  
 
 ### Compliance Risks
 Regulatory compliance presents significant challenges. 
 Accepting stablecoin payments globally exposes companies to issues such as VAT accounting, sanctions, and KYC requirements. 
 Meeting these obligations may remove some of the openness and simplicity that x402 aims to provide.
+
+### Conclusion
+The above-mentioned risks are broad categories of possible attacks/issues that might arise with x402 integrations.
+Because the standard is so new, we have to wait for real-world integrations and examples to provide more accurate data on actual attacks.  
 
 ## About Us
 
