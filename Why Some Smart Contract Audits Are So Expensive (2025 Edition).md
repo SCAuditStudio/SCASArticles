@@ -65,7 +65,8 @@ We have researched the data. We compiled these examples by surveying publicly av
 | Contest      | Perpetuals Funding & Risk Engine                             | 6.2K        | 12 days (contest)   | 52 participants (top 10 majority)   | 95K prize pool     | 1 / 7 / 19 / 33       | Internal re-review | Medium findings clustered in funding rate rounding |
 | Contest      | Stablecoin Collateral & Liquidation Module                   | 3.9K        | 9 days (contest)    | 41 participants                     | 50K prize pool     | 0 / 4 / 12 / 28       | Light internal pass | No Highs; several Medium economic griefing vectors |
 
-<img width="1536" height="1024" alt="ChatGPT Image Sep 17, 2025, 04_56_56 AM" src="https://github.com/user-attachments/assets/50f603ef-c297-4a2a-bd68-4a40fbe20352" />
+
+![CostGrapgh](https://github.com/user-attachments/assets/d649e7ab-1909-45c3-a1ab-cc1cd94963d4)
 
 ### Observations from the Above DataSet
 
@@ -201,61 +202,5 @@ At SC Audit Studio, we specialize in protocols security assessments. Our team of
    {
       "question": "Do we need multiple audits?",
       "answer": "High TVL or novel protocols usually justify: deep audit → contest → targeted final review. Simple tokens may get by with one focused audit plus a bug bounty."
-   },
-   {
-      "question": "When is formal verification worth it?",
-      "answer": "When financial invariants or safety properties (AMM math, collateral ratios, bridge state transitions) anchor solvency. Apply after logic stabilizes to avoid churn."
-   },
-   {
-      "question": "Can a bug bounty replace an audit?",
-      "answer": "No. Bounties assume a baseline of correctness and address residual post-deployment risk. They complement audits; they do not substitute for structured pre-launch review."
-   },
-   {
-      "question": "Typical timelines for a 5–8K LOC audit?",
-      "answer": "~2.5–5 calendar weeks including one remediation pass (traditional). Contests: 7–14 days plus 1–2 weeks triage + patch validation."
-   },
-   {
-      "question": "What should we send auditors up front?",
-      "answer": "Pinned commit hash, scope manifest, architecture diagram, roles/privileges matrix, threat model draft, dependency list, upgrade pattern, test coverage summary, known assumptions & accepted risks."
-   },
-   {
-      "question": "Why include a low $2K–$10K tier example?",
-      "answer": "To show that smaller/B-tier firms can service narrow scopes cheaply—often with reduced brand signal, fewer senior reviewers, lighter docs, and limited liability. It's context, not endorsement."
-   },
-   {
-      "question": "Biggest hidden cost teams miss?",
-      "answer": "Iteration debt: mid-audit logic changes that force re-analysis and queue delays, reducing effective reviewer depth per dollar."
-   },
-   {
-      "question": "How far ahead to book an audit slot?",
-      "answer": "Reputable firms: 6–10 weeks lead time. Reserve early; adjust scope later. Contests benefit from pre-scheduling to attract top researchers."
-   },
-   {
-      "question": "Does adding more auditors always help?",
-      "answer": "After 3–4 experienced reviewers, marginal returns fall unless the system is very large or separable. Specialized depth beats raw headcount."
-   },
-   {
-      "question": "Post-audit metrics to track?",
-      "answer": "Time-to-fix per severity, residual open risk register, invariant test coverage, diff churn post-freeze, bug bounty severity distribution, MTTP for post-deployment patches."
-   },
-   {
-      "question": "How to explain audit value to non-technical stakeholders?",
-      "answer": "Frame removed risk categories, validated economic invariants, remaining known limitations, and enablements (listings, insurance, investor confidence) in plain language before/after posture."
-   },
-   {
-      "question": "Are AI tools lowering prices yet?",
-      "answer": "They trim boilerplate pattern matching but core human reasoning (cross-module logic, economic attack surfaces) still dominates. Efficiency gains are incremental, not disruptive (as of 2025)."
-   },
-   {
-      "question": "How to spot an unrealistically low quote?",
-      "answer": "Missing scope doc, vague deliverables, no remediation plan, single reviewer on complex system, refusal to show anonymized sample, price far below market without narrower depth rationale."
-   },
-   {
-      "question": "Should we pay for on-call launch support?",
-      "answer": "Yes if TVL or blast radius is high. Standby auditors accelerate detection and resolution of last-minute deployment anomalies."
-   },
-   {
-      "question": "Role of threat modeling in cost efficiency?",
-      "answer": "Upfront threat modeling focuses reviewer effort, reduces redundant analysis, and surfaces architecture flaws early—improving both security outcomes and spend efficiency."
    }
 ]
