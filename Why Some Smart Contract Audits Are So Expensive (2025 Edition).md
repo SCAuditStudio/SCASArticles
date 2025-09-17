@@ -21,7 +21,7 @@ Audits are one of the biggest single line-items in a Web3 project’s budget. Wh
 
 ## Recent Price Benchmarks (2025)
 
-Here are fresh data points from 2025 in the market, to give you a sense of real examples and where things are going. These are helpful to compare with contest vs traditional models.
+These are fresh data points from 2025 in the market, to give sense of real examples and where things are going. These are helpful to compare with contest vs traditional models.
 
 | Type / Project                                                          | Approx. Cost Range (USD)                                                           | Attributes / Notes                                                                            |
 | ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
@@ -101,7 +101,7 @@ Putting together the cost drivers + recent data + models, here are the combinati
 
 ## What Drives Up Audit Costs
 
-There are many levers that push an audit from “cheap” to “premium”. Understanding these helps you figure out whether an audit quote is reasonable or excessive.
+There are many levers that push an audit from “cheap” to “premium”. Understanding these helps figuring out whether an audit quote is reasonable or excessive.
 
 1. **Code Complexity & Size (Lines of Code, Modular Architecture)**
    The more logic in the contract(s), more external integrations, more moving parts (oracles, bridges, upgradeability, multi-signatures), the more paths to test and more potential vulnerabilities. Larger codebases require more reviewer time, more tools, more tests.
