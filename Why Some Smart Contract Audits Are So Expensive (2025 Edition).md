@@ -5,7 +5,7 @@
 1. [Introduction](#introduction)
 2. [Recent Price Benchmarks (2025)](#recent-price-benchmarks-2025)
 3. [Contest (Crowdsourced) vs Traditional Audits: How They Compare](#contest-crowdsourced-vs-traditional-audits-how-they-compare)
-4. [Recent Case Studies: Contest vs Traditional](#recent-case-studies-contest-vs-traditional-2024-2025)
+4. [Recent Case Studies: Contest vs Traditional (2024–2025)](#recent-case-studies-contest-vs-traditional-2024–2025)
 5. [Why Some Audits are Very Expensive: Real Justifications](#why-some-audits-are-very-expensive-real-justifications)
 6. [What Drives Up Audit Costs](#what-drives-up-audit-costs)
 7. [What Costs Typically Look Like When You Combine All Factors](#what-costs-typically-look-like-when-you-combine-all-factors)
