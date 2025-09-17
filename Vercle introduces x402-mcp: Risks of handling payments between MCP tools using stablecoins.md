@@ -1,4 +1,4 @@
-# Vercles introduces x402-mcp: Risks of handling payments between MCP tools using stablecoins
+# Vercle introduces x402-mcp: Risks of handling payments between MCP tools using stablecoins
 
 ## Table of Contents
 1. [Introduction](#introduction)  
