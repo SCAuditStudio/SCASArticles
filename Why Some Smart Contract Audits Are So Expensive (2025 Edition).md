@@ -1,6 +1,6 @@
 # Why Some Smart Contract Audits Are So Expensive (2025 Edition)
 
-# Table of Contents
+## Table of Contents
 
 1. [Introduction](#introduction)
 2. [Recent Price Benchmarks (2025)](#recent-price-benchmarks-2025)
@@ -15,11 +15,11 @@
 11. [About Us](#about-us)
 12. [FAQ](#faq)
 
-# Introduction
+## Introduction
 
 Audits are one of the biggest single line-items in a Web3 project’s budget. When you see quotes from “a few thousand dollars” to “hundreds of thousands”, it often raises the question: *what exactly drives that cost?* In 2025, the landscape is more mature, pricier, and more varied than ever. Here’s a deep dive into **why some audits cost a lot**, real market benchmarks, and how different audit models compare.
 
-# Recent Price Benchmarks (2025)
+## Recent Price Benchmarks (2025)
 
 These are fresh data points from 2025 in the market, to give sense of real examples and where things are going. These are helpful to compare with contest vs traditional models.
 
@@ -36,7 +36,7 @@ Additionally:
 
 ![photo_2025-09-16_22-12-20](https://github.com/user-attachments/assets/2d8e3c5e-5b7a-4032-95e5-8676232b4cb3)
 
-# Contest (Crowdsourced) vs Traditional Audits: How They Compare
+## Contest (Crowdsourced) vs Traditional Audits: How They Compare
 
 While many pricing reports refer to traditional audits (firms that assign a dedicated team, manual review etc.), contest / crowdsourced audit platforms have become more prominent. Here’s a comparison of the two models in 2025, specifically in cost, value, risks.
 
@@ -49,7 +49,7 @@ While many pricing reports refer to traditional audits (firms that assign a dedi
 | **Predictability of Cost**          | More volatile depending on how many issues are found, participation of high-quality researchers, how you structure the contest. You can control prize pool, but cost of full coverage is somewhat uncertain.                                                                                                                                                | More predictable: you define scope, get a quote, agree on deliverables; less variation once contract is signed (though re-audits, remediation etc. still can increase cost).                                                               |
 | **Risk of Missing Critical Issues** | Higher if the contest is small, or prize incentives misaligned (if only large bugs are rewarded, many medium/low ones may be ignored; if code is novel or complex, deep logic flaws may get less attention).                                                                                                                                                | Lower risk under proper process: senior auditors dive into edge cases; more likely to include documentation, test coverage, formal verification if needed; better guarantee for sensitive code.                                            |
 
-# Recent Case Studies: Contest vs Traditional (2024–2025)
+## Recent Case Studies: Contest vs Traditional (2024–2025)
 
 We have researched the data. We compiled these examples by surveying publicly available audit reports, contest archives, and disclosed prize pools across 2024–2025. We normalized line counts to in-scope production Solidity (excluding tests, mocks, deployment scripts). We grouped issues into standard High / Medium / Low / Informational buckets after de-duplicating contest submissions. We excluded unverifiable anecdotal cost claims. Below are representative recent examples (drawn from publicly shared audit reports, disclosed contest prize pools, and aggregated 2024–2025 market data). Figures are rounded; LOC = lines of Solidity (or equivalent) actually in scope, not entire repo. Severity counts use typical High/Medium/Low/Informational classification. Exact costs for some traditional audits are often under NDA; where a precise public number was not available, a tight range reflecting comparable disclosed engagements is given.
 
@@ -73,7 +73,7 @@ We have researched the data. We compiled these examples by surveying publicly av
 
 ![CostGrapgh](https://github.com/user-attachments/assets/d649e7ab-1909-45c3-a1ab-cc1cd94963d4)
 
-# Observations from the Above DataSet
+## Observations from the Above DataSet
 
 * Contest models surface many Low/Info issues rapidly (breadth), while traditional audits yield proportionally more design / logic findings relative to total submissions (depth).
 * Re-audit (verification) cycles are more structured and time-boxed in traditional engagements; contests often require an internal or external follow-up pass to consolidate duplicates and validate fixes.
@@ -81,13 +81,13 @@ We have researched the data. We compiled these examples by surveying publicly av
 * Formal methods / invariant proofs (when added) can add 15–30% cost but tend to reduce High-severity residual risk for math-heavy protocols (AMMs, staking derivatives, bridges).
 * Contest prize pools that exceed ~US$75K in these samples correlate with higher unique participant depth (more high-signal reviewers) and at least one High or multiple Medium severity issues found—suggesting marginal returns up to a saturation point.
 
-# Quick Benchmark Ratios
+## Quick Benchmark Ratios
 
 * Traditional (samples above): Approx. US$11–22 per audited LOC (inclusive of re-audit time) at mid-size scope; can rise to US$30+ with formal methods or compressed schedules.
 * Contests (samples above): Effective spend ~US$8–18 per LOC (prize pool only); adding internal triage + engineering time often increases true internal cost by 15–25%.
 * Median High: 0–2 per 5–8K LOC across both models; distribution heavily influenced by protocol novelty rather than model alone.
 
-# Why Some Audits are *Very* Expensive: Real Justifications
+## Why Some Audits are *Very* Expensive: Real Justifications
 
 Putting together the cost drivers + recent data + models, here are the combinations / conditions that make audits “very expensive”, and why paying more sometimes *makes sense* rather than being wasteful.
 
@@ -105,7 +105,7 @@ Putting together the cost drivers + recent data + models, here are the combinati
 
 * **Additional services / deliverables**: Formal verification, gas optimization, performance testing, compliance, user documentation, post-launch monitoring, bug bounty program, all of these are value adds and cost.
 
-# What Drives Up Audit Costs
+## What Drives Up Audit Costs
 
 There are many levers that push an audit from “cheap” to “premium”. Understanding these helps figuring out whether an audit quote is reasonable or excessive.
 
@@ -127,7 +127,7 @@ There are many levers that push an audit from “cheap” to “premium”. Unde
 6. **Remediation, Re-Audits & Support**
    Auditors often report issues; the dev side needs to fix them; auditors then re-review. Sometimes code changes (after the initial audit) need new checks. Also, good auditors provide good documentation, help with integrating fixes, discussing edge cases. That adds to cost beyond just the “first pass”.
 
-# What Costs Typically Look Like When You Combine All Factors
+## What Costs Typically Look Like When You Combine All Factors
 
 Here are approximate ranges (2025) for what you might reasonably expect to pay *if you combine many of the cost-drivers above*, i.e. high complexity, urgency, high stakes, deep audit, etc.:
 
@@ -157,13 +157,13 @@ Because audits are expensive, here are practical strategies to keep costs reason
 
 * **Ensure you choose auditors / contest platforms with good reputation**: credibility matters, cheaper audit that misses critical issues may cost more later in losses or lost trust.
 
-# When to Prefer Each (Reinforced by Cases)
+## When to Prefer Each (Reinforced by Cases)
 
 * Use a contest early to flush broad classes of implementation bugs and gas / minor logic issues once the code is near feature-freeze.
 * Follow with (or precede by) a traditional audit for architectural threat modeling, economic / cross-module invariants, and structured verification of patch sets.
 * High-risk or novel protocols benefit from a hybrid: initial traditional deep dive → contest for breadth → final focused re-audit / formal verification on patched critical paths.
 
-# Conclusion
+## Conclusion
 
 Smart contract audits are expensive because they aren’t just about checking code, they’re about *managing risk*. In 2025, the gap between “cheap audit” and “premium assurance” has widened. The most expensive audits are expensive because of:
 
@@ -177,11 +177,11 @@ Contest / crowdsourced models provide interesting alternatives, often more flexi
 
 If you're budgeting for security, aim to understand *what you're paying for*, not just the price. Budget conservatively, scope carefully, and choose audit partners wisely. The cost of an audit may seem high, but the cost of skipping or under-investing in security is almost always far greater.
 
-# About Us
+## About Us
 
 At SC Audit Studio, we specialize in protocols security assessments. Our team of experts is dedicated to ensuring the safety and reliability of your projects. Partner with us to enhance your project's security and gain peace of mind.
 
-# FAQ
+## FAQ
 
 [
    {
