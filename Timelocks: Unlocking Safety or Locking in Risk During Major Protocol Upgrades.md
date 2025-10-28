@@ -1,4 +1,4 @@
-# Timelocks: Unlocking Safety or Locking in Risk During Major Protocol Upgrades?
+# Timelocks: Unlocking Safety or Locking in Risk During Major Protocol Upgrades
 ## Table of Contents
 
 1. [Introduction](#introduction)
