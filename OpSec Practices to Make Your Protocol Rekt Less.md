@@ -1,4 +1,4 @@
-# OpSec Practices to Make Your Protocol Rekt Less
+# OpSec Practices to not get "Rekt"
 ## Table of Contents
 
 1. [Introduction](#introduction)
@@ -262,4 +262,3 @@ At SC Audit Studio, we specialize in protocols security assessments. Our team of
 "answer": "Yes — the trajectory is usually trusted multisig → decentralized governance with timelocks. Marinade Finance is a good example."
 }
 ]
-OpSec Practices to make your protocol Rekt Less.md
