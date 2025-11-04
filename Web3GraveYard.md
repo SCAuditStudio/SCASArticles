@@ -214,34 +214,6 @@ Partner with us to enhance your project's security and gain peace of mind.
 
 [Reach out to us](https://x.com/SCAuditStudio) for queries and security assessments!
 
-## FAQ
-
-[
-  {
-    "question": "Are VCs still investing in Web3 or is the cycle over?",
-    "answer": "Yes,capital is still flowing, but it's more selective and diligence-heavy. Investors prioritize real revenue, security posture, regulatory readiness, and ecosystem resilience over token momentum or narrative alone."
-  },
-  {
-    "question": "What are the biggest red flags during diligence?",
-    "answer": "No independent audits, opaque treasury controls, extreme admin key centralization, reliance on subsidized yields, token-only 'business models', insider-heavy token allocations with short vesting, and no independent board or multisig oversight."
-  },
-  {
-    "question": "How do we stress-test tokenomics quickly?",
-    "answer": "Model emissions and unlock schedules, simulate a 50–80% drawdown with liquidity constraints, test redeemability and reflexivity (e.g., death-spiral risk), analyze holder concentration and sell pressure, and run sensitivity analyses on fees, incentives, and growth assumptions."
-  },
-  {
-    "question": "Which on-chain metrics actually matter beyond token price?",
-    "answer": "Non-incentivized usage and durability: 30/60/90-day user retention, protocol fee revenue (not from emissions), unique payers, developer activity, security incidents/patch cadence, counterparty dependencies, and decentralization progress for critical components (sequencers, oracles, multisigs)."
-  },
-  {
-    "question": "How do we evaluate governance safety?",
-    "answer": "Check for independent oversight (board or credible multisig), clear timelocks, limited emergency powers with transparent policies, upgradeability controls, documented incident response, and DAO health (quorum, voter distribution, proposal quality). Avoid CEO- or founder-only control."
-  },
-  {
-    "question": "Should we invest before a token exists?",
-    "answer": "Pre-token can be safer if there's demonstrated PMF, real users, and revenue. Evaluate code quality, security discipline, and community traction. A token should add utility and alignment,not be a substitute for a business model or used to mask weak fundamentals."
-  }
-]
 
 ## Works Cited
 
@@ -406,3 +378,31 @@ Partner with us to enhance your project's security and gain peace of mind.
 <a id="ref-80"></a>[80]: Crypto Game 'Blade of God X' Accused of Mismanagement by ... [https://decrypt.co/312600/crypto-game-blade-of-god-x-allegations-mismanagement](https://decrypt.co/312600/crypto-game-blade-of-god-x-allegations-mismanagement)  
 
 <a id="ref-81"></a>[81]: Ex-Blade of God X exec says Game 'Abandoned' Web3 \- C\# Corner [https://www.c-sharpcorner.com/news/exblade-of-god-x-exec-says-game-abandoned-web3](https://www.c-sharpcorner.com/news/exblade-of-god-x-exec-says-game-abandoned-web3)
+
+## FAQ
+[
+  {
+    "question": "Are VCs still investing in Web3 or is the cycle over?",
+    "answer": "Yes,capital is still flowing, but it's more selective and diligence-heavy. Investors prioritize real revenue, security posture, regulatory readiness, and ecosystem resilience over token momentum or narrative alone."
+  },
+  {
+    "question": "What are the biggest red flags during diligence?",
+    "answer": "No independent audits, opaque treasury controls, extreme admin key centralization, reliance on subsidized yields, token-only 'business models', insider-heavy token allocations with short vesting, and no independent board or multisig oversight."
+  },
+  {
+    "question": "How do we stress-test tokenomics quickly?",
+    "answer": "Model emissions and unlock schedules, simulate a 50–80% drawdown with liquidity constraints, test redeemability and reflexivity (e.g., death-spiral risk), analyze holder concentration and sell pressure, and run sensitivity analyses on fees, incentives, and growth assumptions."
+  },
+  {
+    "question": "Which on-chain metrics actually matter beyond token price?",
+    "answer": "Non-incentivized usage and durability: 30/60/90-day user retention, protocol fee revenue (not from emissions), unique payers, developer activity, security incidents/patch cadence, counterparty dependencies, and decentralization progress for critical components (sequencers, oracles, multisigs)."
+  },
+  {
+    "question": "How do we evaluate governance safety?",
+    "answer": "Check for independent oversight (board or credible multisig), clear timelocks, limited emergency powers with transparent policies, upgradeability controls, documented incident response, and DAO health (quorum, voter distribution, proposal quality). Avoid CEO- or founder-only control."
+  },
+  {
+    "question": "Should we invest before a token exists?",
+    "answer": "Pre-token can be safer if there's demonstrated PMF, real users, and revenue. Evaluate code quality, security discipline, and community traction. A token should add utility and alignment,not be a substitute for a business model or used to mask weak fundamentals."
+  }
+]
