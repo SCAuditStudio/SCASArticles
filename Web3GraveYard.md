@@ -41,12 +41,12 @@ The theoretical risks of Web3 investing became a devastating reality during the 
 
 The collapse of FTX, a crypto exchange once valued at $32 billion, represents one of the most profound failures of due diligence in modern venture capital history. Its demise was not the result of a clever hack or poor market timing but of what prosecutors have described as "one of the biggest financial frauds in American history".
 
-#### **Mechanism of Collapse**
+#### Mechanism of Collapse (FTX)
 
 At its core, FTX's failure was caused by the fraudulent commingling of funds between the exchange and its sister quantitative trading firm, Alameda Research, both founded by Sam Bankman-Fried (SBF). Billions of dollars in FTX customer deposits were secretly funneled to Alameda to cover its massive, high-risk trading losses. This created an $8 billion hole in FTX's balance sheet, which was precariously papered over by the exchange's own centrally-controlled and illiquid token, FTT. Alameda held a significant portion of its assets in FTT, creating a dangerous feedback loop: as long as the market believed in FTX, FTT had value, which made Alameda's balance sheet appear solvent.
 
 The trigger for the collapse came on November 2, 2022, when a CoinDesk report revealed Alameda's heavy reliance on the FTT token. This revelation prompted a crisis of confidence, which was fatally amplified when rival exchange Binance announced its intention to liquidate its entire FTT holdings. The announcement sparked a bank run, with customers rushing to withdraw $6 billion in a matter of days. With its customer funds already spent by Alameda and its FTT collateral rapidly becoming worthless, FTX was unable to honor the withdrawals, halted operations, and filed for Chapter 11 bankruptcy on November 11, 2022.
-<img width="895" height="663" alt="image" src="https://github.com/user-attachments/assets/e9224c70-8759-4c54-895e-20f672814638" />
+![image](https://github.com/user-attachments/assets/e9224c70-8759-4c54-895e-20f672814638)
 
 #### **Due Diligence Catastrophe**
 
@@ -64,7 +64,7 @@ The chasm between the investors' stated goals and the reality of FTX's operation
 
 The collapse of the Terra ecosystem in May 2022, which vaporized approximately $45 billion in market capitalization within a week, was not a case of fraud in the mold of FTX, but rather a catastrophic failure of economic engineering. It served as a brutal lesson in the inherent fragility of uncollateralized algorithmic stablecoins and the seductive danger of unsustainable yields.
 
-#### **Mechanism of Collapse**
+#### Mechanism of Collapse (Terra/Luna)
 
 Terra's ecosystem was built on a dual-token model. It featured an algorithmic stablecoin, TerraUSD (UST), which aimed to maintain a 1:1 peg with the US dollar. Unlike collateralized stablecoins like USDC, which are backed by reserves of actual dollars or equivalents, UST was "backed" by a mint-and-burn mechanism with Terra's volatile governance token, LUNA. In theory, arbitrageurs could always swap 1 UST for $1 worth of LUNA, and vice versa. If UST's price fell below $1, traders could buy it cheap, swap it for $1 of LUNA, and pocket the difference, burning UST and reducing its supply to restore the peg.
 
@@ -86,7 +86,7 @@ The failure of these sophisticated investors was a failure to question the impos
 
 The bankruptcy of Celsius Network exposed the dangers of centralized, opaque entities operating under the guise of decentralized finance. Celsius, which at its peak held over $25 billion in assets, collapsed due to a combination of gross mismanagement, reckless investment strategies, and a fundamental misrepresentation of its business model to its 1.7 million customers.
 
-#### **Mechanism of Collapse**
+#### Mechanism of Collapse (Celsius)
 
 Celsius built its brand on the slogan "Unbank Yourself," positioning itself as a safe, high-yield alternative to traditional banking. It promised users yields as high as 17% on their crypto deposits. However, Celsius was not a bank; it was an unregulated, high-risk investment fund. It took customer deposits,which, according to its terms of service, it legally owned,and engaged in a series of risky and often illiquid activities to generate returns. These included making under-collateralized loans to hedge funds like Three Arrows Capital (3AC) and deploying assets into high-risk DeFi protocols, including Terra's Anchor Protocol.
 
@@ -129,7 +129,7 @@ In the most competitive sectors of Web3, such as Layer-2 scaling solutions, even
 
 A crucial realization emerging from these patterns is that in Web3, token price is often a dangerously misleading vanity metric, not a reliable proxy for product-market fit. During the bull market, many investors and founders mistook a rising token price,often fueled by speculative hype, airdrop farming, and aggressive marketing,as a sign of genuine traction. However, true product-market fit is demonstrated by sustained, organic user engagement that persists after initial financial incentives are removed. The collapse of countless projects, particularly in DeFi and gaming, proves that a high token price can create a powerful illusion of success, masking a complete absence of a real user base or a viable business model. Diligence must therefore shift its focus to on-chain metrics that reflect non-incentivized usage, such as protocol revenue, developer activity, and user retention. The guiding question for any investment should be: "Would people use this even if there was no token attached?".
 
-## **The Post-Crash Culling: Case Studies from 2023–2025**
+## **The Post-Crash Culling: Case Studies from 2023-2025**
 
 The market downturn of 2022 did not mark the end of VC-funded failures; rather, it initiated a prolonged culling of projects that could not adapt to a more constrained funding environment and a market less tolerant of hype. The period from 2023 to 2025 saw a continuation of these trends, with even well-backed projects succumbing to familiar pitfalls. A 2024 study of 1,181 VC-backed crypto projects revealed that nearly 45% had ceased operations, and 77% generated less than $1,000 in monthly revenue.
 
@@ -148,7 +148,7 @@ Qredo was positioned as a key piece of institutional-grade infrastructure, offer
 ### **Case Study: Kadena Foundation \- The Limits of Centralized Support**
 
 The shutdown of the Kadena Foundation in October 2025 illustrates the fragility of projects that, despite being decentralized networks, rely heavily on a single corporate entity for development, funding, and ecosystem growth. Kadena, a layer-1 proof-of-work blockchain, announced it was ceasing all business operations and active maintenance, blaming "market conditions" and an inability to sustain its activities.
-<img width="895" height="663" alt="Screenshot from 2025-11-01 23-19-22" src="https://github.com/user-attachments/assets/9370a8bb-19af-4aaa-98ab-519854be168c" />
+![Screenshot from 2025-11-01 23-19-22](https://github.com/user-attachments/assets/9370a8bb-19af-4aaa-98ab-519854be168c)
 
 The news triggered an immediate crash of over 60% in its native KDA token. While the blockchain itself remains operational through independent miners, the dissolution of its core supporting entity raises significant doubts about its long-term viability, future upgrades, and ability to compete. This case highlights a critical due diligence question: how truly decentralized is a project, and can it survive if its primary corporate backer disappears?
 
@@ -199,14 +199,35 @@ The Web3 venture landscape is maturing. The capital that flows into the ecosyste
 
 The goal is not to eliminate risk,an impossibility in an innovative sector like Web3,but to intelligently manage it by avoiding the unforced errors of the past. By learning the lessons from the Web3 graveyard and applying the rigorous, multifaceted diligence framework outlined below, VCs can better position themselves to identify and back the truly transformative projects that will survive the hype cycles and build the enduring infrastructure of the next-generation internet.
 
-| Category | Key Due Diligence Questions & Red Flags |
-| :--- | :--- |
-| **Technical & Security Diligence** | - Have the smart contracts undergone multiple, independent audits by reputable firms? (Red Flag: No audits or audits by unknown firms.)<br><br>- What is the protocol's dependency on centralized infrastructure (e.g., RPC providers, sequencers, cloud hosting)? Is there a clear path to decentralization? (Red Flag: Critical functions run on a single AWS server.)<br><br>- Is there a public, well-funded bug bounty program? What is the team's documented incident response plan for a major exploit? (Red Flag: No clear security plan.) |
-| **Economic & Tokenomic Viability** | - What is the primary source of protocol revenue or user yield? Is it generated from organic economic activity (e.g., trading fees, lending interest) or from protocol token emissions/subsidies? (Red Flag: Yields primarily funded by inflation.)<br><br>- What is the core utility of the native token? Would the protocol still provide value to users if the token did not exist or had no speculative value? (Red Flag: Token exists only for governance or to be farmed and sold.)<br><br>- Analyze the token distribution and vesting schedules. What percentage is allocated to the team, insiders, and VCs versus the public/community? (Red Flag: Highly concentrated insider ownership with short vesting periods.)<br><br>- Has the economic model been stress-tested? What happens during a 50%+ market downturn or a mass withdrawal event? Does it contain a reflexive "death spiral" mechanic? (Red Flag: Stability relies on continuous growth.) |
-| **Governance & Team Oversight** | - Is there an independent board of directors with meaningful oversight and the power to challenge the CEO? (Red Flag: Board is non-existent or composed of founders and employees, as with FTX.)<br><br>- Who has multi-signature control over the treasury and critical smart contract functions? Are the signatories independent of one another and of the founding team? (Red Flag: CEO has unilateral control over funds.)<br><br>- Are there regular, audited financial statements prepared by a reputable (e.g., Big Four) accounting firm? (Red Flag: Audits are done by small, unknown firms or are unavailable.)<br><br>- What is the regulatory posture? Has the project sought legal opinions on its status as a potential security in key jurisdictions like the U.S.? (Red Flag: Ignoring or being dismissive of regulatory compliance.) |
-| **Community & Market Traction** | - Analyze on-chain data: What is the ratio of daily active users to speculative traders? What is the user retention rate over 30/60/90 days? (Red Flag: High user count with near-zero retention after an incentive program ends.)<br><br>- Evaluate the quality of the community. Is the Discord/Telegram/Forum filled with substantive discussion from developers and users, or is it dominated by price speculation and "wen token" messages? (Red Flag: Community is a crowd, not a user base.)<br><br>- Map the protocol's counterparty risk. Which other major protocols or entities is it heavily reliant on for liquidity, collateral, or services? (Red Flag: Heavy exposure to a single, potentially unstable entity.) |
+### Diligence checklist by category
 
-## About US 
+#### Technical & Security Diligence
+
+* Have the smart contracts undergone multiple, independent audits by reputable firms? (Red flag: No audits or audits by unknown firms.)
+* What is the protocol's dependency on centralized infrastructure (e.g., RPC providers, sequencers, cloud hosting)? Is there a clear path to decentralization? (Red flag: Critical functions run on a single AWS server.)
+* Is there a public, well-funded bug bounty program? What is the team's documented incident response plan for a major exploit? (Red flag: No clear security plan.)
+
+#### Economic & Tokenomic Viability
+
+* What is the primary source of protocol revenue or user yield? Is it generated from organic economic activity (e.g., trading fees, lending interest) or from protocol token emissions/subsidies? (Red flag: Yields primarily funded by inflation.)
+* What is the core utility of the native token? Would the protocol still provide value to users if the token did not exist or had no speculative value? (Red flag: Token exists only for governance or to be farmed and sold.)
+* Analyze the token distribution and vesting schedules. What percentage is allocated to the team, insiders, and VCs versus the public/community? (Red flag: Highly concentrated insider ownership with short vesting periods.)
+* Has the economic model been stress-tested? What happens during a 50%+ market downturn or a mass withdrawal event? Does it contain a reflexive "death spiral" mechanic? (Red flag: Stability relies on continuous growth.)
+
+#### Governance & Team Oversight
+
+* Is there an independent board of directors with meaningful oversight and the power to challenge the CEO? (Red flag: Board is non-existent or composed of founders and employees, as with FTX.)
+* Who has multi-signature control over the treasury and critical smart contract functions? Are the signatories independent of one another and of the founding team? (Red flag: CEO has unilateral control over funds.)
+* Are there regular, audited financial statements prepared by a reputable (e.g., Big Four) accounting firm? (Red flag: Audits are done by small, unknown firms or are unavailable.)
+* What is the regulatory posture? Has the project sought legal opinions on its status as a potential security in key jurisdictions like the U.S.? (Red flag: Ignoring or being dismissive of regulatory compliance.)
+
+#### Community & Market Traction
+
+* Analyze on-chain data: What is the ratio of daily active users to speculative traders? What is the user retention rate over 30/60/90 days? (Red flag: High user count with near-zero retention after an incentive program ends.)
+* Evaluate the quality of the community. Is the Discord/Telegram/Forum filled with substantive discussion from developers and users, or is it dominated by price speculation and "wen token" messages? (Red flag: Community is a crowd, not a user base.)
+* Map the protocol's counterparty risk. Which other major protocols or entities is it heavily reliant on for liquidity, collateral, or services? (Red flag: Heavy exposure to a single, potentially unstable entity.)
+
+## About US
 
 At SC Audit Studio, we specialize in protocols security assessments.
 Our team of experts has worked with companies like Aave, 1Inch and several more to conduct security assessments.
@@ -217,169 +238,91 @@ Partner with us to enhance your project's security and gain peace of mind.
 
 ## Works Cited
 
-<a id="ref-1"></a>[1]: Web3 Venture Capital \- Meegle [https://www.meegle.com/en\_us/topics/web3/web3-venture-capital](https://www.meegle.com/en_us/topics/web3/web3-venture-capital)  
+* [Web3 Venture Capital - Meegle](https://www.meegle.com/en_us/topics/web3/web3-venture-capital)
+* [The web3 disruption: Corporations want a piece of the action - Silicon Valley Bank](https://www.svb.com/corporate-venture-capital-insights/corporate-venture-capital-ecosystem/web3-disruption-corporations-want-piece-of-action/)
+* [Why Most Web3 Startups Never Raise; Only 1 in 10 Make It, and Here's the Ugly Truth](https://medium.com/@RajZuvomo/why-most-web3-startups-never-raise-only-1-in-10-make-it-and-heres-the-ugly-truth-69b966753cbe)
+* [Web3 Startup Failure Report: Real Sales Mistakes to Avoid in 2025 - C-Leads](https://www.c-leads.com/blog/web3-startup-failure-report-real-sales-mistakes-to-avoid-in-2025)
+* [VC-Backed Crypto Projects Face High Failure Rates, Study Reveals 45% Have Collapsed](https://news.bitcoin.com/vc-backed-crypto-projects-face-high-failure-rates-study-reveals-45-have-collapsed/)
+* [Venture investments in web3 down significantly from bull highs - Consultancy-me.com](https://www.consultancy-me.com/news/7283/venture-investments-in-web3-down-significantly-from-bull-highs)
+* [Web3 Venture Funding Bounces Back Slightly From Last Year's Lows - Crunchbase News](https://news.crunchbase.com/web3/venture-funding-bounces-back-q1-2024/)
+* [The Funding: Crypto VC Recap 2024 - The Block](https://www.theblock.co/post/332539/the-funding-crypto-vc-recap-2024)
+* [en.wikipedia.org: Cryptocurrency bubble](<https://en.wikipedia.org/wiki/Cryptocurrency_bubble#:~:text=The%202018%20cryptocurrency%20crash%20(also,January%20to%206%20February%202018.>)
+* [Crypto exchange collapses have led to $30–50 billion in investor losses | Comsure, Jersey](https://www.comsuregroup.com/news/crypto-exchange-collapses-have-led-to-30-50-billion-in-investor-losses/)
+* [FTX Collapse Will Reverberate Throughout The VC World For A Long Time](https://news.crunchbase.com/fintech-ecommerce/ftx-collapse-bankman-fried-alameda/)
+* [On FTX, Sequoia and Why Power Law Works - Chris Neumann](https://chrisneumann.com/archives/on-ftx-sequoia-and-why-power-law-works)
+* [The FTX collapse explained: What you need to know - CoinTracker](https://www.cointracker.io/blog/what-is-happening-with-ftx)
+* [The FTX Collapse: A Complete Guide - CoinLedger](https://coinledger.io/learn/the-ftx-collapse)
+* [Terra (blockchain) - Wikipedia](https://en.wikipedia.org/wiki/Terra_\(blockchain\))
+* [Anatomy of a Run: The Terra Luna Crash - Harvard Law School Forum on Corporate Governance](https://corpgov.law.harvard.edu/2023/05/22/anatomy-of-a-run-the-terra-luna-crash/)
+* [A Cautionary Tale in the Crypto World: The collapse of Terra (LUNA) - Binance Square](https://www.binance.com/en/square/post/19015908229074)
+* [Why did Celsius Network fail? A deep-dive into Celsius' Chapter 11 filing - Medium](https://medium.com/algotune/why-did-celsius-network-fail-a-deep-dive-into-celsius-chapter-11-filing-959ca897168a)
+* [Celsius Network - Wikipedia](https://en.wikipedia.org/wiki/Celsius_Network)
+* [Blog: Crypto Fraud Costs Investors $5 billion - Americans for Financial Reform](https://ourfinancialsecurity.org/news/blog-another-crypto-fraudster-pleads-guilty-after-investors-lost-5-billion/)
+* [From the brightest to the marginalized: A look at 8 "dead" projects backed by star VCs](https://www.panewslab.com/en/articles/b3555cef-05e7-45b2-8b80-5793f37e1134)
+* [Who Lost Money in FTX? Tom Brady, Kevin O'Leary and More - Entrepreneur](https://www.entrepreneur.com/business-news/who-lost-money-in-ftx-tom-brady-kevin-oleary-and-more/443653)
+* [Due Diligence, Supervisory Failures Preceded FTX's Collapse - MoneyLaundering.com](https://www.moneylaundering.com/news/due-diligence-supervisory-failures-preceded-ftxs-collapse/)
+* [Bankruptcy of FTX - Wikipedia](https://en.wikipedia.org/wiki/Bankruptcy_of_FTX)
+* [FTX Crash: Timeline, Fallout and What Investors Should Know - NerdWallet](https://www.nerdwallet.com/article/investing/ftx-crash)
+* [The Collapse of FTX: What Went Wrong With the Crypto Exchange? - Investopedia](https://www.investopedia.com/what-went-wrong-with-ftx-6828447)
+* [FTX's collapse: the power of FOMO and the importance of due diligence - Palico insights](https://www.palico.com/ftxs-collapse-the-power-of-fomo-and-the-importance-of-due-diligence/)
+* [Lessons to Learn from the Fall of FTX - NACD](https://www.nacdonline.org/all-governance/governance-resources/directorship-magazine/online-exclusives/lessons-to-learn-from-the-fall-of-ftx/)
+* [Lessons to Learn from the Fall of FTX - NACD (Private Company Directorship Newsletter)](https://www.nacdonline.org/all-governance/governance-resources/directorship-magazine/private-company-directorship-newsletter/lessons-to-learn-from-the-fall-of-ftx/)
+* [Lessons from the bankruptcy of FTX: What went wrong with the due diligence?](https://www.integrity-indonesia.com/blog/lessons-from-the-bankruptcy-of-ftx-what-went-wrong-with-the-due-diligence/)
+* [FTX Reveals the Need for a Higher Standard of Crypto Due Diligence](https://www.integrityriskintl.com/ftx-crypto-due-diligence/)
+* [FTX Statement and FAQs - Temasek](https://www.temasek.com.sg/en/news-and-resources/news-room/statements/2022/statement-FTX)
+* [Temasek bares its soul on FTX failure - Euromoney](https://www.euromoney.com/article/2awc3pztnbmw98vhb1reo/capital-markets/temasek-bares-its-soul-on-ftx-failure/)
+* [$40 Billion Terra (LUNA) Crash Explained - Repool](https://repool.com/the-deep-end/terra-luna/)
+* [Terra - What it Was, Collapse, Stablecoin - Corporate Finance Institute](https://corporatefinanceinstitute.com/resources/cryptocurrency/what-happened-to-terra/)
+* [Terra Luna Collapse Explained: Algorithmic Stablecoin Death Spiral & Risks - YouTube](https://www.youtube.com/watch?v=3ulF_-zu4D4)
+* [Anatomy of a Run: The Terra Luna Crash - Bocconi University](https://finance.unibocconi.eu/sites/default/files/files/media/attachments/terralunacrash_april202320230516135124.pdf)
+* [Anatomy of a Run: The Terra Luna Crash - Sveriges Riksbank](https://www.riksbank.se/globalassets/media/konferenser/2023/session-1-liu_makarov_schoar-anatomy_of_a_run-_the_terra_luna_crash.pdf)
+* [(PDF) Anatomy of a Stablecoin's failure: the Terra-Luna case - ResearchGate](https://www.researchgate.net/publication/362326158_Anatomy_of_a_Stablecoin's_failure_the_Terra-Luna_case)
+* [Crypto VC firm Hashed confirms losing more than $3 billion in luna crash: Bloomberg - The Block](https://www.theblock.co/post/161168/crypto-vc-hashed-confirms-luna-loss-3-billion)
+* [A South Korean VC Firm Lost Over $3 Billion in Luna's Crash This Year - Markets Insider](https://markets.businessinsider.com/news/currencies/crypto-crash-luna-token-hashed-simon-seojoon-kim-game-fi-2022-8)
+* [The Real Reasons Behind the Crypto Crash, and What We Can Learn from Terra's Fall - TIME](https://time.com/6177567/terra-ust-crash-crypto/)
+* [Why 99% of Web3 Startups Fail - Medium](https://medium.com/@svetochka0olehovna/why-99-of-web3-startups-fail-99af2cbba625)
+* [STATEMENT OF FACTS CELSIUS 1. Celsius Network LLC ... - U.S. Department of Justice](https://www.justice.gov/usao-sdny/file/1305436/dl?inline)
+* [DFR Encourages Celsius Network Investors to Proceed with Caution](https://dfr.vermont.gov/consumer-alert/dfr-encourages-celsius-network-investors-proceed-caution)
+* [Another Day in Cryptoland: The Failure of Celsius - Advisorpedia](https://www.advisorpedia.com/cryptocurrency/another-day-in-cryptoland-the-failure-of-celsius/)
+* [SEC Charges Celsius Network Limited and Founder Alex Mashinsky with Fraud and Unregistered Offer and Sale of Securities](https://www.sec.gov/newsroom/press-releases/2023-133)
+* [Zero Degrees Celsius - Ed Zitron's Where's Your Ed At](https://www.wheresyoured.at/zero-degrees-celsius/)
+* [The Problems That Led to Celsius' Bankruptcy - PRCG | Haggerty](https://prcg.com/blog/problems-led-celsius-bankruptcy/)
+* [The Flight To Crypto Quality: Risk Management At Center Stage - Forbes](https://www.forbes.com/sites/cme-group/2023/05/01/the-flight-to-crypto-quality-risk-management-at-center-stage/)
+* [Why So Many Web3 Games Are Shutting Down and What New Projects Can Do Better](https://playtoearn.com/news/why-so-many-web3-games-are-shutting-down-and-what-new-projects-can-do-better)
+* [Herd mentality and FOMO: The issues facing the venture capital industry right now - Tempocap](https://www.tempocap.com/2023/02/24/herd-mentality-and-fomo-the-issues-facing-the-venture-capital-industry-right-now/)
+* [Herd mentality and FOMO: The issues facing the venture capital industry right now - Finextra](https://www.finextra.com/blogposting/23802/herd-mentality-and-fomo-the-issues-facing-the-venture-capital-industry-right-now)
+* [Why venture capitalists aren't afraid of losing money - I by IMD](https://www.imd.org/ibyimd/finance/why-venture-capitalists-arent-afraid-of-losing-money/)
+* [FTX collapse exposes power imbalance between founders and investors - PitchBook](https://pitchbook.com/news/articles/power-imbalance-vc-founders)
+* [Singapore's Temasek to write down US$275 million investment in FTX - Asia Asset Management](https://www.asiaasset.com/post/26633-temasekftx1811-gte-1118)
+* [Temasek to write down $377 million in FTX, says belief in Bankman-Fried appears to be 'misplaced' - The Straits Times](https://www.straitstimes.com/business/temasek-to-write-down-us275-million-in-ftx-says-belief-in-bankman-fried-appear-to-be-misplaced)
+* [Roland Berger's due diligence framework for Web3 investments - Consultancy-me.com](https://www.consultancy-me.com/news/6206/roland-bergers-due-diligence-framework-for-web3-investments)
+* [The Downfall Of VC-Funded Startups: Lessons From The Collapse - Forbes](https://www.forbes.com/councils/forbesbusinesscouncil/2024/09/06/the-downfall-of-vc-funded-startups-lessons-from-the-collapse/)
+* [If Web3 is decentralized, why do DeFi dApps still break when the cloud goes down? - CryptoSlate](https://cryptoslate.com/if-web3-is-decentralized-why-do-dapps-break-when-the-cloud-goes-down/)
+* [Venture Capital Due Diligence (VC) | Startup Checklist - Wall Street Prep](https://www.wallstreetprep.com/knowledge/venture-capital-diligence/)
+* [Web3 Startup Lessons from 2025: Founder Wins and Mistakes - TDeFi](https://tde.fi/founder-resource/blogs/startup/web3-startup-lessons-from-2025-founder-wins-and-mistakes/)
+* [Why Many Fintech Startups Fail And How To Avoid Their Mistakes - Forbes](https://www.forbes.com/councils/forbesbusinesscouncil/2025/08/12/why-many-fintech-startups-fail-and-how-to-avoid-their-mistakes/)
+* [Research: Nearly 45% of VC-backed crypto projects have shut down - ChainCatcher](https://www.chaincatcher.com/en/article/2184513)
+* [Yield Protocol Announces Termination of Official Support by January 31 Following Closure - Binance Square](https://www.binance.com/en-NG/square/post/2024-01-26-yield-protocol-announces-termination-of-official-support-by-january-31-following-closure-3270824286618)
+* [Fixed rate-focused Yield Protocol is the latest DeFi project to wind ... - Blockworks](https://blockworks.co/news/yield-protocol-defi-project-shutter-fixed-rate-platform)
+* [Yield Protocol Announces Shutdown Amid Regulatory Challenges - Good Crypto](https://goodcrypto.app/yield-protocol-announces-shutdown-amid-regulatory/)
+* [Notional Finance Price, NOTE Price, Live Charts, and Marketcap - Coinbase](https://www.coinbase.com/price/notional-finance)
+* [Notional Finance - Token Terminal](https://tokenterminal.com/explorer/projects/notional-finance/about)
+* [8 High-Profile VC-Backed Crypto Projects That Collapsed After the Bull Run - KuCoin](https://www.kucoin.com/news/flash/8-high-profile-vc-backed-crypto-projects-that-collapsed-after-the-bull-run)
+* [From Spotlight to the Fringe: A Review of 8 'Doomed' Projects Backed by Star Venture Capital Firms](https://news.futunn.com/en/post/63958409/from-spotlight-to-the-fringe-a-review-of-8-doomed)
+* [Crashing out: 10 corporate-backed startups that went bust in 2024 - Global Venturing](https://globalventuring.com/corporate/asia/corporate-backed-startups-bankruptcy-2024/)
+* [Digital asset management software Qredo hits $460m valuation - FinTech Global](https://fintech.global/2022/07/02/digital-asset-management-software-qredo-hits-460m-valuation/)
+* [Which Dead Crypto Projects Still Move the Market? - CCN.com](https://www.ccn.com/news/crypto/zombie-tokens-dead-crypto-projects-move-market/)
+* [Kadena (KDA) Plummets After Core Team Shuts Down Operation - DINISTRIO on Binance Square](https://www.binance.com/en/square/post/31374353808442)
+* [Kadena Shuts Down Operations – Team Confirms Immediate Cease of All Activities - TradingView/NewsBTC](https://www.tradingview.com/news/newsbtc:bd7cc8792094b:0-kadena-shuts-down-operations-team-confirms-immediate-cease-of-all-activities/)
+* [Kadena Blames Market Conditions for Sudden Shutdown - Coinpaper](https://coinpaper.com/11801/kadena-blames-market-conditions-for-sudden-shutdown)
+* [Kadena Just Shut Down, Here's What I Saw and How I Felt About It - Medium](https://medium.com/coinmonks/kadena-just-shut-down-heres-what-i-saw-and-how-i-felt-about-it-f13cb3e1d4a2)
+* [Blade of God X Scandal: Devs Accused of Stealing Rewards - CoinoMedia on Binance Square](https://www.binance.com/en-ZA/square/post/22321661880602)
+* [Crypto Game 'Blade of God X' Accused of Mismanagement by ... - Decrypt](https://decrypt.co/312600/crypto-game-blade-of-god-x-allegations-mismanagement)
+* [Ex-Blade of God X exec says Game 'Abandoned' Web3 - C# Corner](https://www.c-sharpcorner.com/news/exblade-of-god-x-exec-says-game-abandoned-web3)
 
-<a id="ref-2"></a>[2]: The web3 disruption: Corporations want a piece of the action \- Silicon Valley Bank [https://www.svb.com/corporate-venture-capital-insights/corporate-venture-capital-ecosystem/web3-disruption-corporations-want-piece-of-action/](https://www.svb.com/corporate-venture-capital-insights/corporate-venture-capital-ecosystem/web3-disruption-corporations-want-piece-of-action/)  
-
-<a id="ref-3"></a>[3]: Why Most Web3 Startups Never Raise; Only 1 in 10 Make It, and Here's the Ugly Truth [https://medium.com/@RajZuvomo/why-most-web3-startups-never-raise-only-1-in-10-make-it-and-heres-the-ugly-truth-69b966753cbe](https://medium.com/@RajZuvomo/why-most-web3-startups-never-raise-only-1-in-10-make-it-and-heres-the-ugly-truth-69b966753cbe)  
-
-<a id="ref-4"></a>[4]: Web3 Startup Failure Report: Real Sales Mistakes to Avoid in 2025 \- C-Leads [https://www.c-leads.com/blog/web3-startup-failure-report-real-sales-mistakes-to-avoid-in-2025](https://www.c-leads.com/blog/web3-startup-failure-report-real-sales-mistakes-to-avoid-in-2025)  
-
-<a id="ref-5"></a>[5]: VC-Backed Crypto Projects Face High Failure Rates,Study Reveals 45% Have Collapsed [https://news.bitcoin.com/vc-backed-crypto-projects-face-high-failure-rates-study-reveals-45-have-collapsed/](https://news.bitcoin.com/vc-backed-crypto-projects-face-high-failure-rates-study-reveals-45-have-collapsed/)  
-
-<a id="ref-6"></a>[6]: Venture investments in web3 down significantly from bull highs \- Consultancy-me.com [https://www.consultancy-me.com/news/7283/venture-investments-in-web3-down-significantly-from-bull-highs](https://www.consultancy-me.com/news/7283/venture-investments-in-web3-down-significantly-from-bull-highs)  
-
-<a id="ref-7"></a>[7]: Web3 Venture Funding Bounces Back Slightly From Last Year's Lows \- Crunchbase News [https://news.crunchbase.com/web3/venture-funding-bounces-back-q1-2024/](https://news.crunchbase.com/web3/venture-funding-bounces-back-q1-2024/)  
-
-<a id="ref-8"></a>[8]: The Funding: Crypto VC Recap 2024 \- The Block [https://www.theblock.co/post/332539/the-funding-crypto-vc-recap-2024](https://www.theblock.co/post/332539/the-funding-crypto-vc-recap-2024)  
-
-<a id="ref-9"></a>[9]: en.wikipedia.org [https://en.wikipedia.org/wiki/Cryptocurrency\_bubble\#:\~:text=The%202018%20cryptocurrency%20crash%20(also,January%20to%206%20February%202018.](https://en.wikipedia.org/wiki/Cryptocurrency_bubble#:~:text=The%202018%20cryptocurrency%20crash%20\(also,January%20to%206%20February%202018.)  
-
-<a id="ref-10"></a>[10]: Crypto exchange collapses have led to $30–50 billion in investor losses | Comsure, Jersey [https://www.comsuregroup.com/news/crypto-exchange-collapses-have-led-to-30-50-billion-in-investor-losses/](https://www.comsuregroup.com/news/crypto-exchange-collapses-have-led-to-30-50-billion-in-investor-losses/)  
-
-<a id="ref-11"></a>[11]: FTX Collapse Will Reverberate Throughout The VC World For A Long Time [https://news.crunchbase.com/fintech-ecommerce/ftx-collapse-bankman-fried-alameda/](https://news.crunchbase.com/fintech-ecommerce/ftx-collapse-bankman-fried-alameda/)  
-
-<a id="ref-12"></a>[12]: On FTX, Sequoia and Why Power Law Works \- Chris Neumann [https://chrisneumann.com/archives/on-ftx-sequoia-and-why-power-law-works](https://chrisneumann.com/archives/on-ftx-sequoia-and-why-power-law-works)  
-
-<a id="ref-13"></a>[13]: The FTX collapse explained: What you need to know \- CoinTracker [https://www.cointracker.io/blog/what-is-happening-with-ftx](https://www.cointracker.io/blog/what-is-happening-with-ftx)  
-
-<a id="ref-14"></a>[14]: The FTX Collapse: A Complete Guide \- CoinLedger [https://coinledger.io/learn/the-ftx-collapse](https://coinledger.io/learn/the-ftx-collapse)  
-
-<a id="ref-15"></a>[15]: Terra (blockchain) \- Wikipedia [https://en.wikipedia.org/wiki/Terra\_(blockchain)](https://en.wikipedia.org/wiki/Terra_\(blockchain\))  
-
-<a id="ref-16"></a>[16]: Anatomy of a Run: The Terra Luna Crash [https://corpgov.law.harvard.edu/2023/05/22/anatomy-of-a-run-the-terra-luna-crash/](https://corpgov.law.harvard.edu/2023/05/22/anatomy-of-a-run-the-terra-luna-crash/)  
-
-<a id="ref-17"></a>[17]: A Cautionary Tale in the Crypto World The collapse of Terra (LUNA) in | Asad Soomro 1554 on Binance Square [https://www.binance.com/en/square/post/19015908229074](https://www.binance.com/en/square/post/19015908229074)  
-
-<a id="ref-18"></a>[18]: Why did Celsius Network fail? ,a deep-dive into Celsius' Chapter 11 filing \- Medium [https://medium.com/algotune/why-did-celsius-network-fail-a-deep-dive-into-celsius-chapter-11-filing-959ca897168a](https://medium.com/algotune/why-did-celsius-network-fail-a-deep-dive-into-celsius-chapter-11-filing-959ca897168a)  
-
-<a id="ref-19"></a>[19]: Celsius Network \- Wikipedia [https://en.wikipedia.org/wiki/Celsius\_Network](https://en.wikipedia.org/wiki/Celsius_Network)  
-
-<a id="ref-20"></a>[20]: Blog: Crypto Fraud Costs Investors $5 billion \- Americans for Financial Reform [https://ourfinancialsecurity.org/news/blog-another-crypto-fraudster-pleads-guilty-after-investors-lost-5-billion/](https://ourfinancialsecurity.org/news/blog-another-crypto-fraudster-pleads-guilty-after-investors-lost-5-billion/)  
-
-<a id="ref-21"></a>[21]: From the brightest to the marginalized: A look at 8 "dead" projects backed by star VCs [https://www.panewslab.com/en/articles/b3555cef-05e7-45b2-8b80-5793f37e1134](https://www.panewslab.com/en/articles/b3555cef-05e7-45b2-8b80-5793f37e1134)  
-
-<a id="ref-22"></a>[22]: Who Lost Money in FTX? Tom Brady, Kevin O'Leary and More \- Entrepreneur [https://www.entrepreneur.com/business-news/who-lost-money-in-ftx-tom-brady-kevin-oleary-and-more/443653](https://www.entrepreneur.com/business-news/who-lost-money-in-ftx-tom-brady-kevin-oleary-and-more/443653)  
-
-<a id="ref-23"></a>[23]: Due Diligence, Supervisory Failures Preceded FTX's Collapse \- MoneyLaundering.com :: Changes in Bank Regulations, Financial Compliance Regulations, Regulation Banks, Money Laundering Cases, Anti Money Laundering, Money Laundering Training [https://www.moneylaundering.com/news/due-diligence-supervisory-failures-preceded-ftxs-collapse/](https://www.moneylaundering.com/news/due-diligence-supervisory-failures-preceded-ftxs-collapse/)  
-
-<a id="ref-24"></a>[24]: Bankruptcy of FTX \- Wikipedia [https://en.wikipedia.org/wiki/Bankruptcy\_of\_FTX](https://en.wikipedia.org/wiki/Bankruptcy_of_FTX)  
-
-<a id="ref-25"></a>[25]: FTX Crash: Timeline, Fallout and What Investors Should Know \- NerdWallet [https://www.nerdwallet.com/article/investing/ftx-crash](https://www.nerdwallet.com/article/investing/ftx-crash)  
-
-<a id="ref-26"></a>[26]: The Collapse of FTX: What Went Wrong With the Crypto Exchange? \- Investopedia [https://www.investopedia.com/what-went-wrong-with-ftx-6828447](https://www.investopedia.com/what-went-wrong-with-ftx-6828447)  
-
-<a id="ref-27"></a>[27]: Palico insights \- FTX's collapse: the power of FOMO and the importance of due diligence [https://www.palico.com/ftxs-collapse-the-power-of-fomo-and-the-importance-of-due-diligence/](https://www.palico.com/ftxs-collapse-the-power-of-fomo-and-the-importance-of-due-diligence/)  
-
-<a id="ref-28"></a>[28]: Lessons to Learn from the Fall of FTX \- National Association of Corporate Directors | NACD [https://www.nacdonline.org/all-governance/governance-resources/directorship-magazine/online-exclusives/lessons-to-learn-from-the-fall-of-ftx/](https://www.nacdonline.org/all-governance/governance-resources/directorship-magazine/online-exclusives/lessons-to-learn-from-the-fall-of-ftx/)  
-
-<a id="ref-29"></a>[29]: Lessons to Learn from the Fall of FTX \- National Association of Corporate Directors | NACD [https://www.nacdonline.org/all-governance/governance-resources/directorship-magazine/private-company-directorship-newsletter/lessons-to-learn-from-the-fall-of-ftx/](https://www.nacdonline.org/all-governance/governance-resources/directorship-magazine/private-company-directorship-newsletter/lessons-to-learn-from-the-fall-of-ftx/)  
-
-<a id="ref-30"></a>[30]: Lessons from the bankruptcy of FTX: What went wrong with the due diligence? [https://www.integrity-indonesia.com/blog/lessons-from-the-bankruptcy-of-ftx-what-went-wrong-with-the-due-diligence/](https://www.integrity-indonesia.com/blog/lessons-from-the-bankruptcy-of-ftx-what-went-wrong-with-the-due-diligence/)  
-
-<a id="ref-31"></a>[31]: FTX Reveals the Need for a Higher Standard of Crypto Due Diligence [https://www.integrityriskintl.com/ftx-crypto-due-diligence/](https://www.integrityriskintl.com/ftx-crypto-due-diligence/)  
-
-<a id="ref-32"></a>[32]: FTX Statement and FAQs \- Temasek [https://www.temasek.com.sg/en/news-and-resources/news-room/statements/2022/statement-FTX](https://www.temasek.com.sg/en/news-and-resources/news-room/statements/2022/statement-FTX)  
-
-<a id="ref-33"></a>[33]: Temasek bares its soul on FTX failure \- Euromoney [https://www.euromoney.com/article/2awc3pztnbmw98vhb1reo/capital-markets/temasek-bares-its-soul-on-ftx-failure/](https://www.euromoney.com/article/2awc3pztnbmw98vhb1reo/capital-markets/temasek-bares-its-soul-on-ftx-failure/)  
-
-<a id="ref-34"></a>[34]: $40 Billion Terra (LUNA) Crash Explained \- Repool [https://repool.com/the-deep-end/terra-luna/](https://repool.com/the-deep-end/terra-luna/)  
-
-<a id="ref-35"></a>[35]: Terra \- What it Was, Collapse, Stablecoin \- Corporate Finance Institute [https://corporatefinanceinstitute.com/resources/cryptocurrency/what-happened-to-terra/](https://corporatefinanceinstitute.com/resources/cryptocurrency/what-happened-to-terra/)  
-
-<a id="ref-36"></a>[36]: Terra Luna Collapse Explained: Algorithmic Stablecoin Death Spiral & Risks \- YouTube [https://www.youtube.com/watch?v=3ulF\_-zu4D4](https://www.youtube.com/watch?v=3ulF_-zu4D4)  
-
-<a id="ref-37"></a>[37]: Anatomy of a Run: The Terra Luna Crash \- Finance [https://finance.unibocconi.eu/sites/default/files/files/media/attachments/terralunacrash\_april202320230516135124.pdf](https://finance.unibocconi.eu/sites/default/files/files/media/attachments/terralunacrash_april202320230516135124.pdf)  
-
-<a id="ref-38"></a>[38]: Anatomy of a Run: The Terra Luna Crash [https://www.riksbank.se/globalassets/media/konferenser/2023/session-1-liu\_makarov\_schoar-anatomy\_of\_a\_run-\_the\_terra\_luna\_crash.pdf](https://www.riksbank.se/globalassets/media/konferenser/2023/session-1-liu_makarov_schoar-anatomy_of_a_run-_the_terra_luna_crash.pdf)  
-
-<a id="ref-39"></a>[39]: (PDF) Anatomy of a Stablecoin's failure: the Terra-Luna case \- ResearchGate [https://www.researchgate.net/publication/362326158\_Anatomy\_of\_a\_Stablecoin's\_failure\_the\_Terra-Luna\_case](https://www.researchgate.net/publication/362326158_Anatomy_of_a_Stablecoin's_failure_the_Terra-Luna_case)  
-
-<a id="ref-40"></a>[40]: Crypto VC firm Hashed confirms losing more than $3 billion in luna crash: Bloomberg [https://www.theblock.co/post/161168/crypto-vc-hashed-confirms-luna-loss-3-billion](https://www.theblock.co/post/161168/crypto-vc-hashed-confirms-luna-loss-3-billion)  
-
-<a id="ref-41"></a>[41]: A South Korean VC Firm Lost Over $3 Billion in Luna's Crash This Year \- Markets Insider [https://markets.businessinsider.com/news/currencies/crypto-crash-luna-token-hashed-simon-seojoon-kim-game-fi-2022-8](https://markets.businessinsider.com/news/currencies/crypto-crash-luna-token-hashed-simon-seojoon-kim-game-fi-2022-8)  
-
-<a id="ref-42"></a>[42]: The Real Reasons Behind the Crypto Crash, and What We Can Learn from Terra's Fall [https://time.com/6177567/terra-ust-crash-crypto/](https://time.com/6177567/terra-ust-crash-crypto/)  
-
-<a id="ref-43"></a>[43]: Why 99% of Web3 Startups Fail \- Medium [https://medium.com/@svetochka0olehovna/why-99-of-web3-startups-fail-99af2cbba625](https://medium.com/@svetochka0olehovna/why-99-of-web3-startups-fail-99af2cbba625)  
-
-<a id="ref-44"></a>[44]: STATEMENT OF FACTS CELSIUS 1\. Celsius Network LLC is a Delaware limited liability corporation headquartered in Hoboken, New Jers \- Department of Justice [https://www.justice.gov/usao-sdny/file/1305436/dl?inline](https://www.justice.gov/usao-sdny/file/1305436/dl?inline)  
-
-<a id="ref-45"></a>[45]: DFR Encourages Celsius Network Investors to Proceed with Caution [https://dfr.vermont.gov/consumer-alert/dfr-encourages-celsius-network-investors-proceed-caution](https://dfr.vermont.gov/consumer-alert/dfr-encourages-celsius-network-investors-proceed-caution)  
-
-<a id="ref-46"></a>[46]: Another Day in Cryptoland: The Failure of Celsius \- Advisorpedia [https://www.advisorpedia.com/cryptocurrency/another-day-in-cryptoland-the-failure-of-celsius/](https://www.advisorpedia.com/cryptocurrency/another-day-in-cryptoland-the-failure-of-celsius/)  
-
-<a id="ref-47"></a>[47]: SEC Charges Celsius Network Limited and Founder Alex Mashinsky with Fraud and Unregistered Offer and Sale of Securities [https://www.sec.gov/newsroom/press-releases/2023-133](https://www.sec.gov/newsroom/press-releases/2023-133)  
-
-<a id="ref-48"></a>[48]: Zero Degrees Celsius \- Ed Zitron's Where's Your Ed At [https://www.wheresyoured.at/zero-degrees-celsius/](https://www.wheresyoured.at/zero-degrees-celsius/)  
-
-<a id="ref-49"></a>[49]: The Problems That Led to Celsius' Bankruptcy \- PRCG | Haggerty [https://prcg.com/blog/problems-led-celsius-bankruptcy/](https://prcg.com/blog/problems-led-celsius-bankruptcy/)  
-
-<a id="ref-50"></a>[50]: The Flight To Crypto Quality: Risk Management At Center Stage \- Forbes [https://www.forbes.com/sites/cme-group/2023/05/01/the-flight-to-crypto-quality-risk-management-at-center-stage/](https://www.forbes.com/sites/cme-group/2023/05/01/the-flight-to-crypto-quality-risk-management-at-center-stage/)  
-
-<a id="ref-51"></a>[51]: Why So Many Web3 Games Are Shutting Down and What New Projects Can Do Better [https://playtoearn.com/news/why-so-many-web3-games-are-shutting-down-and-what-new-projects-can-do-better](https://playtoearn.com/news/why-so-many-web3-games-are-shutting-down-and-what-new-projects-can-do-better)  
-
-<a id="ref-52"></a>[52]: Herd mentality and FOMO: The issues facing the venture capital industry right now [https://www.tempocap.com/2023/02/24/herd-mentality-and-fomo-the-issues-facing-the-venture-capital-industry-right-now/](https://www.tempocap.com/2023/02/24/herd-mentality-and-fomo-the-issues-facing-the-venture-capital-industry-right-now/)  
-
-<a id="ref-53"></a>[53]: Herd mentality and FOMO: The issues facing the venture capital industry right now [https://www.finextra.com/blogposting/23802/herd-mentality-and-fomo-the-issues-facing-the-venture-capital-industry-right-now](https://www.finextra.com/blogposting/23802/herd-mentality-and-fomo-the-issues-facing-the-venture-capital-industry-right-now)  
-
-<a id="ref-54"></a>[54]: Why venture capitalists aren't afraid of losing money \- I by IMD [https://www.imd.org/ibyimd/finance/why-venture-capitalists-arent-afraid-of-losing-money/](https://www.imd.org/ibyimd/finance/why-venture-capitalists-arent-afraid-of-losing-money/)  
-
-<a id="ref-55"></a>[55]: FTX collapse exposes power imbalance between founders and investors \- PitchBook [https://pitchbook.com/news/articles/power-imbalance-vc-founders](https://pitchbook.com/news/articles/power-imbalance-vc-founders)  
-
-<a id="ref-56"></a>[56]: Singapore's Temasek to write down US$275 million investment in FTX [https://www.asiaasset.com/post/26633-temasekftx1811-gte-1118](https://www.asiaasset.com/post/26633-temasekftx1811-gte-1118)  
-
-<a id="ref-57"></a>[57]: Temasek to write down $377 million in FTX, says belief in Bankman-Fried appears to be 'misplaced' | The Straits Times [https://www.straitstimes.com/business/temasek-to-write-down-us275-million-in-ftx-says-belief-in-bankman-fried-appear-to-be-misplaced](https://www.straitstimes.com/business/temasek-to-write-down-us275-million-in-ftx-says-belief-in-bankman-fried-appear-to-be-misplaced)  
-
-<a id="ref-58"></a>[58]: Roland Berger's due diligence framework for Web3 investments \- Consultancy-me.com [https://www.consultancy-me.com/news/6206/roland-bergers-due-diligence-framework-for-web3-investments](https://www.consultancy-me.com/news/6206/roland-bergers-due-diligence-framework-for-web3-investments)  
-
-<a id="ref-59"></a>[59]: The Downfall Of VC-Funded Startups: Lessons From The Collapse \- Forbes [https://www.forbes.com/councils/forbesbusinesscouncil/2024/09/06/the-downfall-of-vc-funded-startups-lessons-from-the-collapse/](https://www.forbes.com/councils/forbesbusinesscouncil/2024/09/06/the-downfall-of-vc-funded-startups-lessons-from-the-collapse/)  
-
-<a id="ref-60"></a>[60]: If Web3 is decentralized, why do DeFi dApps still break when the cloud goes down? [https://cryptoslate.com/if-web3-is-decentralized-why-do-dapps-break-when-the-cloud-goes-down/](https://cryptoslate.com/if-web3-is-decentralized-why-do-dapps-break-when-the-cloud-goes-down/)  
-
-<a id="ref-61"></a>[61]: Venture Capital Due Diligence (VC) | Startup Checklist \- Wall Street Prep [https://www.wallstreetprep.com/knowledge/venture-capital-diligence/](https://www.wallstreetprep.com/knowledge/venture-capital-diligence/)  
-
-<a id="ref-62"></a>[62]: TDeFi Blogs \- Web3 Startup Lessons from 2025: Founder Wins and Mistakes [https://tde.fi/founder-resource/blogs/startup/web3-startup-lessons-from-2025-founder-wins-and-mistakes/](https://tde.fi/founder-resource/blogs/startup/web3-startup-lessons-from-2025-founder-wins-and-mistakes/)  
-
-<a id="ref-63"></a>[63]: Why Many Fintech Startups Fail And How To Avoid Their Mistakes \- Forbes [https://www.forbes.com/councils/forbesbusinesscouncil/2025/08/12/why-many-fintech-startups-fail-and-how-to-avoid-their-mistakes/](https://www.forbes.com/councils/forbesbusinesscouncil/2025/08/12/why-many-fintech-startups-fail-and-how-to-avoid-their-mistakes/)  
-
-<a id="ref-64"></a>[64]: Research: Nearly 45% of VC-backed crypto projects have shut down \- ChainCatcher [https://www.chaincatcher.com/en/article/2184513](https://www.chaincatcher.com/en/article/2184513)  
-
-<a id="ref-65"></a>[65]: Yield Protocol Announces Termination of Official Support by January 31 Following Closure [https://www.binance.com/en-NG/square/post/2024-01-26-yield-protocol-announces-termination-of-official-support-by-january-31-following-closure-3270824286618](https://www.binance.com/en-NG/square/post/2024-01-26-yield-protocol-announces-termination-of-official-support-by-january-31-following-closure-3270824286618)  
-
-<a id="ref-66"></a>[66]: Fixed rate-focused Yield Protocol is the latest DeFi project to wind ... [https://blockworks.co/news/yield-protocol-defi-project-shutter-fixed-rate-platform](https://blockworks.co/news/yield-protocol-defi-project-shutter-fixed-rate-platform)  
-
-<a id="ref-67"></a>[67]: Yield Protocol Announces Shutdown Amid Regulatory Challenges \- Good Crypto [https://goodcrypto.app/yield-protocol-announces-shutdown-amid-regulatory/](https://goodcrypto.app/yield-protocol-announces-shutdown-amid-regulatory/)  
-
-<a id="ref-68"></a>[68]: Notional Finance Price, NOTE Price, Live Charts, and Marketcap [https://www.coinbase.com/price/notional-finance](https://www.coinbase.com/price/notional-finance)  
-
-<a id="ref-69"></a>[69]: Notional Finance about \- Token Terminal [https://tokenterminal.com/explorer/projects/notional-finance/about](https://tokenterminal.com/explorer/projects/notional-finance/about)  
-
-<a id="ref-70"></a>[70]: 8 High-Profile VC-Backed Crypto Projects That Collapsed After the Bull Run \- KuCoin [https://www.kucoin.com/news/flash/8-high-profile-vc-backed-crypto-projects-that-collapsed-after-the-bull-run](https://www.kucoin.com/news/flash/8-high-profile-vc-backed-crypto-projects-that-collapsed-after-the-bull-run)  
-
-<a id="ref-71"></a>[71]: From Spotlight to the Fringe: A Review of 8 'Doomed' Projects Backed by Star Venture Capital Firms [https://news.futunn.com/en/post/63958409/from-spotlight-to-the-fringe-a-review-of-8-doomed](https://news.futunn.com/en/post/63958409/from-spotlight-to-the-fringe-a-review-of-8-doomed)  
-
-<a id="ref-72"></a>[72]: Crashing out: 10 corporate-backed startups that went bust in 2024 \- [https://globalventuring.com/corporate/asia/corporate-backed-startups-bankruptcy-2024/](https://globalventuring.com/corporate/asia/corporate-backed-startups-bankruptcy-2024/)  
-
-<a id="ref-73"></a>[73]: Digital asset management software Qredo hits $460m valuation \- FinTech Global [https://fintech.global/2022/07/02/digital-asset-management-software-qredo-hits-460m-valuation/](https://fintech.global/2022/07/02/digital-asset-management-software-qredo-hits-460m-valuation/)  
-
-<a id="ref-74"></a>[74]: Which Dead Crypto Projects Still Move the Market? \- CCN.com [https://www.ccn.com/news/crypto/zombie-tokens-dead-crypto-projects-move-market/](https://www.ccn.com/news/crypto/zombie-tokens-dead-crypto-projects-move-market/)  
-
-<a id="ref-75"></a>[75]: Kadena (KDA) Plummets After Core Team Shuts Down Operatio | DINISTRIO on Binance Square [https://www.binance.com/en/square/post/31374353808442](https://www.binance.com/en/square/post/31374353808442)  
-
-<a id="ref-76"></a>[76]: Kadena Shuts Down Operations – Team Confirms Immediate Cease ... [https://www.tradingview.com/news/newsbtc:bd7cc8792094b:0-kadena-shuts-down-operations-team-confirms-immediate-cease-of-all-activities/](https://www.tradingview.com/news/newsbtc:bd7cc8792094b:0-kadena-shuts-down-operations-team-confirms-immediate-cease-of-all-activities/)  
-
-<a id="ref-77"></a>[77]: Kadena Blames Market Conditions for Sudden Shutdown \- Coinpaper [https://coinpaper.com/11801/kadena-blames-market-conditions-for-sudden-shutdown](https://coinpaper.com/11801/kadena-blames-market-conditions-for-sudden-shutdown)  
-
-<a id="ref-78"></a>[78]: Kadena Just Shut Down, Here's What I Saw and How I Felt About It | by Solana Levelup [https://medium.com/coinmonks/kadena-just-shut-down-heres-what-i-saw-and-how-i-felt-about-it-f13cb3e1d4a2](https://medium.com/coinmonks/kadena-just-shut-down-heres-what-i-saw-and-how-i-felt-about-it-f13cb3e1d4a2)  
-
-<a id="ref-79"></a>[79]: Blade of God X Scandal: Devs Accused of Stealing Rewards | CoinoMedia on Binance Square [https://www.binance.com/en-ZA/square/post/22321661880602](https://www.binance.com/en-ZA/square/post/22321661880602)  
-
-<a id="ref-80"></a>[80]: Crypto Game 'Blade of God X' Accused of Mismanagement by ... [https://decrypt.co/312600/crypto-game-blade-of-god-x-allegations-mismanagement](https://decrypt.co/312600/crypto-game-blade-of-god-x-allegations-mismanagement)  
-
-<a id="ref-81"></a>[81]: Ex-Blade of God X exec says Game 'Abandoned' Web3 \- C\# Corner [https://www.c-sharpcorner.com/news/exblade-of-god-x-exec-says-game-abandoned-web3](https://www.c-sharpcorner.com/news/exblade-of-god-x-exec-says-game-abandoned-web3)
 
 ## FAQ
+
 [
   {
     "question": "Are VCs still investing in Web3 or is the cycle over?",
