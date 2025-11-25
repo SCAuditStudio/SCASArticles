@@ -58,6 +58,7 @@ The sophistication of depositors varies enormously. On one end, you have retail 
 ## The Risks and Reality Check
 
 The curator model's efficiency comes with concentrated operational risk, as the late 2025 collapse of **Stream Finance** brutally demonstrated. When the **xUSD stablecoin**,used as collateral in multiple curator-managed vaults,**depegged from $1 to $0.33**, the resulting contagion exposed over **$285 million in potential losses** across the ecosystem. Several prominent curators, including **TelosC**, **MEV Capital**, and **Re7 Labs**, had chased xUSD's high yields, allocating depositor funds to markets accepting it as collateral. When the crash came, **bad debt** accrued entirely to depositors in those specific vaults.
+![curate](https://github.com/user-attachments/assets/cb5eecc9-1832-444d-906f-fb95421b7ae8)
 
 The mechanics of this failure reveal both the strengths and weaknesses of the isolated market model. Because the vaults were isolated at the market level, the losses weren't socialized across the entire Morpho or Euler protocol as they might have been in a monolithic system like Aave. This meant that conservative vaults that had avoided xUSD exposure were completely unaffected. However, depositors who had trusted the wrong curators saw significant losses. The illiquidity of the depegged xUSD meant liquidators couldn't profitably seize and sell the collateral to repay loans, leaving markets with irrecoverable bad debt.
 
