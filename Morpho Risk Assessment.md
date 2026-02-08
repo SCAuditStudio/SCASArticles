@@ -190,7 +190,7 @@ This analysis has important limitations that affect its real-world applicability
 | The Graph | Chainlink price updates | Aug-Sep 2024 |
 | DefiLlama Swap | Manual slippage simulation | Feb 6, 2026 |
 
-*This analysis was conducted using data from the Morpho WETH/USDC market on Base. For the full technical report with additional tables and code, see the accompanying [Liquidation Risk Report](./liquidation_risk_report.md).*
+*This analysis was conducted using data from the Morpho WETH/USDC market on Base. For the full technical report with additional tables and code, see the accompanying [Liquidation Risk Report](https://github.com/SCAuditStudio/MorphoResources/blob/main/Morpho%20WETH-USDC%20Analysis/liquidation_risk_report.md).*
 
 ## About Us
 
