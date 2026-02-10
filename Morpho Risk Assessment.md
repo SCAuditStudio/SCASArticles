@@ -1,7 +1,5 @@
 # What Happens to $45M of Morpho Debt When ETH Falls 20%?
 
-*An analysis of liquidation cascades, on-chain liquidity, and the "death spiral" risk on Base*
-
 ## Table of Contents
 
 1. [Introduction](#introduction)
@@ -35,6 +33,8 @@ We backtest scenarios using real borrower positions, historical oracle prices, a
 | Active Borrowers Analyzed | 50 (top positions) | *Collected: January 27, 2026* |
 
 > **⚠️ Note on Data Freshness:** The borrower position data was collected on **January 27, 2026**. Current market conditions may differ significantly. This analysis is illustrative and should be treated as a methodology demonstration, not real-time risk assessment.
+
+![simulation](https://github.com/SCAuditStudio/SCASArticles/blob/main/images/morpho_simulation_positions.png)
 
 ## Historical Reference: The August 5, 2024 Crash
 
@@ -190,7 +190,7 @@ This analysis has important limitations that affect its real-world applicability
 | The Graph | Chainlink price updates | Aug-Sep 2024 |
 | DefiLlama Swap | Manual slippage simulation | Feb 6, 2026 |
 
-*This analysis was conducted using data from the Morpho WETH/USDC market on Base. For the full technical report with additional tables and code, see the accompanying [Liquidation Risk Report](https://github.com/SCAuditStudio/MorphoResources/blob/main/Morpho%20WETH-USDC%20Analysis/liquidation_risk_report.md).*
+*This analysis was conducted using data from the Morpho WETH/USDC market on Base. For the full technical report with additional tables and code, reach out to us).*
 
 ## About Us
 
