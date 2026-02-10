@@ -34,7 +34,7 @@ We backtest scenarios using real borrower positions, historical oracle prices, a
 
 > **⚠️ Note on Data Freshness:** The borrower position data was collected on **January 27, 2026**. Current market conditions may differ significantly. This analysis is illustrative and should be treated as a methodology demonstration, not real-time risk assessment.
 
-![simulation](https://github.com/SCAuditStudio/SCASArticles/blob/main/images/morpho_simulation_positions.png)
+![simulation](https://raw.githubusercontent.com/SCAuditStudio/SCASArticles/main/images/morpho_simulation_positions.png)
 
 ## Historical Reference: The August 5, 2024 Crash
 
@@ -89,25 +89,8 @@ The market can absorb **~$5M in liquidations with minimal impact** (~0.2% slippa
 
 When collateral is sold during liquidation, it depresses the market price. This can push additional positions underwater, triggering more liquidations in a self-reinforcing loop.
 
-```mermaid
-flowchart TD
-    A[External Price Shock] --> B[Oracle Updates Price]
-    B --> C[Positions Become Undercollateralized]
-    C --> D[Liquidators Seize Collateral]
-    D --> E[Mass WETH Sales on DEX]
-    E --> F[DEX Price Drops Further]
-    F --> G[Oracle Picks Up Lower Price]
-    G --> H[More Positions Undercollateralized]
-    H --> D
-    
-    E --> I{Liquidity Sufficient?}
-    I -- No --> J[Liquidation Delays]
-    J --> K[Bad Debt Accumulates]
-    K --> L[Protocol Insolvency Risk]
-    
-    I -- Yes --> M[Orderly Liquidation]
-    M --> N[Market Stabilizes]
-```
+![liqudiation](https://raw.githubusercontent.com/SCAuditStudio/SCASArticles/main/images/LiquidationLoop.PNG)
+
 
 ### Cascade Impact (Verified Numbers)
 
