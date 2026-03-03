@@ -293,6 +293,8 @@ SCAS is a smart contract security and research firm focused on DeFi security aud
 
 We specialize in lending protocols, prediction markets, vault systems, and complex cross-protocol integrations.
 
+## Tags
+["Security","Development","Prediction","Yield"]
 
 ## FAQ
 [
