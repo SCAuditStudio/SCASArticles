@@ -17,6 +17,10 @@ This is the official hub for all smart contract security and development article
 3. Submit it through a **Pull Request** or open an **Issue** with your file attached.
 4. Wait for review. Once approved, your article will be published under **SCAS** with attribution. Join our [discord](https://discord.gg/XtgJxfXNxQ) for support
 
+### FAQ and Tags
+Add faq in json format under the `## FAQ` header.
+Add Tags written with first letter uppercase and space replaced by `-` under the `## Tags` header.
+
 ### Submission Rules
 - ✅ **Allowed:**  
   - Topics related to **smart contracts**, **security**, **DeFi**, **cyber security practices**, or similar.
