@@ -183,6 +183,9 @@ Partner with us to enhance your project's security and gain peace of mind.
 
 [Reach out to us](https://x.com/SCAuditStudio) for queries and security assessments!
 
+## Tags
+["vault-curation","security","morpho"]
+
 ## FAQ
 
 [
