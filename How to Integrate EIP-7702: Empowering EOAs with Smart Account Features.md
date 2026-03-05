@@ -200,6 +200,9 @@ At SC Audit Studio, we specialize in protocols security assessments. Our team of
 
 [Reach out to us](https://x.com/SCAuditStudio) for queries and security assessments!
 
+## Tags
+["Development","Ethereum","EIP","Account-Abstraction"]
+
 ## FAQ
 [
   {

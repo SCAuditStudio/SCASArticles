@@ -181,6 +181,9 @@ If you're budgeting for security, aim to understand *what you're paying for*, no
 
 At SC Audit Studio, we specialize in protocols security assessments. Our team of experts is dedicated to ensuring the safety and reliability of your projects. Partner with us to enhance your project's security and gain peace of mind.
 
+## Tags
+["Security","Audit","Research"]
+
 ## FAQ
 
 [

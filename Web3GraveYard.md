@@ -320,6 +320,8 @@ Partner with us to enhance your project's security and gain peace of mind.
 * [Crypto Game 'Blade of God X' Accused of Mismanagement by ... - Decrypt](https://decrypt.co/312600/crypto-game-blade-of-god-x-allegations-mismanagement)
 * [Ex-Blade of God X exec says Game 'Abandoned' Web3 - C# Corner](https://www.c-sharpcorner.com/news/exblade-of-god-x-exec-says-game-abandoned-web3)
 
+## Tags
+["Web3","Research","DeFi"]
 
 ## FAQ
 
