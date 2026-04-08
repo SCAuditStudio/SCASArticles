@@ -21,7 +21,8 @@ A step-by-step walkthrough covering everything from prerequisites and network sp
 15. [Monitoring & Observability](#monitoring--observability)
 16. [Common Errors & Troubleshooting](#common-errors--troubleshooting)
 17. [Summary](#summary)
-18. [FAQ](#faq)
+18. [About Us](#about-us)
+19. [FAQ](#faq)
 
 
 
@@ -769,7 +770,7 @@ Partner with us to enhance your project's security and gain peace of mind.
 [Reach out to us](https://x.com/SCAuditStudio) for queries and security assessments!
 
 ## Tags
-`["Canton Network", "Validator Node", "DeFi Infrastructure", "Daml", "Blockchain", "DevOps", "Docker", "Kubernetes", "Canton Coin"]`
+["Canton Network", "Validator Node", "DeFi Infrastructure", "Daml", "Blockchain", "DevOps", "Docker", "Kubernetes", "Canton Coin"]
 
 ## FAQ
 [
