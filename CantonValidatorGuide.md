@@ -752,8 +752,6 @@ The key operational principles are: keep your identities backed up, use a dedica
 
 The software is fully open-source under the Splice project on GitHub. There is no slashing, no minimum stake, and no penalty for downtime though staying online maximizes your reward accrual and keeps your ledger state current.
 
-## About
-
 **Canton Network Docs:** [docs.dev.sync.global](https://docs.dev.sync.global)
 
 **Splice Source Code:** [github.com/hyperledger-labs/splice](https://github.com/hyperledger-labs/splice)
@@ -761,6 +759,14 @@ The software is fully open-source under the Splice project on GitHub. There is n
 **Validator Application Form:** [sync.global/validator-request](https://sync.global/validator-request)
 
 **Canton Foundation:** [canton.foundation/validators](https://canton.foundation/validators)
+
+## About Us
+
+At SC Audit Studio, we specialize in protocols security assessments.
+Our team of experts has worked with companies like Aave, 1Inch and several more to conduct security assessments.
+Partner with us to enhance your project's security and gain peace of mind.
+
+[Reach out to us](https://x.com/SCAuditStudio) for queries and security assessments!
 
 ## Tags
 `["Canton Network", "Validator Node", "DeFi Infrastructure", "Daml", "Blockchain", "DevOps", "Docker", "Kubernetes", "Canton Coin"]`
