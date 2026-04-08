@@ -770,7 +770,7 @@ Partner with us to enhance your project's security and gain peace of mind.
 [Reach out to us](https://x.com/SCAuditStudio) for queries and security assessments!
 
 ## Tags
-["Canton Network", "Validator Node", "DeFi Infrastructure", "Daml", "Blockchain", "DevOps", "Docker", "Kubernetes", "Canton Coin"]
+["Canton", "Validator", "Daml", "Blockchain", "DevOps", "Infrastructure", "Canton Coin"]
 
 ## FAQ
 [
