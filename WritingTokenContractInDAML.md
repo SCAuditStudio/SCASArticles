@@ -16,7 +16,9 @@ A walkthrough covering how to think about token contracts in Daml, how to struct
 10. [Step 7: Upload to Canton](#step-7-upload-to-canton)
 11. [Common Mistakes](#common-mistakes)
 12. [Summary](#summary)
-13. [FAQ](#faq)
+13. [About Us](#about-us)
+14. [Tags](#tags)
+15. [FAQ](#faq)
 
 ## What Are We Actually Building?
 
@@ -371,6 +373,19 @@ The workflow is: write → `dpm build` → `dpm test` → `dpm sandbox` → uplo
 **Canton Token Standard (CIP-0056):** [github.com/hyperledger-labs/splice/tree/main/token-standard](https://github.com/hyperledger-labs/splice/tree/main/token-standard)
 
 **Validator Setup (next step):** [docs.dev.sync.global](https://docs.dev.sync.global)
+
+
+## About Us
+
+At SC Audit Studio, we specialize in protocol security assessments. Our team of experts has worked with companies like Aave, 1inch, and many more to conduct thorough security assessments across EVM and non-EVM environments.
+
+[Reach out to us](https://scauditstudio.com/contact) for queries and security assessments!
+
+
+
+## Tags
+
+["Canton", "Daml", "Token", "Smart Contracts", "Beginner Guide", "Development"]
 
 
 

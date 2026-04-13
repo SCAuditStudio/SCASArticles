@@ -181,7 +181,7 @@ At SC Audit Studio, we specialize in protocols security assessments.
 Our team of experts has worked with companies like Aave, 1Inch and several more to conduct security assessments.
 Partner with us to enhance your project's security and gain peace of mind.
 
-[Reach out to us](https://x.com/SCAuditStudio) for queries and security assessments!
+[Reach out to us](https://scauditstudio.com/contact) for queries and security assessments!
 
 ## Tags
 ["Vault-Curation","Security","Morpho"]

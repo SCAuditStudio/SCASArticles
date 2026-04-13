@@ -119,7 +119,7 @@ Timelocks are a fundamental component of decentralized security, yet their appli
 
 At SC Audit Studio, we specialize in protocols security assessments. Our team of experts analyze governance, timelocks, multisigs, and overall opsec and give certification that your protocol is truly secure.
 
-[Reach out to us](https://x.com/SCAuditStudio) for queries and security assessments!
+[Reach out to us](https://scauditstudio.com/contact) for queries and security assessments!
 
 ## Tags
 ["Security","Governance","OpSec"]

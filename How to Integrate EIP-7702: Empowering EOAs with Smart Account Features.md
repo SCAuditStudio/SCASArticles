@@ -198,7 +198,7 @@ Use **ERC-4337 when**:
 
 At SC Audit Studio, we specialize in protocols security assessments. Our team of experts is dedicated to ensuring the safety and reliability of your projects. Partner with us to enhance your project's security and gain peace of mind.
 
-[Reach out to us](https://x.com/SCAuditStudio) for queries and security assessments!
+[Reach out to us](https://scauditstudio.com/contact) for queries and security assessments!
 
 ## Tags
 ["Development","Ethereum","EIP","Account-Abstraction"]

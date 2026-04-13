@@ -160,7 +160,7 @@ The institutions investing in Canton are not doing so for speculative reasons. T
 
 At SC Audit Studio, we specialize in protocol security assessments. Our team of experts has worked with companies like Aave, 1inch, and many more to conduct thorough security assessments across EVM and non-EVM environments.
 
-[Reach out to us](https://x.com/SCAuditStudio) for queries and security assessments!
+[Reach out to us](https://scauditstudio.com/contact) for queries and security assessments!
 
 
 
