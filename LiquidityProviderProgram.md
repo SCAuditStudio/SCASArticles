@@ -64,3 +64,29 @@ By pairing capital with accountability, SCAS aims to help establish a more stabl
 
 Applications are now open.  
 Visit https://scauditstudio.com/
+
+# About Us
+
+At SC Audit Studio, we specialize in protocols security assessments. Our team of experts is dedicated to ensuring the safety and reliability of your projects. Partner with us to enhance your project's security and gain peace of mind.
+
+[Reach out to us](https://scauditstudio.com/contact) for queries and security assessments!
+
+## Tags
+["Announcement","Security","LP"]
+
+## FAQ
+[
+  {
+    "question": "What is the SCAS Liquidity Provider Program",
+    "answer": "The SCAS Liquidity Provider Program is an initiative in which SC Audit Studio commits to provide liquidity for our security partners."
+  },
+  {
+    "question": "Who is this program for?",
+    "answer": "Every startup that has raised seed funding (or similar) and is looking to build a secure finance products"
+  },
+  {
+    "question": "Why should you join the program?",
+    "answer": "Most DeFi products benefit from initial liquidity to act as the countertrade for users. We also believe that cybersecurity practices will increase in importance for future investors."
+  }
+]
+
