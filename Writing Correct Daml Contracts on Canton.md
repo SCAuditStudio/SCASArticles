@@ -18,8 +18,9 @@ If you're coming from general-purpose languages or other smart contract platform
 10. [Stale Contract References and Upgrade Safety](#10-stale-contract-references-and-upgrade-safety)
 11. [Testing What the Compiler Can't See](#11-testing-what-the-compiler-cant-see)
 12. [Using CantonGuard](#using-cantonguard)
-13. [About Us](#about-us)
-14. [FAQ](#faq)
+13. [Relevant Links](#relevant-links)
+14. [About Us](#about-us)
+15. [FAQ](#faq)
 
 ## 1. Authorization: Controllers Are Not Access Control Lists
 
@@ -316,6 +317,16 @@ Use $canton-guard-by-scas on src/MyWorkflow.daml
 It's most useful on targeted modules rather than whole repos. Running it more than once tends to surface different issues across passes, so it's worth doing on anything you ship to production.
 
 It won't replace reading your own code, and it doesn't catch everything covered in this post. What it does well is flag issues you normalize after staring at a contract for hours, a controller assignment that looks fine in isolation but is wrong given the signatory set, an observer list that's wider than it needs to be, a key lookup with missing error handling. As a second pair of eyes on the specific categories it covers, it earns its place in a Canton development workflow.
+
+## Relevant Links
+
+
+- [DAML official docs](http://docs.digitalasset.com)
+- [Canton Network docs](http://docs.canton.network)
+- [Daml Smart Contract Vulnerabilities](https://scauditstudio.com/blog/DamlSmartContractVulnerabilities)
+- [Daml and Canton: An Introduction](https://halborn.com/blog/post/daml-and-canton-an-introduction)
+- [Security Auditing Daml Smart Contracts on Canton 2026](https://informal.systems/blog/security-auditing-daml-smart-contracts-on-canton-2026)
+- [Daml and Canton: Front Door and Back Door Security](https://halborn.com/blog/post/daml-and-canton-front-door-and-back-door-security)
 
 ## About Us
 
