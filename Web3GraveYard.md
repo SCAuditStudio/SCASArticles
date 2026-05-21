@@ -1,5 +1,5 @@
 
-# **Post-Mortem on Venture Capital Failures In Web 3**
+# Post-Mortem on Venture Capital Failures In Web 3
 
 ## Table of Contents
 
