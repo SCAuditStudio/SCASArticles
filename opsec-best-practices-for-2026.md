@@ -1,4 +1,4 @@
-# OpSec Practices to not get Hacked
+# OpSec Best Practices in DeFi 2026
 ## Table of Contents
 
 1. [Introduction](#introduction)
