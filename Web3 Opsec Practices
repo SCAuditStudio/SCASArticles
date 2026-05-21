@@ -1,4 +1,4 @@
-# OpSec Practices to not get "Rekt"
+# OpSec Practices to not get Hacked
 ## Table of Contents
 
 1. [Introduction](#introduction)
@@ -20,7 +20,7 @@
 
 ## Introduction
 
-Web3 protocols don’t usually get “rekt” from Solidity math errors alone, they get rekt when **governance powers, upgrade keys, or treasury controls are mismanaged**. The truth is: **your smart contracts are only as secure as your operational security (OpSec)**.
+Web3 protocols don’t usually get hacked from Solidity math errors alone, they get rekt when **governance powers, upgrade keys, or treasury controls are mismanaged**. The truth is: **your smart contracts are only as secure as your operational security (OpSec)**.
 
 In 2025, we’ve seen more exploits caused by **bad governance setups, weak timelocks, and compromised multisigs** than by raw code bugs. That means even if you pass multiple audits, poor OpSec can still undo your protocol.
 
@@ -262,6 +262,6 @@ At SC Audit Studio, we specialize in protocols security assessments. Our team of
 },
 {
 "question": "Do DAOs ever move past multisigs?",
-"answer": "Yes — the trajectory is usually trusted multisig → decentralized governance with timelocks. Marinade Finance is a good example."
+"answer": "Yes, the trajectory is usually trusted multisig → decentralized governance with timelocks. Marinade Finance is a good example."
 }
 ]
