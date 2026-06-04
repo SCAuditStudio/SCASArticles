@@ -1,6 +1,4 @@
-# How Web3's Weakest Link Became Its Most Expensive One
-
-*Three case studies. $1.8 billion gone. Zero smart contract bugs exploited.*
+# OPSEC in Web3: How the Weakest Link Became the Most Expensive One
 
 The narrative that Web3 security is fundamentally a smart contract problem is dead. Audit culture built an entire industry around Solidity bugs, reentrancy vectors, and integer overflows, and it worked. DeFi-specific exploits dropped 89% year-over-year in Q1 2026. But losses didn't drop. They shifted.
 
