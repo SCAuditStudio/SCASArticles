@@ -1,10 +1,10 @@
 # How a Zero-Amount Call Could Lock Any LP's Funds in Perpetuals Protocols
 
-Between April 14 and May 4, 2026, we ran a pre-audit consultation on Plether Perpetuals a forex-indexed perps protocol on Arbitrum built around a USDC-denominated liquidity pool. During the review, we found two High and seven Medium severity issues. This article walks through one of the more interesting Highs: a zero-amount griefing vector in the TrancheVault that let any external address reset any LP's withdrawal cooldown, indefinitely, for free.
+Between April 14 and May 4, 2026, we ran a pre-audit consultation on Plether Perpetuals, a forex-indexed perps protocol on Arbitrum built around a USDC-denominated liquidity pool. During the review, we found two High and seven Medium severity issues. This article covers one of the more interesting Highs: a zero-amount griefing vector in the TrancheVault that let any external address reset an LP's withdrawal cooldown indefinitely and at no cost beyond gas.
 
 ## The Protocol Context
 
-Plether's liquidity lives in a contract called `HousePool`, which splits LP capital across two tranches senior and junior, using a pair of ERC-4626-compatible `TrancheVault` contracts. Junior tranche absorbs first losses in exchange for higher upside. Senior tranche earns relatively stable yield. Standard tranched LP mechanics.
+Plether's liquidity lives in a contract called `HousePool`, which splits LP capital across senior and junior tranches using a pair of ERC-4626-compatible `TrancheVault` contracts. The junior tranche absorbs first losses in exchange for higher upside, while the senior tranche earns relatively stable yield.
 
 To prevent flash-loan-style attacks on pool liquidity, the vault enforces a `DEPOSIT_COOLDOWN`, a time-lock between when you deposit and when you're allowed to withdraw. This is tracked per LP via a `lastDepositTime` mapping:
 
@@ -12,7 +12,7 @@ To prevent flash-loan-style attacks on pool liquidity, the vault enforces a `DEP
 mapping(address => uint256) public lastDepositTime;
 ```
 
-Once `block.timestamp >= lastDepositTime[owner] + DEPOSIT_COOLDOWN`, the LP is free to withdraw. Straightforward protection. The bug had nothing to do with the cooldown logic itself, it was in how `_withdraw()` reset it.
+Once `block.timestamp >= lastDepositTime[owner] + DEPOSIT_COOLDOWN`, the LP is free to withdraw. The flaw was in how `_withdraw()` reset the cooldown.
 
 ## What We Noticed
 
@@ -56,9 +56,9 @@ function _withdraw(
 }
 ```
 
-The ordering here is what caught our eye. The `lastDepositTime` reset happens *before* `_spendAllowance`. That on its own isn't exploitable, if `shares > 0`, an unauthorized caller would hit the allowance check and revert. But what happens when `shares == 0`?
+The `lastDepositTime` reset happens *before* `_spendAllowance`. For any positive share amount, an unauthorized caller hits the allowance check and the transaction reverts. A zero-share call behaves differently.
 
-## Pulling the Thread
+## Tracing the Zero-Amount Path
 
 OpenZeppelin's ERC4626 entry point guards withdrawals with a max-check:
 
@@ -89,17 +89,17 @@ So the full path for an unauthorized caller with zero approval:
 5. `_burn(_owner, 0)`, no-op
 6. Zero assets transferred
 
-The victim's `lastDepositTime` is now `block.timestamp`. Their cooldown just restarted. The attacker spent gas. That's the entire cost.
+The victim's `lastDepositTime` is now `block.timestamp`, restarting the cooldown. The attacker pays only the transaction's gas cost.
 
 ## The Attack
 
-Here's the full griefing flow:
+The attack works as follows:
 
-**Step 1**, Victim deposits into the junior or senior TrancheVault. `lastDepositTime[victim]` is set.
+**Step 1:** The victim deposits into the junior or senior TrancheVault. `lastDepositTime[victim]` is set.
 
-**Step 2**, Victim waits out `DEPOSIT_COOLDOWN`. `maxWithdraw(victim)` now returns their balance. They're ready to exit.
+**Step 2:** The victim waits out `DEPOSIT_COOLDOWN`. `maxWithdraw(victim)` now returns their balance. They're ready to exit.
 
-**Step 3**, Attacker calls:
+**Step 3:** The attacker calls:
 
 ```solidity
 juniorVault.withdraw(0, attacker, victim);
@@ -107,21 +107,21 @@ juniorVault.withdraw(0, attacker, victim);
 seniorVault.redeem(0, attacker, victim);
 ```
 
-**Step 4**, `_withdraw()` runs. Cooldown check passes (it had expired). `lastDepositTime[victim]` gets set to `block.timestamp`. Zero shares burned, zero assets moved.
+**Step 4:** `_withdraw()` runs. The cooldown check passes because it had expired. `lastDepositTime[victim]` gets set to `block.timestamp`. Zero shares are burned and zero assets are moved.
 
-**Step 5**, `maxWithdraw(victim)` returns `0`. `maxRedeem(victim)` returns `0`. Victim is locked again for the full cooldown period.
+**Step 5:** `maxWithdraw(victim)` returns `0`. `maxRedeem(victim)` returns `0`. The victim is locked again for the full cooldown period.
 
-**Step 6**, Each time the cooldown expires, the attacker repeats. Gas-only cost per cycle. No shares needed, no approval needed, no capital at risk.
+**Step 6:** Each time the cooldown expires, the attacker repeats the call. Each cycle costs only gas and requires no shares, approval, or capital.
 
-In a perpetuals protocol where LPs might need to exit quickly during adverse market conditions, indefinite cooldown griefing has direct financial consequences. The attacker doesn't need to profit directly, this is a targeted denial of withdrawal.
+An LP may need to exit quickly when market conditions turn against the pool. By restarting the cooldown indefinitely, an attacker can block that exit without needing to profit from the attack directly.
 
 ## Why This Matters in Plether's Context
 
 Plether's LP tranches are the counterparty to every trade in the system. The senior tranche in particular is designed as a relatively stable yield vehicle, the kind of position an LP might want to exit fast if trading conditions shift against them.
 
-The cooldown is a reasonable protection against flash-loan abuse. But the zero-amount path bypasses the entire authorization layer and exposes `lastDepositTime` as mutable state with no cost gate. Any address can target any LP on either vault, repeatedly, for as long as they're willing to pay gas.
+The cooldown protects against flash-loan abuse, but the zero-amount path bypasses authorization and lets any address update `lastDepositTime`. An attacker can repeatedly target any LP in either vault for the cost of gas.
 
-There's also a related finding (SC-L1) we flagged in the same audit: a zero-value senior withdraw could trigger `reconcile()` in a way that left `HousePool`'s `seniorPrincipal` and `juniorPrincipal` materially overstated, in one PoC, raw principal read `100,000 USDC` while the correct value was `49,960 USDC`. The zero-amount attack surface across the vault was a recurring theme in this codebase.
+We also reported a related finding (SC-L1): a zero-value senior withdrawal could trigger `reconcile()` and leave `HousePool`'s `seniorPrincipal` and `juniorPrincipal` materially overstated. In one PoC, the raw principal was `100,000 USDC`; the correct value was `49,960 USDC`. Several vault functions handled zero-amount inputs unsafely.
 
 ## The Fix
 
@@ -145,7 +145,7 @@ function redeem(uint256 shares, address receiver, address owner)
 }
 ```
 
-A secondary hardening we also noted: moving the `lastDepositTime` write to *after* `_spendAllowance`, consistent with checks-effects-interactions, so that any unauthorized call reverts before state is mutated, regardless of amount:
+We also recommended moving the `lastDepositTime` write to *after* `_spendAllowance`. This ensures that an unauthorized call reverts before the cooldown is updated, regardless of the amount:
 
 ```solidity
 // Before
@@ -157,13 +157,13 @@ _spendAllowance(_owner, caller, shares);    // ← check first
 lastDepositTime[_owner] = block.timestamp;
 ```
 
-Both fixes together close the vector completely.
+Together, these changes prevent the attack.
 
 ## Takeaway
 
-ERC-4626 is designed to be extended. Protocols that add stateful mechanisms on top, cooldowns, lockups, epoch-based restrictions, need to think carefully about what zero- amount paths do to those mechanisms. OZ's max-check is a strict inequality: `amount > max`. When `amount == 0`, it always passes, even if `max == 0`. If your `_withdraw()` hook mutates state before allowance checks, that state mutation is reachable by anyone.
+Protocols often extend ERC-4626 with cooldowns, lockups, or epoch-based restrictions. Each extension must account for zero-amount calls. OpenZeppelin's max-check uses the strict inequality `amount > max`, so an amount of zero passes even when the maximum is zero. If an overridden `_withdraw()` mutates state before checking allowance, anyone may be able to reach that mutation.
 
-The pattern appears in a few other ERC-4626 vaults we've reviewed. It's worth checking if your own vault extension has the same ordering issue before it ends up in production.
+We have seen the same pattern in other ERC-4626 vaults. Check zero-amount behavior and the order of state changes and authorization checks in every vault extension.
 
 ## About Us
 
@@ -176,11 +176,11 @@ Pioneers should not care about cybersecurity, we take care of it.
 [
 {
 "question": "Was this a flaw in OpenZeppelin's ERC-4626 or in Plether's vault?",
-"answer": "It's Plether's. OZ's implementation is a base to extend, the responsibility for guarding zero-amount entry paths falls on the protocol. OZ's strict-inequality max-check is correct behavior; the missing guard and the premature state mutation are both in TrancheVault."
+"answer": "The flaw is in Plether's vault. OZ provides a base implementation that protocols can extend, and TrancheVault introduced the missing zero-amount guard and premature state mutation. OZ's strict-inequality max-check behaves as designed."
 },
 {
 "question": "Why does _spendAllowance not block an unauthorized zero-amount call?",
-"answer": "OZ's allowance check only reverts when currentAllowance < value. When value == 0, that condition is never true, regardless of what approval the caller has. This is a known property of ERC-20 allowance logic, not a bug in OZ."
+"answer": "OZ's allowance check reverts only when currentAllowance < value. When value == 0, that condition is never true, regardless of the caller's approval. This follows standard ERC-20 allowance behavior."
 },
 {
 "question": "How much does this attack actually cost?",
@@ -192,6 +192,6 @@ Pioneers should not care about cybersecurity, we take care of it.
 },
 {
 "question": "Was this found in the pre-audit or a formal audit?",
-"answer": "This was found during our pre-audit engagement (April–May 2026). The pre-audit is specifically designed to catch design-level and high-severity issues before the formal audit begins, so the formal audit can focus on deeper, more subtle vulnerabilities."
+"answer": "We found it during the April–May 2026 pre-audit engagement. The pre-audit focuses on design-level and high-severity issues before the formal audit begins, leaving more time in the formal audit for subtler vulnerabilities."
 }
 ]
