@@ -195,7 +195,7 @@ Partner with us to enhance your project's security and gain peace of mind.
   },
   {
     "question": "How does on-chain liquidity affect liquidation risk?",
-    "answer": "Limited DEX liquidity means large liquidations cause significant price slippage. Our analysis shows Base DEXs can absorb ~$5M safely, but volumes exceeding $10M trigger 1%+ slippage, and $24M causes ~5% slippage that could initiate a death spiral."
+    "answer": "Limited DEX liquidity means large liquidations cause heavy price slippage. Our analysis shows Base DEXs can absorb ~$5M safely, but volumes exceeding $10M trigger 1%+ slippage, and $24M causes ~5% slippage that could initiate a death spiral."
   },
   {
     "question": "What Health Factor should borrowers maintain?",

@@ -1,6 +1,6 @@
 # Common Vulnerabilities in Daml Smart Contracts
 
-A deep-dive into Daml-specific security pitfalls drawn directly from the language specification, official documentation, and real patterns found in open-source Daml codebases, with vulnerable code, exploits, and fixes.
+A practical guide to Daml-specific security pitfalls drawn directly from the language specification, official documentation, and real patterns found in open-source Daml codebases, with vulnerable code, exploits, and fixes.
 
 ## Table of Contents
 
@@ -98,7 +98,7 @@ Adding the owner as a signatory means their signature is required to *create* th
 
 Showing contracts to non-stakeholders through ledger projections is called divulgence. Divulgence needs to be considered when designing Daml models for privacy-sensitive applications.
 
-In Daml, when a choice is exercised, every party who is an *informee* of any ancestor action in the transaction tree sees all the sub-actions, even contracts they are not a stakeholder on. This is not a bug in Daml; it is a deliberate design decision to enable delegation. But it becomes a vulnerability when developers do not realize they are leaking contract data to parties who should not have it.
+In Daml, when a choice is exercised, every party who is an *informee* of any ancestor action in the transaction tree sees all the sub-actions, even contracts they are not a stakeholder on. Daml makes this deliberate design choice to enable delegation, and it becomes a vulnerability when developers do not realize they are leaking contract data to parties who should not have it.
 
 ### Vulnerable Code
 
@@ -126,13 +126,13 @@ template TradeSettlement
 
 ### The Exploit
 
-Charlie is not a stakeholder on Alice's IOU. But because the `Settle` choice, of which Charlie is a controller, has a `fetch alicesPrivateIouId` as a sub-action, Alice's IOU is **divulged to Charlie**. This kind of disclosure is often called "divulgence" and needs to be considered when designing Daml models for privacy-sensitive applications.
+Charlie is outside the stakeholder set on Alice's IOU. Because the `Settle` choice, of which Charlie is a controller, has a `fetch alicesPrivateIouId` as a sub-action, Alice's IOU is **divulged to Charlie**. This kind of disclosure is often called "divulgence" and needs to be considered when designing Daml models for privacy-sensitive applications.
 
-In financial applications this can mean: a settlement agent learns the full terms of a trade they are only supposed to facilitate, not observe.
+In financial applications this can mean: a settlement agent learns the full terms of a trade they are only supposed to process, not observe.
 
 ### The Fix
 
-Use Explicit Contract Disclosure (available in Canton 3.x+) instead of fetch-based divulgence. The disclosing party provides a signed proof of the contract at submission time, and the authorization restrictions of the Daml model still apply: the submitted command still needs to be well-authorized. The contract details are shared only for the duration of the transaction and are not permanently visible to the disclosee.
+Use Explicit Contract Disclosure (available in Canton 3.x+) for cases that would otherwise rely on fetch-based divulgence. The disclosing party provides a signed proof of the contract at submission time, and the authorization restrictions of the Daml model still apply: the submitted command still needs to be well-authorized. The contract details are shared only for the duration of the transaction and are not permanently visible to the disclosee.
 
 Alternatively, restructure the model so the settlement agent is a genuine observer on the IOU (making the disclosure explicit and permanent), or redesign the workflow to avoid fetching private contracts in mixed-party transactions.
 
@@ -275,7 +275,7 @@ The `ensure` clause is checked on every contract creation and re-creation. Combi
 
 ### What It Is
 
-Daml supports **flexible controllers**, choices where the controller is not fixed at contract creation time but is passed as an argument at exercise time. This is a powerful feature that enables delegation patterns, but it becomes a critical vulnerability when the contract does not validate that the provided controller is actually authorized to act.
+Daml supports **flexible controllers**, choices where the controller is passed as an argument at exercise time. This is a useful feature for delegation patterns, and it becomes a serious vulnerability when the contract does not validate that the provided controller is actually authorized to act.
 
 ### Vulnerable Code
 
@@ -315,7 +315,7 @@ When using flexible controllers, always add an `assert` that ties the runtime co
         exercise asset Transfer with newOwner = receiver
 ```
 
-Better still, avoid flexible controllers entirely for security-critical choices. Use a fixed `controller receiver` instead:
+Better still, avoid flexible controllers entirely for sensitive choices. Use a fixed `controller receiver` instead:
 
 ```haskell
     choice Accept : ContractId Token
@@ -354,7 +354,7 @@ template UserAccount
 
 ### The Problem
 
-Since the key is part of the contract, the maintainers must be signatories of the contract. However, maintainers are computed from the key instead of the template arguments. If the maintainer is referenced from template fields rather than computed from the key itself, the key uniqueness guarantee cannot be enforced across the ledger, because different participants compute different maintainer sets.
+Since the key is part of the contract, the maintainers must be signatories of the contract. However, maintainers are computed from the key, not from the template arguments. If the maintainer is referenced from template fields rather than computed from the key itself, the key uniqueness guarantee cannot be enforced across the ledger, because different participants compute different maintainer sets.
 
 ### The Fix
 
@@ -446,7 +446,7 @@ template Settlement
 
 ### The Fix
 
-Ensure the fetching party is explicitly listed as an observer on the contract being fetched by key. This is not optional when key-based lookups are part of your authorization flow:
+Make sure the fetching party is explicitly listed as an observer on the contract being fetched by key. This is not optional when key-based lookups are part of your authorization flow:
 
 ```haskell
 template UserAccount
@@ -464,7 +464,7 @@ Alternatively, use `lookupByKey` and handle the `None` case explicitly, making i
 
 ## Daml vs. Solidity: How the Threat Model Differs
 
-Understanding how Daml's vulnerability landscape differs from Solidity's helps prioritize what to look for in an audit.
+Understanding how Daml's vulnerability profile differs from Solidity's helps prioritize what to look for in an audit.
 
 | Threat Class | Solidity | Daml |
 |---|---|---|
@@ -478,7 +478,7 @@ Understanding how Daml's vulnerability landscape differs from Solidity's helps p
 | Front-running | Common | Mitigated by Canton's privacy model |
 | Upgrade risks | High (proxy patterns) | Managed, Daml has explicit upgrade framework |
 
-Daml's runtime eliminates the most catastrophic low-level bugs. What remains is a set of **authorization logic errors**, mistakes in who can do what, to which contracts, and who can see the results. These require semantic understanding of the contract's business logic, not just code scanning.
+Daml's runtime eliminates the most catastrophic low-level bugs. What remains is a set of **authorization logic errors**, mistakes in who can do what, to which contracts, and who can see the results. These require semantic understanding of the contract's business logic.
 
 
 
@@ -516,7 +516,7 @@ Use this checklist when auditing a Daml contract:
 
 ## Summary
 
-Daml's design eliminates whole categories of smart contract vulnerabilities that have cost the broader blockchain ecosystem hundreds of millions of dollars. There are no reentrancy bugs, no integer overflows, and no unprotected destructors. The ledger model itself enforces authorization rules that Solidity developers have to implement manually.
+Daml's design eliminates whole categories of smart contract vulnerabilities that have cost blockchain systems hundreds of millions of dollars. There are no reentrancy bugs, no integer overflows, and no unprotected destructors. The ledger model itself enforces authorization rules that Solidity developers have to implement manually.
 
 What Daml does not eliminate is logic errors in how authorization is structured. The eight vulnerabilities in this article share a common root: a developer made a decision about `signatory`, `observer`, `controller`, or `consuming` without fully thinking through who that decision empowers, what they can do, and who will be able to see the results.
 
@@ -552,7 +552,7 @@ Partner with us to enhance your project's security and gain peace of mind.
   },
   {
     "question": "Can a Daml contract be hacked after deployment?",
-    "answer": "The contract code itself cannot be modified post-deployment, and the Daml runtime enforces authorization rules on every transaction. However, logic vulnerabilities in the contract, such as the ones described in this article, can be exploited by any party who has access to the ledger. This is why design-time review is critical."
+    "answer": "The contract code itself cannot be modified post-deployment, and the Daml runtime enforces authorization rules on every transaction. However, logic vulnerabilities in the contract, such as the ones described in this article, can be exploited by any party who has access to the ledger. This is why design-time review is important."
   },
   {
     "question": "What is the most common Daml vulnerability in practice?",
@@ -568,6 +568,6 @@ Partner with us to enhance your project's security and gain peace of mind.
   },
   {
     "question": "Is there a static analysis tool for Daml security?",
-    "answer": "Daml Studio provides inline diagnostics for type errors and authorization failures. There is no equivalent of Slither or Mythril for Daml yet, which makes manual review and comprehensive submitMustFail test suites especially important for security assurance."
+    "answer": "Daml Studio provides inline diagnostics for type errors and authorization failures. There is no equivalent of Slither or Mythril for Daml yet, which makes manual review and thorough submitMustFail test suites especially important for security assurance."
   }
 ]

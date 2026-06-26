@@ -90,7 +90,7 @@ Such outcomes may be unlikely in practice, but they challenge the notion of x402
 ### Supply Chain Attacks
 Another risk is supply chain compromise. Recent incidents have shown that even well-maintained npm packages can be targeted. 
 If libraries published by providers such as Vercel were ever compromised, it could severely impact integrations. 
-Mitigation strategies include pinning package versions and implementing safeguards for fund management.  
+Defenses include pinning package versions and adding safeguards for fund management.
 
 ### AI Model Exploits
 A different class of vulnerabilities arises from AI-driven agents using x402. 
@@ -103,7 +103,7 @@ When APIs accept payments through smart contracts, attackers may exploit callbac
 This requires carefull consideration when sending payments to smart contracts, or accpeting payments using smart contracts.  
 
 ### Compliance Risks
-Regulatory compliance presents significant challenges. 
+Regulatory compliance presents hard problems.
 Accepting stablecoin payments globally exposes companies to issues such as VAT accounting, sanctions, and KYC requirements. 
 Meeting these obligations may remove some of the openness and simplicity that x402 aims to provide.
 

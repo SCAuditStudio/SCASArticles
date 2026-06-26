@@ -17,7 +17,7 @@
 
 ## Introduction
 
-Audits are one of the biggest single line-items in a Web3 project’s budget. When you see quotes from “a few thousand dollars” to “hundreds of thousands”, it often raises the question: *what exactly drives that cost?* In 2025, the landscape is more mature, pricier, and more varied than ever. Here’s a deep dive into **why some audits cost a lot**, real market benchmarks, and how different audit models compare.
+Audits are one of the biggest single line-items in a Web3 project’s budget. When you see quotes from “a few thousand dollars” to “hundreds of thousands”, it often raises the question: *what exactly drives that cost?* In 2025, the market is more mature, pricier, and more varied than ever. Here’s a breakdown of **why some audits cost a lot**, real market benchmarks, and how different audit models compare.
 
 ## Recent Price Benchmarks (2025)
 
@@ -28,7 +28,7 @@ These are fresh data points from 2025 in the market, to give sense of real examp
 | Basic token / simple contract                                           | **\$2,000 – \$15,000**                                           | E.g. simple ERC-20, minimal custom logic. Lower-risk. Minimal external integrations.          |
 | Mid-tier / Moderate complexity (governance, staking, some custom logic) | **\$15,000 – \$40,000**                                          | Multiple contracts, more logic, possibly external oracles or tokenomics.                      |
 | DeFi protocols / multi-component systems                                | **\$40,000 – \$100,000+**                                        | Lending, swapping, yield farms, complex logic, large TVL.                                     |
-| Enterprise / Cross-chain / Bridges / High Risk / Mission-Critical       | **\$100,000 – \$200,000+** (in many cases much more)             | Bridges, multi-chain, formal verification, large attack surface. Also multiple review stages. |
+| Enterprise / Cross-chain / Bridges / High Risk / Fund-Handling          | **\$100,000 – \$200,000+** (in many cases much more)             | Bridges, multi-chain, formal verification, large attack surface. Also multiple review stages. |
 
 Additionally:
 
@@ -43,11 +43,11 @@ While many pricing reports refer to traditional audits (firms that assign a dedi
 | Feature                             | Contest / Crowdsourced Audit                                                                                                                                                                                                                                                                                                                                | Traditional Audit Firms                                                                                                                                                                                                                    |
 | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Cost to Project**                 | You pay a prize pool / bounty + platform / judging / operational fees. The cost can be somewhat more flexible: you can scale prize pool depending on your budget and risk. For large, visible projects, prize pools often reach tens or hundreds of thousands. | Fixed quotes from firms. Usually higher base cost for same risk/complexity. Traditional firms may also charge extra for urgency, re-audits, and documentation etc.                                                                         |
-| **Depth & Quality of Coverage**     | Pros: multiple researchers, overlapping perspectives, often find many low/medium severity issues quickly. But cons: coverage might miss deeper issues; some participants may lack deep expertise; issue duplication; less guarantee of full coverage.                                                                                                       | Pros: deeper manual review, formal methodologies; better guarantee of full coverage (especially for critical paths); more accountability; often better follow-through post-audit; higher reputational trust. Cons: slower; more expensive. |
+| **Depth & Quality of Coverage**     | Pros: multiple researchers, overlapping perspectives, often find many low/medium severity issues quickly. But cons: coverage might miss deeper issues; some participants may lack deep expertise; issue duplication; less guarantee of full coverage.                                                                                                       | Pros: deeper manual review, formal methodologies; better guarantee of full coverage (especially for sensitive paths); more accountability; often better follow-through post-audit; higher reputational trust. Cons: slower; more expensive. |
 | **Turnaround Time & Flexibility**   | Can be faster for getting many eyes; more parallelism; possibly more forgiving on timelines. But coordinating submissions, judging, review cycles can introduce delays.                                                                                                                                                                                     | More predictable timelines; more structured process; but less flexible (if scope grows, cost + time typically increases). Rush audits cost premiums.                                                                                       |
 | **Reputation & Trust Signal**       | Good contest platforms have strong reputations, but some users / investors still place more trust in audits from established traditional firms, especially for DeFi / financial protocols / institutional participation.                                                                                                                                    | Stronger brand recognition; traditional firm audits often used to signal credibility for exchanges, investors, regulators.                                                                                                                 |
 | **Predictability of Cost**          | More volatile depending on how many issues are found, participation of high-quality researchers, how you structure the contest. You can control prize pool, but cost of full coverage is somewhat uncertain.                                                                                                                                                | More predictable: you define scope, get a quote, agree on deliverables; less variation once contract is signed (though re-audits, remediation etc. still can increase cost).                                                               |
-| **Risk of Missing Critical Issues** | Higher if the contest is small, or prize incentives misaligned (if only large bugs are rewarded, many medium/low ones may be ignored; if code is novel or complex, deep logic flaws may get less attention).                                                                                                                                                | Lower risk under proper process: senior auditors dive into edge cases; more likely to include documentation, test coverage, formal verification if needed; better guarantee for sensitive code.                                            |
+| **Risk of Missing Severe Issues**   | Higher if the contest is small, or prize incentives misaligned (if only large bugs are rewarded, many medium/low ones may be ignored; if code is novel or complex, deep logic flaws may get less attention).                                                                                                                                                | Lower risk under proper process: senior auditors review edge cases; more likely to include documentation, test coverage, formal verification if needed; better guarantee for sensitive code.                                             |
 
 ## Recent Case Studies: Contest vs Traditional (2024–2025)
 
@@ -93,11 +93,11 @@ Putting together the cost drivers + recent data + models, here are the combinati
 
 * **Large codebases with many modules**: If your protocol is composed of many interdependent contracts, cross-chain oracles, bridging, upgradeability, etc., the risk, possible attack surface, and enumeration of edge cases explode. Each module adds lines of logic and new paths to test.
 
-* **High stakes / high TVL / mission-critical functionality**: If you are managing user funds, or treasury or governance oracles, or any component where a bug can lead to large financial loss / reputational damage. The higher the stakes, the more due diligence is expected.
+* **High stakes / high TVL / fund-handling functionality**: If you are managing user funds, or treasury or governance oracles, or any component where a bug can lead to large financial loss / reputational damage. The higher the stakes, the more due diligence is expected.
 
 * **Novel or custom logic / minimal auditable precedents**: If your logic is unique (not following common patterns), you will pay for the auditor to build models, think through new attack vectors, do more rugged testing.
 
-* **Regulatory or investor expectations**: Sometimes the audit is not just about security, but about trust. Investors, exchanges, or insurers may require audits from certain firms, formal write-ups, proofs, etc. Those requirements often push costs up.
+* **Regulatory or investor expectations**: Sometimes security is only part of the goal. Investors, exchanges, or insurers may require audits from certain firms, formal write-ups, proofs, etc. Those requirements often push costs up.
 
 * **Multiple rounds + remediation + re-audits**: Many projects underestimate how many times they’ll need to fix issues (from auditors or from contest submissions) and then have auditors re-verify. Also code may evolve (patches, new features), requiring new audits.
 
@@ -113,10 +113,10 @@ There are many levers that push an audit from “cheap” to “premium”. Unde
    The more logic in the contract(s), more external integrations, more moving parts (oracles, bridges, upgradeability, multi-signatures), the more paths to test and more potential vulnerabilities. Larger codebases require more reviewer time, more tools, more tests.
 
 2. **Risk Profile & Novelty**
-   Code that handles large sums, or is mission-critical (bridges, cross-chain, governance, oracles, etc.) demands more scrutiny. Also, if the code is novel (custom logic, new protocols, experimental patterns), then auditors must spend more time understanding, modeling edge cases, testing unusual failure modes.
+   Code that handles large sums, or controls sensitive components (bridges, cross-chain, governance, oracles, etc.) demands more scrutiny. Also, if the code is novel (custom logic, new protocols, experimental patterns), then auditors must spend more time understanding, modeling edge cases, testing unusual failure modes.
 
 3. **Reputation / Expertise of Auditor / Firm**
-   Top firms or auditors with strong track records / brand value (Trail of Bits, OpenZeppelin, ConsenSys Diligence, etc.) charge more. Not just because of their skill, but because their audit report has higher “credibility value” for users/investors/exchanges.
+   Top firms or auditors with strong track records / brand value (Trail of Bits, OpenZeppelin, ConsenSys Diligence, etc.) charge more for their skill and because their audit report has higher “credibility value” for users/investors/exchanges.
 
 4. **Audit Depth & Scope**
    There’s a spectrum: superficial vulnerability scanning + automated tools → deeper manual review → formal verification → integration testing / penetration testing → full red-team / attack-scenario simulation. Each added layer significantly increases cost.
@@ -133,7 +133,7 @@ Here are approximate ranges (2025) for what you might reasonably expect to pay *
 
 | Project Type                                                                                     | Typical Audit Cost (Traditional) | What a Contest / Crowdsourced Prize Pool Might Be for Similar Project                                   |
 | ------------------------------------------------------------------------------------------------ | -------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| Small but critical contract (\~1,000 LOC with ownership / access control / bridges etc.)         | \$25,000 - \$50,000+             | \$20,000 - \$40,000 prize pool + platform costs                                                         |
+| Small but high-risk contract (\~1,000 LOC with ownership / access control / bridges etc.)        | \$25,000 - \$50,000+             | \$20,000 - \$40,000 prize pool + platform costs                                                         |
 | Mid-size DeFi protocol (multiple modules, external dependencies, staking / governance / oracles) | \$60,000 - \$120,000+            | \$40,000 - \$80,000 or more prize pool, depending on visibility & risk                                  |
 | Large protocol / cross-chain bridge / VM / novel logic                                           | \$150,000 - \$300,000+ (or more) | \$100,000 - \$200,000+ prize pools (if the contest is well-structured + many high-quality participants) |
 
@@ -143,9 +143,9 @@ Because audits are expensive, here are practical strategies to keep costs reason
 
 * **Prepare your codebase well**: clean architecture, good tests, documentation, internal audits. The cleaner you ship, the less time auditors waste on basics.
 
-* **Define scope clearly**: decide what you *must* audit (critical modules, high risk) vs what can wait. Possibly split audit into phases.
+* **Define scope clearly**: decide what you *must* audit (highest-risk modules) vs what can wait. Possibly split audit into phases.
 
-* **Get multiple quotes**: traditional firms, small firms, contest platforms. Compare scope + deliverables, not just price.
+* **Get multiple quotes**: traditional firms, small firms, contest platforms. Compare scope, deliverables, and price together.
 
 * **Use contest or community audits as supplement**: you could run a contest for some parts, then traditional audit for core / risky parts.
 
@@ -155,13 +155,13 @@ Because audits are expensive, here are practical strategies to keep costs reason
 
 * **Avoid rushed timelines if possible**: unless you need speed, giving auditors more time often reduces cost premiums.
 
-* **Ensure you choose auditors / contest platforms with good reputation**: credibility matters, cheaper audit that misses critical issues may cost more later in losses or lost trust.
+* **Choose auditors / contest platforms with good reputation**: credibility matters, cheaper audit that misses severe issues may cost more later in losses or lost trust.
 
 ## When to Prefer Each (Reinforced by Cases)
 
 * Use a contest early to flush broad classes of implementation bugs and gas / minor logic issues once the code is near feature-freeze.
 * Follow with (or precede by) a traditional audit for architectural threat modeling, economic / cross-module invariants, and structured verification of patch sets.
-* High-risk or novel protocols benefit from a hybrid: initial traditional deep dive → contest for breadth → final focused re-audit / formal verification on patched critical paths.
+* High-risk or novel protocols benefit from a hybrid: initial traditional deep review → contest for breadth → final focused re-audit / formal verification on patched sensitive paths.
 
 ## Conclusion
 
@@ -173,9 +173,9 @@ Smart contract audits are expensive because they aren’t just about checking co
 * depth of scope (manual review, formal methods, multiple audit rounds)
 * urgency, compliance, extra deliverables
 
-Contest / crowdsourced models provide interesting alternatives, often more flexible and perhaps more cost-efficient for certain modules or risk profiles, but they typically cannot replace traditional audits for mission-critical parts, especially when trust, liability, and guarantees matter.
+Contest / crowdsourced models provide interesting alternatives, often more flexible and perhaps more cost-efficient for certain modules or risk profiles, but they typically cannot replace traditional audits for fund-handling parts, especially when trust, liability, and guarantees matter.
 
-If you're budgeting for security, aim to understand *what you're paying for*, not just the price. Budget conservatively, scope carefully, and choose audit partners wisely. The cost of an audit may seem high, but the cost of skipping or under-investing in security is almost always far greater.
+If you're budgeting for security, aim to understand *what you're paying for* beyond the price. Budget conservatively, scope carefully, and choose audit partners wisely. The cost of an audit may seem high, but the cost of skipping or under-investing in security is almost always far greater.
 
 ## About Us
 
@@ -197,11 +197,11 @@ At SC Audit Studio, we specialize in protocols security assessments. Our team of
    },
    {
       "question": "How can we reduce audit cost without sacrificing security?",
-      "answer": "Freeze scope, remove dead code, provide a threat model + roles matrix, ensure strong test/invariant coverage, and avoid late refactors. Fewer mid-audit changes = fewer re-audit cycles."
+      "answer": "Freeze scope, remove dead code, provide a threat model + roles matrix, keep strong test/invariant coverage, and avoid late refactors. Fewer mid-audit changes = fewer re-audit cycles."
    },
    {
       "question": "Contest vs traditional: when should we pick one over the other?",
-      "answer": "Use contests for breadth and quick surface discovery; use traditional firms for depth (architecture, economics, formal methods). Mission-critical launches benefit from a hybrid sequence."
+      "answer": "Use contests for breadth and quick surface discovery; use traditional firms for depth (architecture, economics, formal methods). Fund-handling launches benefit from a hybrid sequence."
    },
    {
       "question": "Are re-audits usually included?",

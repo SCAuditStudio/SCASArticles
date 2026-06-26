@@ -61,7 +61,7 @@ From this structure, several unique conditions emerge:
 * Deposited and withdrawn tokens must always match outcome token supply
 * Centralized orderbook with on-chain settlement
 
-Choosing the right yield source is therefore critical for secure system design.
+The yield source directly affects system safety.
 
 
 ### Yield Sources in DeFi
@@ -221,7 +221,7 @@ The wrapped vault enforces:
 3. **Liquidity buffer is maintained**
    → Allows controlled exposure to underlying strategies and smoother withdrawals.
 
-Losses, if they occur, are correctly passed to users instead of breaking invariants.
+Losses, if they occur, are correctly passed to users without breaking invariants.
 
 
 ### Simplified Pseudo-Implementation (ERC-4626 Based)

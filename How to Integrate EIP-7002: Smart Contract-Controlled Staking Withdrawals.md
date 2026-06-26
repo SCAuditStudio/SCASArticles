@@ -35,7 +35,7 @@ This rigidity slowed down **restaking adoption**, added **operational friction**
 
 ## The Smart Contract Era of ETH Withdrawals
 
-EIP-7002 allows a validator to set their withdrawal credentials to a **smart contract** instead of just an EOA.
+EIP-7002 allows a validator to move withdrawal credentials from an EOA to a **smart contract**.
 
 When withdrawals (either partial or full) occur, ETH is sent directly into that contract, which can then execute custom logic:
 
@@ -335,7 +335,7 @@ At SC Audit Studio, we specialize in protocols security assessments. Our team of
 [
     {
         "question": "What is EIP-7002?",
-        "answer": "EIP-7002 lets Ethereum validators set their withdrawal credentials to a smart contract instead of an EOA, making withdrawals programmable."
+        "answer": "EIP-7002 lets Ethereum validators move their withdrawal credentials from an EOA to a smart contract, making withdrawals programmable."
     },
     {
         "question": "Why does it matter?",

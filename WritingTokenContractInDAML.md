@@ -224,9 +224,9 @@ template MintRequest
       do return ()
 ```
 
-**Why a separate `MintRequest`?** Why not just let the issuer create tokens directly?
+**Why use a separate `MintRequest`?**
 
-In a real application the issuer is a backend service, not a human sitting at a keyboard. The `MintRequest` pattern lets the *user* initiate the process (which they can do from a frontend) while ensuring the *issuer* always approves before any tokens exist. This is the standard **Propose and Accept** pattern in Daml, and it maps cleanly to real-world authorization workflows.
+In a real application the issuer is a backend service, not a human sitting at a keyboard. The `MintRequest` pattern lets the *user* initiate the process from a frontend and requires the *issuer* to approve before any tokens exist. This is the standard **Propose and Accept** pattern in Daml, and it maps cleanly to real-world authorization workflows.
 
 
 
@@ -356,7 +356,7 @@ For deployment to **DevNet, TestNet, or MainNet**, follow the full validator nod
 
 **Reusing the same `.dar` across networks.** Each Canton network (DevNet, TestNet, MainNet) is fully isolated. Upload your `.dar` separately to each one. The same file works everywhere, the endpoint URL is the only thing that changes.
 
-**Using `=` instead of `<-` for ledger actions.** In scripts, `<-` means "run this action and give me the result." `=` is for pure values. `tokenId <- submit ...` is correct. `tokenId = submit ...` will not compile.
+**Using `=` for ledger actions.** In scripts, `<-` means "run this action and give me the result." `=` is for pure values. `tokenId <- submit ...` is correct. `tokenId = submit ...` will not compile.
 
 
 
@@ -398,7 +398,7 @@ At SC Audit Studio, we specialize in protocol security assessments. Our team of 
   },
   {
     "question": "Can anyone see my token balances?",
-    "answer": "No. Canton's privacy model ensures only the parties named in a contract (`signatory`, `observer`, `controller`) can see it. Nobody else on the network has visibility into your token holdings."
+    "answer": "No. Canton's privacy model shows the contract only to the parties named in it (`signatory`, `observer`, `controller`). Nobody else on the network has visibility into your token holdings."
   },
   {
     "question": "What is the difference between `signatory` and `observer`?",

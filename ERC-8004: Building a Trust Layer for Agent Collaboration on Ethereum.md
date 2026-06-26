@@ -24,7 +24,7 @@
 
 ## Introduction
 
-In a decentralized world where autonomous agents (AI, bots, dApps) must collaborate across organizational boundaries, trust becomes the missing link. **ERC-8004**, titled **Trustless Agents**, introduces a minimal but robust on-chain infrastructure that provides agent identity, reputation, and validation while preserving flexibility and modularity.
+In a decentralized world where autonomous agents (AI, bots, dApps) must collaborate across organizational boundaries, trust becomes the missing link. **ERC-8004**, titled **Trustless Agents**, introduces minimal on-chain infrastructure for agent identity, reputation, and validation while preserving flexibility and modularity.
 
 Created by Marco De Rossi, Davide Crapis, and Jordan Ellis (August 13, 2025), this proposal extends the Agent-to-Agent (A2A) Protocol with trust primitives that are interoperable, lightweight, and future-proof. [Ethereum Improvement Proposals](https://eips.ethereum.org/EIPS/eip-8004)
 
@@ -44,7 +44,7 @@ The result: a modular, composable trust layer for any Ethereum-compatible enviro
 
 ## Core Components of ERC-8004
 
-ERC-8004 implements a three-registry architecture that separates concerns while enabling powerful combinations:
+ERC-8004 implements a three-registry architecture that separates concerns while enabling useful combinations:
 
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
@@ -176,7 +176,7 @@ With trust data available, your applications can:
 
 ### Conclusion
 
-ERC-8004 is a significant step towards establishing a robust trust framework for decentralized AI agents. By integrating identity, reputation, and validation mechanisms, it empowers agents to interact with confidence and accountability.
+ERC-8004 gives decentralized AI agents a practical trust framework. Identity, reputation, and validation let agents interact with more confidence and accountability.
 
 ## About Us
 

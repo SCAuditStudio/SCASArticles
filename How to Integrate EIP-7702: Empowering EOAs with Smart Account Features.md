@@ -1,4 +1,4 @@
-# How to Integrate EIP-7702: Empowering EOAs with Smart Account Features
+# How to Integrate EIP-7702: Adding Smart Account Features to EOAs
 
 ## Table of Contents
 
@@ -11,7 +11,7 @@
    - [Step 4: Deploy](#step-4-deploy)
    - [Step 5: Send Delegation via CLI with `cast`](#step-5-send-delegation-via-cli-with-cast)
 4. [When to Choose EIP-7702 vs ERC-4337](#when-to-choose-eip-7702-vs-erc-4337)
-   - [Ecosystem & Tool Support](#ecosystem--tool-support)
+   - [Tool Support](#tool-support)
    - [TL;DR](#tldr)
 5. [About Us](#about-us)
 6. [FAQ](#faq)
@@ -30,7 +30,7 @@ This proposal addresses key developer and UX pain points:
 * Offers features like **social recovery**, **alternative authentication**, and **token-based gas payments** enhancing UX and flexibility.
 * Aligns with the broader vision of **account abstraction** while preserving EOA identity and compatibility.
 
-EIP-7702 delivers smart account capabilities directly in EOAs, unlocking powerful features without sacrificing simplicity or compatibility.
+EIP-7702 gives EOAs smart account capabilities without sacrificing simplicity or compatibility.
 
 
 
@@ -38,7 +38,7 @@ EIP-7702 delivers smart account capabilities directly in EOAs, unlocking powerfu
 
 EIP-7702 introduces a new transaction type **`0x04`** `setcode`that enables an EOA to include smart contract-like execution logic (via a "delegation designator") only for that transaction. After it's processed, the EOA reverts to its standard behavior
 
-This clever enhancement preserves the EOA's address, private key, and UX while unlocking:
+This change preserves the EOA's address, private key, and UX while adding:
 
 * **Batch operations**
 * **Gas-free or sponsored interactions**
@@ -63,7 +63,7 @@ In your `foundry.toml`, specify an EVM version supporting the necessary features
 evm_version = "prague"
 ```
 
-This ensures Foundry’s cheatcodes like `signDelegation` and `attachDelegation` are available.
+This makes Foundry’s cheatcodes like `signDelegation` and `attachDelegation` available.
 
 
 
@@ -180,7 +180,7 @@ Use **ERC-4337 when**:
 
 
 
-### Ecosystem & Tool Support
+### Tool Support
 
 * **Hardhat + GitHub Example**: Check out the `woogie96/eip7702-example` repo, a full Hardhat project demonstrating batch delegation logic [Luganodes | Hassle-Free Staking](https://www.luganodes.com/blog/ethereum-pectra-eip/).
 * **MetaMask Delegation Toolkit**: Offers developer flow to upgrade EOAs into smart accounts with minimal friction [ethereum.org](https://ethereum.org/te/roadmap/pectra/7702/).

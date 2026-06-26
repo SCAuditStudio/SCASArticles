@@ -30,7 +30,7 @@ A step-by-step walkthrough covering everything from prerequisites and network sp
 
 Canton is an enterprise-grade blockchain network built by Digital Asset on top of the Daml smart contract language. Unlike traditional public blockchains that broadcast all data to all nodes, Canton uses a **privacy-by-default architecture**: your validator node only receives and stores data belonging to transactions you are a party to. Every other participant's data remains invisible to you by design.
 
-The network's backbone is the **Global Synchronizer** a decentralized coordination layer operated by a set of Super Validator (SV) nodes. Validators connect to this synchronizer to participate in the ecosystem, submit transactions, and interact with applications such as tokenization platforms, payment rails, and settlement systems.
+The network's backbone is the **Global Synchronizer** a decentralized coordination layer operated by a set of Super Validator (SV) nodes. Validators connect to this synchronizer to participate in the network, submit transactions, and interact with applications such as tokenization platforms, payment rails, and settlement systems.
 
 The native utility token is **Canton Coin (CC)**, used to pay for network traffic fees and earned as liveness rewards for running an active validator node.
 
@@ -38,7 +38,7 @@ The native utility token is **Canton Coin (CC)**, used to pay for network traffi
 
 ## Validator vs. Super Validator
 
-Before diving in, it's important to understand the two node tiers on Canton:
+Before we start, it's important to understand the two node tiers on Canton:
 
 | Feature | Validator Node | Super Validator Node |
 |---|---|---|
@@ -473,7 +473,7 @@ https://scan.sv-1.dev.global.canton.network.cumberland.io: 0.3.6
 https://scan.sv-1.dev.global.canton.network.sync.global: 0.3.6
 ```
 
-If lines return errors instead of version numbers, your IP has not been added to the allowlist yet, or the SV you're checking is momentarily unreachable. You need **at least 2/3 of SVs** reachable for your validator to function.
+If lines return errors where version numbers should appear, your IP has not been added to the allowlist yet, or the SV you're checking is momentarily unreachable. You need **at least 2/3 of SVs** reachable for your validator to function.
 
 ### Test Sequencer Connectivity
 
@@ -604,7 +604,7 @@ Use your **validator operator party** as both the exchange party and the traffic
 
 ## Backups & Disaster Recovery
 
-Regular backups are not strictly required to keep the node running but they are critical for recovering your Canton Coin in the event of a catastrophic failure.
+Regular backups are optional for day-to-day operation and needed to recover your Canton Coin after a catastrophic failure.
 
 ### What to Back Up
 
@@ -792,7 +792,7 @@ Partner with us to enhance your project's security and gain peace of mind.
   },
   {
     "question": "Is the Docker Compose setup suitable for production?",
-    "answer": "It is acceptable for small production deployments and is the easiest path to get started. However, the official recommendation for serious production usage is the Kubernetes/Helm path because it includes monitoring, better scalability, and more robust restart handling than Docker Compose alone."
+    "answer": "It is acceptable for small production deployments and is the easiest path to get started. However, the official recommendation for serious production usage is the Kubernetes/Helm path because it includes monitoring, better scalability, and stronger restart handling than Docker Compose alone."
   },
   {
     "question": "What OIDC providers are officially supported?",

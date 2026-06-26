@@ -44,7 +44,7 @@ SCAS supports protocols through flexible liquidity solutions, including:
 
 ## Requirements
 
-To ensure a high standard across all participating protocols, applicants should meet the following criteria:
+To keep the program selective, applicants should meet the following criteria:
 - Demonstrated financial backing or funding  
 - Completion of a smart contract audit via an SCAS-approved provider (reach out for more information)  
 - Participation in the SCAS OpSec Audit  
@@ -58,7 +58,7 @@ SCAS works closely with teams throughout the process, helping to:
 ## A different kind of commitment
 
 In times of uncertainty, actions speak louder than assurances. 
-By pairing capital with accountability, SCAS aims to help establish a more stable foundation for the next generation of DeFi protocols, where security is not a milestone, but an ongoing standard.
+By pairing capital with accountability, SCAS aims to help establish a more stable foundation for the next generation of DeFi protocols, where security remains an ongoing standard.
 
 ## Apply
 
@@ -89,4 +89,3 @@ At SC Audit Studio, we specialize in protocols security assessments. Our team of
     "answer": "Most DeFi products benefit from initial liquidity to act as the countertrade for users. We also believe that cybersecurity practices will increase in importance for future investors."
   }
 ]
-
