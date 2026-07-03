@@ -1,179 +1,214 @@
-# What Happens to $45M of Morpho Debt When ETH Falls 20%?
+# Morpho Risk Assessment: What Happens to $45M of WETH/USDC Debt if ETH Drops 20%?
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
-2. [The Market We Analyzed](#the-market-we-analyzed)
-3. [Historical Reference: The August 5, 2024 Crash](#historical-reference-the-august-5-2024-crash)
-4. [What If August 5, 2024 Happened Today?](#what-if-august-5-2024-happened-today)
-5. [Can Base DEXs Handle This? We Tested It](#can-base-dexs-handle-this-we-tested-it)
-6. [The "Death Spiral" Explained](#the-death-spiral-explained)
-7. [Oracle Reliability During the Crash](#oracle-reliability-during-the-crash)
-8. [Simulation Limitations](#simulation-limitations)
-9. [Key Takeaways](#key-takeaways)
-10. [Recommendations](#recommendations)
+1. [TLDR](#tldr)
+2. [Why This Assessment Exists](#why-this-assessment-exists)
+3. [The Market We Analyzed](#the-market-we-analyzed)
+4. [Historical Stress Event: August 5, 2024](#historical-stress-event-august-5-2024)
+5. [Borrower Impact Under ETH Price Shocks](#borrower-impact-under-eth-price-shocks)
+6. [Base DEX Liquidity Simulation](#base-dex-liquidity-simulation)
+7. [How Liquidation Cascades Form](#how-liquidation-cascades-form)
+8. [Oracle Behavior During Volatility](#oracle-behavior-during-volatility)
+9. [Simulation Limitations](#simulation-limitations)
+10. [Practical Recommendations](#practical-recommendations)
 11. [Data Sources](#data-sources)
 12. [About Us](#about-us)
 13. [FAQ](#faq)
 
-## Introduction
+## TLDR
 
-Recent market volatility (February 2026 saw ETH drop ~20% in days) reminds us that liquidation risk isn't theoretical, it's imminent. This article examines what would happen to the Morpho Blue WETH/USDC market on Base if history repeated itself.
+- This Morpho risk assessment models the WETH/USDC market on Base using borrower data collected on January 27, 2026. Use it as a snapshot rather than a live solvency report.
+- In the modeled book, a 17% ETH drop makes 8 positions liquidatable, representing about $2.2M of debt and roughly 820 WETH of collateral.
+- A 20% ETH drop makes 12 positions liquidatable, representing about $5.51M of debt and roughly 2,074 WETH of collateral.
+- Normal-condition Base DEX quotes suggested that liquidating around $5M of WETH collateral was absorbable with low quoted price impact, but that result depends on liquidity staying available during the crash.
+- The first liquidation is small. Cascade risk comes from falling ETH price, thinner DEX liquidity, oracle update lag, and repeated collateral sales.
+- Health factor 1.0 leaves no margin. For this market profile, a buffer above 1.3 gives more room against 20-25% ETH moves.
 
-We backtest scenarios using real borrower positions, historical oracle prices, and verified liquidity simulations to quantify the risk of cascading liquidations.
+## Why This Assessment Exists
+
+[Morpho](https://morpho.org/) Blue uses isolated lending markets. Each market has its own loan asset, collateral asset, oracle, interest rate model, and liquidation loan-to-value parameter. This contains risk to a specific market instead of sharing it across every asset in a larger lending pool. It also makes market-by-market analysis necessary.
+
+This article is for readers searching for a Morpho liquidation risk assessment: borrowers using WETH as collateral, vault curators allocating USDC into Morpho markets, liquidators estimating sell pressure, and security teams reviewing oracle and liquidity assumptions. The question is narrow: if ETH falls sharply, how much of the WETH/USDC debt on Base becomes liquidatable, and can on-chain liquidity absorb the collateral sales?
+
+Current conditions may differ. The borrower data was collected on January 27, 2026, and the swap quotes were collected on February 6, 2026. Positions, liquidity, interest rates, and oracle configurations can change quickly. The method combines borrower-level collateralization, historical price shocks, oracle behavior, and DEX depth rather than relying on total borrowed value alone.
+
+Keep liquidatable debt separate from bad debt. Liquidatable debt means a position has crossed the liquidation threshold and can be repaid by a liquidator in exchange for collateral. Bad debt means the collateral cannot cover the debt after price movement, slippage, incentives, and execution costs. A market can have many liquidations without bad debt if liquidators can execute quickly and sell collateral into deep markets.
+
+For broader context on why isolated lending markets are increasingly managed through curators and vaults, see our guide to [DeFi vault curation](https://scauditstudio.com/blog/DefiVaultCuration). For a separate example of how oracle assumptions and vault accounting can transmit losses, see our breakdown of the [Resolv vault curation incident](https://scauditstudio.com/blog/Resolv-Exploit-A-Vault-Curation-Disaster).
 
 ## The Market We Analyzed
+
+The target market is a WETH collateral and USDC borrow market on [Base](https://docs.base.org/base-chain/network-information), chain ID 8453. The analysis focuses on the largest active borrower positions visible in the collected snapshot.
 
 | Parameter | Value | Source |
 |-----------|-------|--------|
 | Protocol | Morpho Blue | [Morpho API](https://blue-api.morpho.org/graphql) |
-| Market | WETH/USDC on Base | Chain ID: 8453 |
-| Total Borrowed | ~$45.56M | *Collected: January 27, 2026* |
-| Liquidation LTV (LLTV) | 86% | Protocol parameter |
-| Active Borrowers Analyzed | 50 (top positions) | *Collected: January 27, 2026* |
+| Network | Base | Chain ID: 8453 |
+| Market | WETH collateral / USDC debt | Borrower snapshot |
+| Total Borrowed | ~$45.56M | Collected: January 27, 2026 |
+| Liquidation LTV (LLTV) | 86% | Market parameter |
+| Active Borrowers Analyzed | 50 top positions | Collected: January 27, 2026 |
 
-> **⚠️ Note on Data Freshness:** The borrower position data was collected on **January 27, 2026**. Current market conditions may differ significantly. This analysis is illustrative and should be treated as a methodology demonstration, not real-time risk assessment.
+In a Morpho market, the liquidation threshold is defined by LLTV. A simplified health factor for this type of stress test is:
 
-![simulation](https://raw.githubusercontent.com/SCAuditStudio/SCASArticles/main/images/morpho_simulation_positions.png)
+`health factor = collateral value * LLTV / borrowed value`
 
-## Historical Reference: The August 5, 2024 Crash
+When the health factor falls below 1.0, the position is eligible for liquidation. One account crossing that line only means its collateral value, after applying the market's liquidation threshold, no longer supports the outstanding debt. The liquidator still needs to repay debt, receive collateral, and unwind that collateral without losing money.
 
-On August 5, 2024, ETH experienced a flash crash of **-17% in ~7 hours**:
+Most of the ~$45.56M borrowed book remains above threshold in the 20% ETH scenario. Borrower-level analysis identifies which positions actually cross the threshold under each price path.
+
+![Morpho WETH/USDC borrower liquidation simulation](https://raw.githubusercontent.com/SCAuditStudio/SCASArticles/main/images/morpho_simulation_positions.png)
+
+## Historical Stress Event: August 5, 2024
+
+A 17-20% ETH drawdown has happened before. During the August 5, 2024 market sell-off, hourly aggregated ETH/USD prices showed a fast move from roughly $2,695 to $2,235.
 
 | Time (UTC) | ETH Price | Drop from Peak |
 |------------|-----------|----------------|
 | Aug 4, 23:00 | $2,695.59 | Baseline |
-| Aug 5, 01:00 | $2,343.51 | **-13.1%** |
-| Aug 5, 06:00 | $2,235.97 | **-17.0%** |
+| Aug 5, 01:00 | $2,343.51 | -13.1% |
+| Aug 5, 06:00 | $2,235.97 | -17.0% |
 
-*Source: Dune Analytics, hourly aggregated Chainlink ETH/USD prices. Data period: August-September 2024.*
+Source: hourly aggregated [Chainlink Data Feeds](https://docs.chain.link/data-feeds) ETH/USD data queried through [Dune Analytics](https://dune.com/). The reference period was August to September 2024.
 
-This event serves as our stress test scenario.
+The event is a reasonable stress test: large enough to push lending positions, but still within recent market history. If a lending market cannot tolerate a repeat of this type of move, borrowers, curators, and liquidators need to know that before the next volatility event.
 
-## What If August 5, 2024 Happened Today?
+## Borrower Impact Under ETH Price Shocks
 
-Using the borrower data collected in January 2026, we simulated various price drops:
+Using the January 27, 2026 borrower snapshot, we applied deterministic ETH price drops and recalculated which positions crossed the liquidation threshold. The debt side was treated as stable USDC debt, and WETH collateral value was reduced by the modeled ETH price move.
 
-| Price Drop | Positions Liquidatable | At-Risk Debt | At-Risk Collateral |
-|------------|------------------------|--------------|-------------------|
+| ETH Price Drop | Positions Liquidatable | At-Risk Debt | At-Risk Collateral |
+|----------------|------------------------|--------------|-------------------|
 | 5% | 1 | $389,000 | ~154 WETH |
 | 10% | 4 | $1,170,000 | ~455 WETH |
-| **17%** *(Aug 5 scenario)* | 8 | **~$2,200,000** | ~820 WETH |
+| 17% | 8 | ~$2,200,000 | ~820 WETH |
 | 20% | 12 | $5,510,000 | ~2,074 WETH |
 | 50% | 43 | $16,450,000 | ~4,633 WETH |
 
-*Data: Morpho Blue GraphQL API, borrower snapshot January 27, 2026.*
+Source: Morpho Blue GraphQL API borrower snapshot, January 27, 2026.
 
-At a **20% drop**, similar to recent market conditions, **$5.5M of debt** across 12 positions would become liquidatable.
+The jump is non-linear. A 5% decline catches one vulnerable account. A 10% decline catches four. Around the August 5, 2024 stress level, eight positions become liquidatable. At 20%, the modeled liquidatable debt rises to $5.51M.
 
-## Can Base DEXs Handle This? We Tested It.
+Liquidations would happen across different transactions and blocks. Borrowers may repay, add collateral, or be liquidated in partial chunks. Liquidators may wait for oracle updates, gas conditions, and DEX routes. Still, the table shows where the market's liquidation workload begins to cluster.
 
-We manually simulated large WETH sales on the **DefiLlama Aggregator** (routing through 1inch and CowSwap) to measure real-world price impact.
+The 50% scenario is a tail comparison. The main conclusion stands without it, but it shows why liquidity depth becomes more important as shocks grow. Once liquidatable collateral moves from hundreds of WETH to thousands of WETH, execution quality becomes part of solvency.
 
-### Verified Simulation Results (February 6, 2026)
+## Base DEX Liquidity Simulation
 
-| WETH Sold | Approx. USD Value | Verified Price Impact | Assessment |
-|-----------|-------------------|-----------------------|------------|
-| 500 | ~$960k | **~0.00%** |  Safe |
-| 2,500 | ~$4.8M | **~0.19%** |  Safe |
-| 5,000 | ~$9.6M | **~1.19%** |  Strain |
-| 12,500 | ~$24M | **~4.82%** |  Critical |
+To estimate liquidation execution risk, we manually simulated WETH sales on [DefiLlama Swap](https://swap.defillama.com/) on Base. No transactions were executed; these are quote observations.
 
-*Source: DefiLlama Swap (aggregator), Base network, February 6, 2026. Routed via 1inch/CowSwap.*
+| WETH Sold | Approx. USD Value | Quoted Price Impact | Assessment |
+|-----------|-------------------|---------------------|------------|
+| 500 | ~$960k | ~0.00% | Low observed impact |
+| 2,500 | ~$4.8M | ~0.19% | Low observed impact |
+| 5,000 | ~$9.6M | ~1.19% | Material impact |
+| 12,500 | ~$24M | ~4.82% | Severe impact |
 
-### Key Finding
+Source: DefiLlama Swap quote simulation on Base, February 6, 2026.
 
-The market can absorb **~$5M in liquidations with minimal impact** (~0.2% slippage). However, if liquidation volumes reach **$24M+** (as in a 50% crash), a single liquidation wave would incur **~5% additional slippage**, potentially triggering further liquidations.
+Under normal liquidity conditions, the 20% stress case looked manageable. The modeled $5.51M of liquidatable debt maps to collateral sales closer to the low-impact quote range than the severe-impact range. Bad debt would still require failed execution, heavier slippage, further price movement, or some combination of those factors.
 
-## The "Death Spiral" Explained
+DEX liquidity during a crash can look very different from a calm quote simulation. Liquidity providers can withdraw, spreads can widen, aggregators can route through thinner paths, and other sellers may be hitting the same pools at the same time. If the liquidation wave occurs while unrelated ETH holders are also selling, realized slippage can be worse than the quoted values above.
 
-When collateral is sold during liquidation, it depresses the market price. This can push additional positions underwater, triggering more liquidations in a self-reinforcing loop.
+For liquidators, route quality matters. Breaking sales into smaller chunks, using multiple venues, and monitoring pool depth can reduce the chance that a profitable liquidation becomes unprofitable after slippage. For curators and lenders, supply caps should be sized against stressed exit liquidity as well as normal market TVL.
 
-![liqudiation](https://raw.githubusercontent.com/SCAuditStudio/SCASArticles/main/images/LiquidationLoop.PNG)
+## How Liquidation Cascades Form
 
+A liquidation cascade starts when falling collateral prices push some positions below the liquidation threshold. Liquidators repay debt and receive collateral. If they sell that collateral into the market, the sale can push the collateral price lower. That lower price can make more positions liquidatable, creating another round of collateral sales.
 
-### Cascade Impact (Verified Numbers)
+![Liquidation cascade loop](https://raw.githubusercontent.com/SCAuditStudio/SCASArticles/main/images/LiquidationLoop.PNG)
 
-| Phase | Trigger | WETH to Sell | Verified Slippage | Cumulative Drop |
-|-------|---------|--------------|-------------------|-----------------|
-| Initial Crash | External event | 0 | -17% | -17.0% |
-| Wave 1-3 | HF < 1.0 | ~639 WETH | < 0.1% | -17.1% |
-| Wave 4 | Deep cascade | ~2,074 WETH | ~0.19% | -17.2% |
-| Liquidity Crisis | >12k WETH | Pending | **~4.82%** | **>22%** |
+In the January 2026 snapshot, the early liquidation waves were too small to create major price impact under the February 2026 quote conditions. Risk increases when liquidatable WETH approaches the size of the market's stressed exit liquidity.
 
-*Source: DefiLlama Aggregator simulation, February 2026.*
+| Phase | Trigger | WETH to Sell | Observed or Modeled Slippage | Cumulative ETH Drop |
+|-------|---------|--------------|-------------------------------|---------------------|
+| Initial shock | External ETH sell-off | 0 | Market move | -17.0% |
+| Early liquidations | Health factor below 1.0 | ~639 WETH | <0.1% quoted impact | ~-17.1% |
+| 20% stress zone | More accounts cross LLTV | ~2,074 WETH | ~0.19% quote reference | ~-17.2% |
+| Tail liquidity stress | Very large collateral sales | >12,000 WETH | ~4.82% quote reference | >-22% possible |
 
-## Oracle Reliability During the Crash
+Source: borrower snapshot plus DefiLlama Swap quote simulation, February 2026.
 
-We compared ETH/USD prices from **Dune Analytics** (hourly aggregates) and **The Graph** (raw on-chain updates) during August 5, 2024.
+"Cascade" describes a possible failure mode rather than a forecast. Whether it happens depends on timing, liquidity, liquidation incentives, oracle updates, and the behavior of large borrowers. The same borrower book can be safe in one market environment and fragile in another.
+
+## Oracle Behavior During Volatility
+
+Liquidations depend on price data. If the market price of ETH moves before the on-chain oracle reflects it, liquidations can be delayed. If an oracle update captures a short-lived dislocation, borrowers can be liquidated at a price that later reverts.
+
+We compared hourly aggregated ETH/USD values queried through Dune with raw on-chain update data indexed through [The Graph](https://thegraph.com/) during the August 5, 2024 sell-off.
 
 | Time (UTC) | Dune Price | Graph Price | Time Diff | Deviation |
 |------------|------------|-------------|-----------|-----------|
-| 01:00 | $2,343.51 | $2,533.73 | **59 sec** | **7.5%** |
+| 01:00 | $2,343.51 | $2,533.73 | 59 sec | 7.5% |
 | 06:00 | $2,235.97 | $2,315.06 | 49 sec | 3.4% |
 | 07:00 | $2,321.51 | $2,266.29 | 1 sec | 2.4% |
 
-*Source: `oracleBackTest` tool, Dune Analytics + The Graph comparison. Data period: August 2024.*
+Source: internal `oracleBackTest` comparison using Dune Analytics and The Graph data for August 2024.
 
-> **⚠️ Is This a Timing Issue?**  
-> The 7.5% deviation at 01:00 UTC occurred with only a **59-second difference** between data sources, not a timing artifact. During extreme volatility, oracle aggregation methods (hourly snapshots vs. per-update events) can diverge significantly, even when sampling nearly the same moment.
+This comparison is about data methodology rather than a verdict on Chainlink correctness. Different sampling and aggregation methods can produce materially different values during fast markets, even when timestamps are close. Chainlink's own documentation notes that price feeds update based on deviation thresholds and heartbeat settings, and that consuming applications should check timestamps and define their own acceptable limits.
 
-This matters because:
-- Delayed on-chain prices could **delay liquidations**, increasing bad debt risk.
-- Premature or "flash" prices could cause **unfair liquidations**.
-- MEV bots can exploit these discrepancies.
+For lending markets, oracle reputation is only one part of the question. The liquidation design also has to handle oracle timing, update thresholds, sequencer behavior on an L2, and temporary gaps between CEX prices, DEX prices, and oracle-reported prices.
 
 ## Simulation Limitations
 
-This analysis has important limitations that affect its real-world applicability:
+This assessment has several limits.
 
-1. **DEX Liquidity Assumes Normal Conditions**  
-   Our swap simulations were conducted during *normal* market conditions. In a real 17-20% crash, liquidity providers may **withdraw liquidity** to avoid impermanent loss. The actual slippage during a crash would likely be **worse** than our tested figures.
+1. **The borrower data is a snapshot.** The January 27, 2026 positions may not match current positions. Borrowers can add collateral, repay, withdraw collateral, refinance, or migrate to another market.
 
-2. **Snapshot Data, Not Real-Time**  
-   The borrower positions (January 27, 2026) and the DEX simulations (February 6, 2026) are from different timestamps. We are modeling a **virtual scenario**, not a live backtest.
+2. **The swap simulations were collected under normal market conditions.** In a real crash, liquidity providers may pull capital, active market makers may widen quotes, and unrelated sellers may compete for the same exit liquidity.
 
-3. **No Consideration of Concurrent Selling Pressure**  
-   Our simulations assume a single liquidator selling collateral. In reality, multiple liquidators, panicked holders, and arbitrage bots would all be selling simultaneously, amplifying price impact.
+3. **The analysis excludes borrower reactions.** Some borrowers will act before liquidation. Others will not. The model assumes no preemptive repayment or collateral top-up.
 
-4. **Oracle Data Granularity Differs**  
-   Dune Analytics provides hourly aggregated prices; The Graph provides per-update event data. Comparing these directly introduces methodology-based discrepancies, though we minimized this with ±30-minute matching windows.
+4. **The analysis excludes detailed liquidation incentives.** A liquidator's realized profit depends on bonus, gas, routing, private order flow, MEV competition, and whether the collateral sale can be completed at the expected price.
 
-## Key Takeaways
+5. **Oracle data sources have different granularity.** Dune queries and subgraph data do not represent the same data product. The comparison is a timing-sensitivity check rather than a definitive oracle-quality score.
 
-| Finding | Severity | Implication |
-|---------|----------|-------------|
-| First liquidation at **5% drop** | High | One $389k position is extremely vulnerable |
-| **$5.5M at risk** at 20% drop | Critical | 12 positions, ~12% of analyzed debt |
-| DEX can absorb **~$5M safely** | Good News | 20% crash liquidations are manageable |
-| **>$10M triggers 1%+ slippage** | Warning | Cascade risk begins above this threshold |
-| **$24M triggers ~5% slippage** | Critical | This alone could cause a death spiral |
-| **7.5% oracle deviation** (verified) | Medium | Not a timing issue, real divergence during volatility |
+6. **User exposure can cross market boundaries.** Morpho Blue market isolation can contain bad debt at the market level. However, vaults, aggregators, and curators can expose passive depositors to several markets at once. That is why vault-level exposure analysis is separate from single-market borrower analysis.
 
-## Recommendations
+These limits define how to use the results. Treat the numbers as a structured stress test, then repeat the same process with fresh positions, fresh DEX depth, and the exact oracle configuration before making risk decisions.
+
+## Practical Recommendations
 
 ### For Borrowers
-- Maintain Health Factor **> 1.3** to survive 25%+ crashes
-- Set automated alerts at HF < 1.2
 
-### For Protocols
-- Consider dynamic LLTV adjustments during high volatility
-- Implement circuit breakers for flash crash scenarios
+Managing a WETH-backed USDC position around health factor 1.0 leaves no room for error. In this stress test, the first account becomes liquidatable after a 5% ETH move. A health factor above 1.3 gives more room to survive a 20-25% move, but the right buffer depends on position size, ability to repay quickly, and tolerance for forced liquidation.
+
+Borrowers should set alerts before the position becomes urgent. One alert setup is an early warning around health factor 1.25, an action threshold around 1.15, and an emergency threshold around 1.05. The exact numbers can vary, but alerts at liquidation distance zero are too late.
+
+### For Vault Curators and Lenders
+
+Size market exposure against stressed liquidity instead of headline APY. If a vault allocates to a WETH/USDC market, the curator should know how much WETH could be seized and sold under 10%, 20%, and 30% ETH shocks. Supply caps should reflect the amount of collateral that liquidators can exit without turning slippage into bad debt.
+
+Curators should also monitor concentration. A market with many small borrowers is different from a market where a few large accounts dominate liquidation risk. The same total borrowed value can produce very different liquidation behavior depending on borrower distribution.
+
+### For Protocol and Risk Teams
+
+Risk monitoring should combine borrower health, oracle freshness, DEX liquidity, and L2 status. Any single metric misses the interaction that creates liquidation cascades.
+
+Useful dashboards should answer four questions:
+
+- How much debt becomes liquidatable at each collateral price drop?
+- How much collateral would liquidators need to sell?
+- What is the current and stressed price impact for that collateral sale?
+- Are oracle updates and L2 sequencer conditions healthy enough for liquidations to execute fairly?
 
 ### For Liquidators
-- Use aggregators like 1inch/CowSwap to minimize slippage
-- Prefer incremental liquidations over full position seizures
+
+A fast full-size sale can be less profitable than slower execution. Large liquidations can lose money if collateral is dumped into shallow routes. Liquidators should simulate routes before execution, split trades when needed, and account for MEV competition and route failure.
 
 ## Data Sources
 
 | Source | Description | Date |
 |--------|-------------|------|
-| Morpho Blue GraphQL API | Borrower positions | Jan 27, 2026 |
-| Dune Analytics | Chainlink ETH/USD hourly | Aug-Sep 2024 |
-| The Graph | Chainlink price updates | Aug-Sep 2024 |
-| DefiLlama Swap | Manual slippage simulation | Feb 6, 2026 |
+| [Morpho Blue GraphQL API](https://blue-api.morpho.org/graphql) | Borrower positions and market parameters | Jan 27, 2026 |
+| [Base network information](https://docs.base.org/base-chain/network-information) | Chain ID and network context | Reference |
+| [Chainlink Data Feeds](https://docs.chain.link/data-feeds) | ETH/USD oracle reference and feed behavior context | Aug-Sep 2024 |
+| [Dune Analytics](https://dune.com/) | Hourly aggregated ETH/USD query output | Aug-Sep 2024 |
+| [The Graph](https://thegraph.com/) | Raw indexed oracle update comparison | Aug-Sep 2024 |
+| [DefiLlama Swap](https://swap.defillama.com/) | Manual WETH sale quote simulation on Base | Feb 6, 2026 |
 
-*This analysis was conducted using data from the Morpho WETH/USDC market on Base. For the full technical report with additional tables and code, reach out to us).*
+This analysis was conducted using data from the Morpho WETH/USDC market on Base. The numbers should be refreshed before using the result for live risk management.
 
 ## About Us
 
@@ -181,28 +216,32 @@ At SC Audit Studio, we specialize in protocols security assessments.
 Our team of experts has worked with companies like Aave, 1Inch and several more to conduct security assessments.
 Partner with us to enhance your project's security and gain peace of mind.
 
-[Reach out to us](https://scauditstudio.com/contact) for queries and security assessments!
+[Contact SC Audit Studio](https://scauditstudio.com/contact) for protocol security assessments.
 
 ## Tags
-["Vault-Curation","Security","Morpho"]
+["Vault-Curation","Security","Morpho","Risk-Assessment","Liquidation"]
 
 ## FAQ
 
 [
   {
-    "question": "What is a liquidation cascade?",
-    "answer": "A liquidation cascade occurs when collateral sold during liquidation depresses the market price, pushing additional positions underwater and triggering more liquidations in a self-reinforcing loop that can destabilize an entire lending market."
+    "question": "What is the main conclusion of this Morpho risk assessment?",
+    "answer": "In the January 27, 2026 borrower snapshot, a 20% ETH drop would make 12 positions liquidatable, representing about $5.51M of debt. Normal-condition Base DEX quotes suggested that this liquidation size was manageable, but the result depends on liquidity remaining available during the crash."
   },
   {
-    "question": "How does on-chain liquidity affect liquidation risk?",
-    "answer": "Limited DEX liquidity means large liquidations cause heavy price slippage. Our analysis shows Base DEXs can absorb ~$5M safely, but volumes exceeding $10M trigger 1%+ slippage, and $24M causes ~5% slippage that could initiate a death spiral."
+    "question": "Does liquidatable debt mean bad debt?",
+    "answer": "No. Liquidatable debt means a position has crossed the liquidation threshold and can be repaid by a liquidator in exchange for collateral. Bad debt occurs when the collateral cannot cover the debt after price movement, slippage, liquidation incentives, and execution costs."
   },
   {
-    "question": "What Health Factor should borrowers maintain?",
-    "answer": "We recommend maintaining a Health Factor greater than 1.3 to survive 25%+ market crashes. Setting automated alerts at HF < 1.2 provides early warning to add collateral or repay debt before liquidation."
+    "question": "What health factor should Morpho borrowers maintain?",
+    "answer": "Health factor 1.0 leaves no margin. For the WETH/USDC stress profile modeled here, a buffer above 1.3 gives more room against 20-25% ETH moves, though the right buffer depends on position size and the borrower's ability to repay quickly."
+  },
+  {
+    "question": "Why does DEX liquidity matter for liquidations?",
+    "answer": "Liquidators often need to sell seized collateral to recover the debt asset. If the collateral sale causes heavy slippage, liquidations can become unprofitable or fail to cover the debt, increasing the chance of bad debt."
   },
   {
     "question": "Why do oracle deviations matter during crashes?",
-    "answer": "Oracle deviations during volatility can cause delayed or premature liquidations. Delayed prices increase bad debt risk, while flash prices may trigger unfair liquidations. MEV bots can exploit these discrepancies for profit."
+    "answer": "Liquidations depend on oracle-reported prices. During fast markets, timing differences, heartbeat settings, and update thresholds can affect when positions become liquidatable. Delayed updates can increase bad debt risk, while short-lived dislocations can create unfair liquidation risk."
   }
 ]
