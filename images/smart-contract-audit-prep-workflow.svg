@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Smart contract audit preparation workflow</title>
+  <desc id="desc">A five step workflow showing scope freeze, pre-audit readiness, formal audit, remediation review, and launch monitoring.</desc>
+  <rect width="1200" height="420" fill="#f7f9fb"/>
+  <rect x="40" y="40" width="1120" height="340" rx="20" fill="#ffffff" stroke="#d7dde5" stroke-width="2"/>
+  <text x="600" y="92" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700" fill="#111827">Audit budget should buy security review, not missing context</text>
+  <text x="600" y="128" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" fill="#4b5563">Prepare the codebase before the formal audit window starts.</text>
+
+  <g font-family="Inter, Arial, sans-serif">
+    <rect x="80" y="185" width="170" height="96" rx="12" fill="#e8f2ff" stroke="#7aa7e8" stroke-width="2"/>
+    <text x="165" y="223" text-anchor="middle" font-size="18" font-weight="700" fill="#12315c">1. Freeze Scope</text>
+    <text x="165" y="252" text-anchor="middle" font-size="14" fill="#30415f">Commit hash, files,</text>
+    <text x="165" y="272" text-anchor="middle" font-size="14" fill="#30415f">deploy scripts</text>
+
+    <path d="M260 233 H315" stroke="#8a94a6" stroke-width="3" fill="none"/>
+    <path d="M315 233 l-12 -8 v16 z" fill="#8a94a6"/>
+
+    <rect x="330" y="185" width="170" height="96" rx="12" fill="#edf7ed" stroke="#70b970" stroke-width="2"/>
+    <text x="415" y="223" text-anchor="middle" font-size="18" font-weight="700" fill="#1f4d2b">2. Pre-Audit</text>
+    <text x="415" y="252" text-anchor="middle" font-size="14" fill="#34513a">Docs, tests, roles,</text>
+    <text x="415" y="272" text-anchor="middle" font-size="14" fill="#34513a">obvious bugs</text>
+
+    <path d="M510 233 H565" stroke="#8a94a6" stroke-width="3" fill="none"/>
+    <path d="M565 233 l-12 -8 v16 z" fill="#8a94a6"/>
+
+    <rect x="580" y="185" width="170" height="96" rx="12" fill="#fff3df" stroke="#d69a37" stroke-width="2"/>
+    <text x="665" y="223" text-anchor="middle" font-size="18" font-weight="700" fill="#714600">3. Formal Audit</text>
+    <text x="665" y="252" text-anchor="middle" font-size="14" fill="#684b20">Independent review</text>
+    <text x="665" y="272" text-anchor="middle" font-size="14" fill="#684b20">of real risk</text>
+
+    <path d="M760 233 H815" stroke="#8a94a6" stroke-width="3" fill="none"/>
+    <path d="M815 233 l-12 -8 v16 z" fill="#8a94a6"/>
+
+    <rect x="830" y="185" width="170" height="96" rx="12" fill="#f8eefe" stroke="#b47bd6" stroke-width="2"/>
+    <text x="915" y="223" text-anchor="middle" font-size="18" font-weight="700" fill="#5a2678">4. Remediate</text>
+    <text x="915" y="252" text-anchor="middle" font-size="14" fill="#54315f">Fix, test, and</text>
+    <text x="915" y="272" text-anchor="middle" font-size="14" fill="#54315f">verify patches</text>
+
+    <path d="M1010 233 H1065" stroke="#8a94a6" stroke-width="3" fill="none"/>
+    <path d="M1065 233 l-12 -8 v16 z" fill="#8a94a6"/>
+
+    <rect x="1080" y="185" width="80" height="96" rx="12" fill="#eef2f7" stroke="#8b95a5" stroke-width="2"/>
+    <text x="1120" y="223" text-anchor="middle" font-size="16" font-weight="700" fill="#263241">5. Monitor</text>
+    <text x="1120" y="252" text-anchor="middle" font-size="13" fill="#44505f">Ops and</text>
+    <text x="1120" y="270" text-anchor="middle" font-size="13" fill="#44505f">alerts</text>
+  </g>
+
+  <text x="600" y="334" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" fill="#4b5563">The pre-audit removes avoidable noise so the formal audit can focus on deeper protocol risk.</text>
+</svg>
