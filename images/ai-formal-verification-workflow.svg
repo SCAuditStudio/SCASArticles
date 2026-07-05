@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">AI-assisted formal verification process</title>
+  <desc id="desc">A process showing protocol intent, AI candidate generation, human review, formal verification, counterexamples, and regression checks.</desc>
+  <rect width="1200" height="520" fill="#f8fafc"/>
+  <rect x="56" y="56" width="1088" height="408" rx="18" fill="#ffffff" stroke="#d6dde7" stroke-width="2"/>
+  <text x="600" y="112" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#111827">AI-assisted formal verification process</text>
+  <text x="600" y="148" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#4b5563">Generated specifications are reviewed and checked before they become security evidence.</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="84" y="218" width="158" height="104" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+    <text x="163" y="258" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Protocol</text>
+    <text x="163" y="286" text-anchor="middle" font-size="16" fill="#334155">intent and</text>
+    <text x="163" y="310" text-anchor="middle" font-size="16" fill="#334155">assumptions</text>
+
+    <line x1="242" y1="270" x2="304" y2="270" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <rect x="314" y="218" width="158" height="104" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+    <text x="393" y="258" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">AI drafts</text>
+    <text x="393" y="286" text-anchor="middle" font-size="16" fill="#334155">candidate</text>
+    <text x="393" y="310" text-anchor="middle" font-size="16" fill="#334155">properties</text>
+
+    <line x1="472" y1="270" x2="534" y2="270" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <rect x="544" y="218" width="158" height="104" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="623" y="258" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Human</text>
+    <text x="623" y="286" text-anchor="middle" font-size="16" fill="#334155">review and</text>
+    <text x="623" y="310" text-anchor="middle" font-size="16" fill="#334155">threat model</text>
+
+    <line x1="702" y1="270" x2="764" y2="270" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <rect x="774" y="218" width="158" height="104" rx="12" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+    <text x="853" y="258" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Formal</text>
+    <text x="853" y="286" text-anchor="middle" font-size="16" fill="#334155">prover checks</text>
+    <text x="853" y="310" text-anchor="middle" font-size="16" fill="#334155">all modeled states</text>
+
+    <line x1="932" y1="270" x2="994" y2="270" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <rect x="1004" y="218" width="126" height="104" rx="12" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+    <text x="1067" y="258" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Fixes</text>
+    <text x="1067" y="286" text-anchor="middle" font-size="16" fill="#334155">tests and</text>
+    <text x="1067" y="310" text-anchor="middle" font-size="16" fill="#334155">regressions</text>
+
+    <path d="M1067 334 C1067 404 393 404 393 334" fill="none" stroke="#94a3b8" stroke-width="3" stroke-dasharray="8 8" marker-end="url(#arrow)"/>
+    <text x="730" y="432" text-anchor="middle" font-size="16" fill="#475569">Counterexamples and weak properties loop back for refinement.</text>
+  </g>
+</svg>
