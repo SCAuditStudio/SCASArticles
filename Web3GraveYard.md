@@ -31,7 +31,7 @@ The catastrophic losses suffered by VCs in Web3 were not merely the result of ma
 | **Celsius Network (CEL)** | WestCap, Caisse de dépôt et placement du Québec (CDPQ) | \~$750 Million | \>$3 Billion | Bankruptcy, \>99% collapse | Mismanagement, Risky Investments, Misrepresentation, Ponzi-like characteristics |
 | **Internet Computer (ICP)** | Andreessen Horowitz (a16z), Polychain Capital | $187 Million | \~$70 Billion (FDV) | \>99% collapse | Valuation Bubble, Hasty Launch, Slow Ecosystem Growth |
 | **Flow (FLOW)** | Andreessen Horowitz (a16z), Dapper Labs | N/A | \>$20 Billion | \>96% collapse | Over-reliance on NFT Hype, Single Application Dependency |
-| **Yield Protocol** | Paradigm | Undisclosed | N/A | Shutdown, 100% loss | Insufficient Market Demand, Unsustainable Model |
+| **Yield Protocol** (legacy fixed-rate lending protocol) | Paradigm, Framework Ventures, CMS Holdings, Robot Ventures | $10 Million Series A | $22 Million TVL | Wind-down; borrowing and lending ended in December 2023 | The team cited a lack of sustainable demand for fixed-rate borrowing and a challenging regulatory environment |
 
 ## **In-Depth Case Studies of VC-Funded Failures**
 
@@ -110,7 +110,7 @@ Beyond the headline-grabbing catastrophes of FTX, Terra, and Celsius, a vast gra
 
 A primary cause of failure is the prioritization of speculative tokenomics over the creation of a sustainable business model. Many projects are designed not to generate external revenue but to drive up the value of their own native token, creating a system that is inherently fragile and prone to collapse. As one analyst noted, "If your Web3 startup can't generate revenue outside of token speculation, you're not building a company,you're playing financial roulette".
 
-* **Unsustainable Yields:** The promise of unnaturally high, fixed-rate returns proved to be a recurring vulnerability. **Yield Protocol**, backed by the influential firm Paradigm, and **Notional Finance**, backed by Coinbase Ventures, were both fixed-rate lending protocols that ultimately failed. They shut down or saw their tokens lose over 99% of their value due to a combination of insufficient market demand for their products and economic models that could not be sustained without continuous capital inflows.  
+* **Unsustainable Yields:** The promise of unnaturally high, fixed-rate returns proved to be a recurring vulnerability. The collapse of Terra/Luna, whose Anchor Protocol subsidized nearly 20% yields on UST deposits, shows how token-funded returns can create a false impression of durable demand and become a systemic risk when incentives fade.
 * **Structurally Flawed Models:** The algorithmic stablecoin model, exemplified by **Terra/Luna**, has proven to be a particularly dangerous design. The failure of a similar project, **Iron Finance**, in 2021 had already demonstrated the "death spiral" risk inherent in such systems. The core lesson for investors is that collateralization is not an optional feature but a fundamental requirement for stability. Any model that relies on a volatile, algorithmically-linked asset to maintain a peg is carrying a hidden systemic risk.
 
 ### **Failures of Product-Market Fit (PMF) and Go-to-Market (GTM)**
@@ -133,13 +133,13 @@ A crucial realization emerging from these patterns is that in Web3, token price 
 
 The market downturn of 2022 did not mark the end of VC-funded failures; rather, it initiated a prolonged culling of projects that could not adapt to a more constrained funding environment and a market less tolerant of hype. The period from 2023 to 2025 saw a continuation of these trends, with even well-backed projects succumbing to familiar pitfalls. A 2024 study of 1,181 VC-backed crypto projects revealed that nearly 45% had ceased operations, and 77% generated less than $1,000 in monthly revenue.
 
-### **Case Study: The Fixed-Rate Fallacy \- Yield Protocol and Notional Finance**
+### **Case Study: Yield Protocol \- The Fixed-Rate Lending Wind-Down**
 
-The DeFi bear market claimed two of the most prominent projects in the fixed-rate lending sector, demonstrating that even with elite VC backing, a niche product with insufficient demand cannot survive.
+This case concerns the former Ethereum fixed-rate lending protocol, Yield Protocol, not the separate, active YO protocol. Yield Protocol enabled fixed-term, fixed-rate borrowing and lending through tokenized debt instruments. It raised a $10 million Series A led by Paradigm, with Framework Ventures and other crypto investors participating.
 
-* **Yield Protocol**, backed by the influential firm Paradigm, announced it would wind down operations in late 2023. The team cited a lack of sustainable demand for fixed-rate borrowing and increasing regulatory pressures as the primary reasons for the shutdown.  
-* Notional Finance, which counted Coinbase Ventures among its investors, suffered a similar fate. While the protocol remains operational, its native token (NOTE) collapsed by over 99% from its all-time high, with its market capitalization shrinking to just $1.7 million and daily trading volumes often falling below a few thousand dollars.  
-  The simultaneous failure of these projects underscored a fundamental miscalculation by investors: the addressable market for fixed-rate DeFi products was far smaller than anticipated, and the models were not sustainable without continuous growth.
+In October 2023, the team announced that it would wind down the protocol: it cancelled the planned March 2024 series, kept only the December 2023 series active, and ended borrowing and lending on December 31, 2023. The team cited a lack of sustainable demand for fixed-rate borrowing and an increasingly challenging regulatory environment in the United States, Europe, and the United Kingdom.
+
+The case illustrates the difficulty of sustaining specialised fixed-rate lending markets in DeFi. Venture backing and an innovative mechanism cannot substitute for enduring borrower demand, sufficient liquidity, and an operating environment in which the team can continue supporting the product.
 
 ### **Case Study: Qredo \- Failure of an Institutional Hopeful**
 
@@ -302,11 +302,9 @@ Partner with us to enhance your project's security and gain peace of mind.
 * [Web3 Startup Lessons from 2025: Founder Wins and Mistakes - TDeFi](https://tde.fi/founder-resource/blogs/startup/web3-startup-lessons-from-2025-founder-wins-and-mistakes/)
 * [Why Many Fintech Startups Fail And How To Avoid Their Mistakes - Forbes](https://www.forbes.com/councils/forbesbusinesscouncil/2025/08/12/why-many-fintech-startups-fail-and-how-to-avoid-their-mistakes/)
 * [Research: Nearly 45% of VC-backed crypto projects have shut down - ChainCatcher](https://www.chaincatcher.com/en/article/2184513)
-* [Yield Protocol Announces Termination of Official Support by January 31 Following Closure - Binance Square](https://www.binance.com/en-NG/square/post/2024-01-26-yield-protocol-announces-termination-of-official-support-by-january-31-following-closure-3270824286618)
-* [Fixed rate-focused Yield Protocol is the latest DeFi project to wind ... - Blockworks](https://blockworks.co/news/yield-protocol-defi-project-shutter-fixed-rate-platform)
-* [Yield Protocol Announces Shutdown Amid Regulatory Challenges - Good Crypto](https://goodcrypto.app/yield-protocol-announces-shutdown-amid-regulatory/)
-* [Notional Finance Price, NOTE Price, Live Charts, and Marketcap - Coinbase](https://www.coinbase.com/price/notional-finance)
-* [Notional Finance - Token Terminal](https://tokenterminal.com/explorer/projects/notional-finance/about)
+* [Fixed rate-focused Yield Protocol is the latest DeFi project to wind down - Blockworks](https://blockworks.com/news/yield-protocol-defi-project-shutter-fixed-rate-platform)
+* [Yield Protocol shutting down, cites low demand and regulatory challenges - crypto.news](https://crypto.news/yield-protocol-shutting-down-cites-law-demand-and-regulatory-challenges/)
+* [YO Protocol](https://www.yo.xyz/)
 * [8 High-Profile VC-Backed Crypto Projects That Collapsed After the Bull Run - KuCoin](https://www.kucoin.com/news/flash/8-high-profile-vc-backed-crypto-projects-that-collapsed-after-the-bull-run)
 * [From Spotlight to the Fringe: A Review of 8 'Doomed' Projects Backed by Star Venture Capital Firms](https://news.futunn.com/en/post/63958409/from-spotlight-to-the-fringe-a-review-of-8-doomed)
 * [Crashing out: 10 corporate-backed startups that went bust in 2024 - Global Venturing](https://globalventuring.com/corporate/asia/corporate-backed-startups-bankruptcy-2024/)
