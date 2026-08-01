@@ -4,8 +4,6 @@ Teams comparing AI smart contract audit tools are often comparing three things a
 
 If you're comparing AI smart contract audit tools or trying to understand AI agent harnesses, you need to know what a harness does, what current benchmarks actually show, which components may lose value as models improve, and which controls remain necessary regardless of model capability.
 
-Do not read this as "the harness will not matter." Harnesses matter now and will continue to matter as software. However, features that only compensate for a temporary model limitation are unlikely to remain durable differentiators. Verification, reproducibility, permissions, and accountability solve different problems and do not become optional when the model improves.
-
 ## Table of Contents
 
 1. [TLDR](#tldr)
@@ -29,7 +27,7 @@ Do not read this as "the harness will not matter." Harnesses matter now and will
 - Smart contract results are less settled. The initial EVMbench release reported a best detection score of 45.6% and a best exploit score of 72.2% on a smaller exploit subset. A later re-evaluation found that scaffold choice and dataset choice materially changed results.
 - Prompt checklists, rigid chunking rules, and retry strategies may become less valuable when they only patch a specific model weakness. They may still remain useful for cost, workflow, or product-control reasons.
 - Fuzzing, invariant tests, static analysis, formal verification, reproducible exploits, sandboxing, and human sign-off provide independent evidence or risk control. Better models do not remove their purpose.
-- Evaluate tools on held-out protocol code, reproducible findings, false-positive burden, coverage, cost, permissions, and remediation workflow—not a single leaderboard score.
+- Evaluate tools on held-out protocol code, reproducible findings, false-positive burden, coverage, cost, permissions, and remediation workflow, not a single leaderboard score.
 
 ## What Is an AI Agent Harness?
 
@@ -72,8 +70,6 @@ The initial paper reported that the best agent detected 45.6% of the vulnerabili
 The paper also tested hints. When agents received information about the broken mechanism, patch and exploit performance increased. This supports the view that finding the relevant mechanism inside a large repository is a major difficulty. It does not prove that discovery is the only bottleneck, or that the harness has little effect on discovery.
 
 A subsequent [independent re-evaluation of EVMbench](https://arxiv.org/abs/2603.10795) tested 26 configurations across four model families and three scaffolds. It also introduced 22 incidents that occurred after the evaluated models' release dates to reduce the risk that benchmark cases had appeared in training data. The researchers found that rankings changed across configurations and datasets. An open-source scaffold outperformed vendor alternatives by 1.7 to 5 percentage points in some comparisons. On the post-release incident set, agents detected up to 65% of vulnerabilities, but none completed an end-to-end exploit across the 110 agent-incident pairs.
-
-Do not read these results as evidence that harnesses are irrelevant to smart contract security. Model, scaffold, reasoning settings, task construction, and dataset all affect the result. A strong score on historical contest findings is also not proof that a tool can audit a new protocol autonomously.
 
 ## Why Smart Contract Auditing Is a Different Task
 
